@@ -1,0 +1,11 @@
+# CPU parts: data generation, image processing, OCR baseline, classifier, corrector
+numpy>=1.26
+scipy>=1.11
+opencv-python-headless>=4.9
+pdf2image>=1.17          # also needs Poppler installed (see README)
+reportlab>=4.0
+Pillow>=10.0
+scikit-learn>=1.4
+pytesseract>=0.3.10      # also needs Tesseract installed (only for the OCR baseline)
+matplotlib>=3.8
+pandas>=2.0

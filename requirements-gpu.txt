@@ -1,0 +1,7 @@
+# GPU parts: vision-language model fine-tuning / inference.
+# Install PyTorch with CUDA FIRST (see README), then: pip install -r requirements-gpu.txt
+transformers==4.51.3
+peft==0.15.2
+accelerate==1.6.0
+bitsandbytes>=0.45.0
+tokenizers>=0.21

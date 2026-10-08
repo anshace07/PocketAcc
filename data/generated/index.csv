@@ -1,0 +1,141 @@
+file,bank,profile,occupation,pages,txn_count,opening,closing
+G001_HDFC_Fatima-Singh.pdf,HDFC,salaried,Bank Clerk,2,62,912917.52,871072.67
+G002_SBI_Ritu-Sharma.pdf,SBI,self_employed,Consulting Physician,3,73,2347074.86,2901090.02
+G003_PNB_Swati-Bose.pdf,PNB,self_employed,Restaurant Owner,3,100,6443.35,36549.64
+G004_KOTAK_Rahul-Chatterjee.pdf,KOTAK,salaried,Factory Machine Operator,2,53,766092.36,747309.25
+G005_ICICI_Rahul-Bhatt.pdf,ICICI,low_income,Retired (PSU),4,168,93021.78,72333.05
+G006_BOB_Meera-Mishra.pdf,BOB,self_employed,Kirana Store Owner,5,171,48770.48,34769.86
+G007_AXIS_Suresh-Ansari.pdf,AXIS,salaried,Sales Executive,2,45,15080.41,80148.87
+G008_HDFC_Manoj-Shah.pdf,HDFC,low_income,Domestic Worker,5,159,90065.19,351.84
+G009_SBI_Rohan-Kulkarni.pdf,SBI,self_employed,Consulting Physician,5,158,6197.56,794744.84
+G010_PNB_Sunita-Shah.pdf,PNB,gig,Bike Taxi Rider,2,68,770993.82,722167.36
+G011_KOTAK_Ajay-Malhotra.pdf,KOTAK,salaried,Software Engineer,2,78,7136.05,53.32
+G012_ICICI_Ramesh-Thomas.pdf,ICICI,student,Student,2,44,7030.02,239.4
+G013_BOB_Rohan-Chatterjee.pdf,BOB,salaried,Retail Store Manager,2,56,2384.31,34548.54
+G014_AXIS_Asha-Kumar.pdf,AXIS,salaried,Sales Executive,4,101,231756.19,172199.97
+G015_HDFC_Ajay-Khan.pdf,HDFC,salaried,Sales Executive,2,43,46777.91,326.41
+G016_SBI_Rahul-Thomas.pdf,SBI,low_income,Retired (PSU),2,50,77891.38,128549.11
+G017_PNB_Kavita-Thomas.pdf,PNB,salaried,Government School Teacher,3,110,799396.5,723485.31
+G018_KOTAK_Anjali-Joshi.pdf,KOTAK,low_income,Domestic Worker,2,61,299357.16,275009.2
+G019_ICICI_Vikram-Verma.pdf,ICICI,self_employed,Kirana Store Owner,3,88,318478.6,775975.19
+G020_BOB_Sanjay-Verma.pdf,BOB,salaried,Retail Store Manager,3,111,8345.93,825.04
+G021_AXIS_Rahul-Yadav.pdf,AXIS,salaried,Sales Executive,6,182,256746.67,190842.17
+G022_HDFC_Rahul-Pandey.pdf,HDFC,self_employed,Textile Trader,5,180,25714.53,481062.69
+G023_SBI_Sanjay-Kulkarni.pdf,SBI,self_employed,Textile Trader,3,81,251290.33,975086.26
+G024_PNB_Mary-Iyer.pdf,PNB,student,Student,2,61,37906.29,20755.85
+G025_KOTAK_Rekha-Shah.pdf,KOTAK,salaried,Bank Clerk,2,60,45463.28,17691.37
+G026_ICICI_Ajay-Pillai.pdf,ICICI,salaried,Bank Clerk,2,52,93960.25,85705.2
+G027_BOB_Deepak-Mehta.pdf,BOB,self_employed,Hardware Shop Owner,5,235,42603.06,414759.43
+G028_AXIS_Rekha-Reddy.pdf,AXIS,low_income,Domestic Worker,2,45,98517.63,97008.91
+G029_HDFC_Sneha-Kulkarni.pdf,HDFC,gig,Cab Driver,6,222,250899.84,167718.28
+G030_SBI_Venkat-Malhotra.pdf,SBI,student,Student,3,66,16632.49,59.06
+G031_PNB_Ramesh-Bose.pdf,PNB,gig,Bike Taxi Rider,2,67,36928.69,7964.08
+G032_KOTAK_Anjali-Ansari.pdf,KOTAK,salaried,Bank Clerk,1,29,15394.54,2565.17
+G033_ICICI_Lakshmi-Pandey.pdf,ICICI,salaried,Bank Clerk,4,102,74486.14,677.57
+G034_BOB_Ajay-Rao.pdf,BOB,student,Student,4,122,42205.62,5856.29
+G035_AXIS_Ramesh-Khan.pdf,AXIS,student,Student,3,73,236316.6,209864.3
+G036_HDFC_Anjali-Das.pdf,HDFC,salaried,Sales Executive,2,50,9451.42,300.3
+G037_SBI_Kavita-Pandey.pdf,SBI,self_employed,Restaurant Owner,8,249,49258.03,957576.64
+G038_PNB_Lakshmi-Iyer.pdf,PNB,self_employed,Kirana Store Owner,4,166,25935.25,1190157.17
+G039_KOTAK_Divya-Shah.pdf,KOTAK,student,Student,2,89,15192.62,204.29
+G040_ICICI_Venkat-Verma.pdf,ICICI,student,Student,4,105,45383.72,11976.42
+G041_BOB_Nisha-Chauhan.pdf,BOB,salaried,Government School Teacher,2,59,2832.67,104.76
+G042_AXIS_Ajay-Yadav.pdf,AXIS,self_employed,Hardware Shop Owner,6,184,2848817.36,4538560.82
+G043_HDFC_Rahul-Nair.pdf,HDFC,gig,Bike Taxi Rider,4,130,2286.88,7555.26
+G044_SBI_Asha-Sharma.pdf,SBI,salaried,Government School Teacher,2,49,38431.75,2063.96
+G045_PNB_Aarav-Pandey.pdf,PNB,salaried,Sales Executive,2,45,8772.31,70.13
+G046_KOTAK_Rekha-Pandey.pdf,KOTAK,salaried,Government School Teacher,3,130,879987.57,755766.88
+G047_ICICI_Venkat-Naidu.pdf,ICICI,salaried,Staff Nurse,3,100,75462.09,149.75
+G048_BOB_Harpreet-Das.pdf,BOB,salaried,Retail Store Manager,1,28,15392.29,51.16
+G049_AXIS_Anjali-Naidu.pdf,AXIS,self_employed,Consulting Physician,5,158,28395.51,938830.02
+G050_HDFC_Sunita-Joshi.pdf,HDFC,low_income,Farmer,2,62,81653.91,40951.65
+G051_SBI_Nisha-Malhotra.pdf,SBI,salaried,Software Engineer,5,173,104185.0,155831.11
+G052_PNB_Sanjay-Naidu.pdf,PNB,gig,Food Delivery Partner,2,79,6819.58,1142.39
+G053_KOTAK_Ritu-Verma.pdf,KOTAK,salaried,Factory Machine Operator,2,51,40088.11,115272.58
+G054_ICICI_Sneha-Saikia.pdf,ICICI,salaried,Retail Store Manager,1,20,2536.34,340.89
+G055_BOB_Divya-Kulkarni.pdf,BOB,self_employed,Chartered Accountant (Practice),6,239,2251412.07,2032102.86
+G056_AXIS_Meera-Rao.pdf,AXIS,student,Student,4,102,93807.51,6850.78
+G057_HDFC_Sanjay-Bose.pdf,HDFC,gig,Bike Taxi Rider,5,139,7028.58,7094.0
+G058_SBI_Suresh-Deshpande.pdf,SBI,gig,Food Delivery Partner,3,92,99282.96,37344.37
+G059_PNB_Nisha-Saikia.pdf,PNB,low_income,Farmer,2,62,2329.04,416.18
+G060_KOTAK_Ramesh-Kulkarni.pdf,KOTAK,salaried,Factory Machine Operator,2,58,993506.91,926833.4
+G061_ICICI_Fatima-Gupta.pdf,ICICI,student,Student,4,128,767105.55,683060.51
+G062_BOB_Amit-Kumar.pdf,BOB,salaried,Software Engineer,5,187,243778.52,106995.83
+G063_AXIS_Rekha-Pillai.pdf,AXIS,self_employed,Consulting Physician,5,148,47598.85,568746.4
+G064_HDFC_Sanjay-Reddy.pdf,HDFC,self_employed,Hardware Shop Owner,7,257,301503.87,1821022.73
+G065_SBI_Rahul-Ansari.pdf,SBI,salaried,Staff Nurse,4,102,102987.63,86.3
+G066_PNB_Joseph-Singh.pdf,PNB,gig,Food Delivery Partner,4,204,2740.49,1548.59
+G067_KOTAK_Manoj-Naidu.pdf,KOTAK,self_employed,Chartered Accountant (Practice),3,165,23922.07,876304.15
+G068_ICICI_Nisha-Verma.pdf,ICICI,salaried,Retail Store Manager,2,55,283512.25,291455.62
+G069_BOB_Nitin-Mehta.pdf,BOB,salaried,Sales Executive,2,60,78726.85,133248.63
+G070_AXIS_Arjun-Gupta.pdf,AXIS,salaried,Government School Teacher,4,110,816587.0,742409.33
+G071_HDFC_Aarav-Iyer.pdf,HDFC,student,Student,2,74,865974.84,854758.13
+G072_SBI_Imran-Reddy.pdf,SBI,low_income,Farmer,2,53,999701.24,978390.84
+G073_PNB_Ritu-Kumar.pdf,PNB,salaried,Staff Nurse,2,92,44534.79,9838.43
+G074_KOTAK_Sanjay-Nair.pdf,KOTAK,self_employed,Restaurant Owner,2,98,24550.74,413636.2
+G075_ICICI_Venkat-Mehta.pdf,ICICI,salaried,Software Engineer,2,60,2367.39,1914.41
+G076_BOB_Manoj-Malhotra.pdf,BOB,gig,Bike Taxi Rider,2,78,759849.68,756996.11
+G077_AXIS_Ajay-Gupta.pdf,AXIS,gig,Food Delivery Partner,5,152,728684.58,673344.93
+G078_HDFC_Rekha-Pillai.pdf,HDFC,salaried,Software Engineer,2,30,2620.72,351.22
+G079_SBI_Karan-Pillai.pdf,SBI,gig,Food Delivery Partner,5,154,106095.33,44448.35
+G080_PNB_Gurpreet-Malhotra.pdf,PNB,self_employed,Hardware Shop Owner,2,80,6704.7,236362.97
+G081_KOTAK_Sanjay-Gupta.pdf,KOTAK,salaried,Factory Machine Operator,2,49,1049195.85,1024868.11
+G082_ICICI_Nitin-Pillai.pdf,ICICI,student,Student,3,81,12783.35,53.49
+G083_BOB_Meera-Naidu.pdf,BOB,self_employed,Consulting Physician,2,78,264369.31,3699.25
+G084_AXIS_Manoj-Sharma.pdf,AXIS,gig,Food Delivery Partner,5,154,1025374.46,985487.35
+G085_HDFC_Aarav-Joshi.pdf,HDFC,gig,Bike Taxi Rider,3,87,2665.56,3499.71
+G086_SBI_Rohan-Kumar.pdf,SBI,salaried,Bank Clerk,2,38,6462.62,2224.47
+G087_PNB_Rahul-Mishra.pdf,PNB,self_employed,Consulting Physician,5,286,7078.59,1200542.92
+G088_KOTAK_Harpreet-Ansari.pdf,KOTAK,self_employed,Restaurant Owner,2,85,278661.23,706185.05
+G089_ICICI_Sanjay-Nair.pdf,ICICI,salaried,Retail Store Manager,4,118,6611.81,87229.65
+G090_BOB_Gurpreet-Ansari.pdf,BOB,self_employed,Kirana Store Owner,4,165,24973.94,476707.9
+G091_AXIS_Mary-Verma.pdf,AXIS,self_employed,Hardware Shop Owner,4,95,23479.12,381871.19
+G092_HDFC_Suresh-Joshi.pdf,HDFC,low_income,Domestic Worker,6,188,103997.76,26178.73
+G093_SBI_Fatima-Reddy.pdf,SBI,salaried,Software Engineer,4,106,267868.61,347028.2
+G094_PNB_Amit-Rao.pdf,PNB,salaried,Factory Machine Operator,2,106,2510.87,95.78
+G095_KOTAK_Joseph-Kapoor.pdf,KOTAK,salaried,Bank Clerk,1,33,12334.59,97.28
+G096_ICICI_Rekha-Joshi.pdf,ICICI,self_employed,Kirana Store Owner,4,180,43384.64,1410914.51
+G097_BOB_Vikram-Reddy.pdf,BOB,gig,Freelance Designer,2,59,2232.26,58157.0
+G098_AXIS_Fatima-Chatterjee.pdf,AXIS,low_income,Retired (PSU),4,109,17360.69,42777.74
+G099_HDFC_Suresh-Shah.pdf,HDFC,gig,Cab Driver,8,256,249331.62,165593.11
+G100_SBI_Amit-Gupta.pdf,SBI,self_employed,Consulting Physician,6,236,291289.6,1419072.65
+G101_PNB_Imran-Kumar.pdf,PNB,self_employed,Chartered Accountant (Practice),4,192,24324.16,694202.66
+G102_KOTAK_Amit-Saikia.pdf,KOTAK,salaried,Sales Executive,2,96,261433.29,244058.83
+G103_ICICI_Gurpreet-Bhatt.pdf,ICICI,salaried,Staff Nurse,2,65,17640.22,458.49
+G104_BOB_Rahul-Pillai.pdf,BOB,low_income,Farmer,1,22,2507.29,263.0
+G105_AXIS_Imran-Iyer.pdf,AXIS,student,Student,4,113,811540.91,772713.06
+G106_HDFC_Kavita-Mehta.pdf,HDFC,gig,Freelance Designer,7,228,965263.61,889514.6
+G107_SBI_Nitin-Kapoor.pdf,SBI,self_employed,Restaurant Owner,7,253,115459.38,747963.14
+G108_PNB_Neha-Naidu.pdf,PNB,low_income,Domestic Worker,2,69,7390.63,5078.05
+G109_KOTAK_Asha-Rao.pdf,KOTAK,salaried,Factory Machine Operator,3,108,734026.34,648311.15
+G110_ICICI_Harpreet-Iyer.pdf,ICICI,salaried,Retail Store Manager,2,46,8604.9,321.39
+G111_BOB_Divya-Patel.pdf,BOB,salaried,Factory Machine Operator,1,30,2586.3,709.42
+G112_AXIS_Rahul-Naidu.pdf,AXIS,self_employed,Kirana Store Owner,5,164,25667.09,988073.16
+G113_HDFC_Kavita-Reddy.pdf,HDFC,gig,Cab Driver,2,60,8636.9,2405.61
+G114_SBI_Lakshmi-Iyer.pdf,SBI,low_income,Homemaker,3,85,13456.26,1854.81
+G115_PNB_Rekha-Shah.pdf,PNB,low_income,Farmer,2,48,8563.02,1731.59
+G116_KOTAK_Harpreet-Rao.pdf,KOTAK,self_employed,Restaurant Owner,2,90,882847.6,1263605.64
+G117_ICICI_Fatima-Pillai.pdf,ICICI,self_employed,Hardware Shop Owner,7,255,133752.16,479465.89
+G118_BOB_Aarav-Bose.pdf,BOB,self_employed,Consulting Physician,4,165,7935.79,705254.54
+G119_AXIS_Manoj-Mishra.pdf,AXIS,salaried,Factory Machine Operator,3,72,45572.74,120.17
+G120_HDFC_Pooja-Naidu.pdf,HDFC,self_employed,Textile Trader,3,92,133341.75,965755.83
+G121_SBI_Sunita-Das.pdf,SBI,salaried,Software Engineer,3,75,7282.92,62.87
+G122_PNB_Rohan-Das.pdf,PNB,salaried,Factory Machine Operator,2,90,2829.62,214.23
+G123_KOTAK_Ritu-Ansari.pdf,KOTAK,self_employed,Kirana Store Owner,2,85,2307899.58,2371298.11
+G124_ICICI_Meera-Deshpande.pdf,ICICI,low_income,Homemaker,2,41,803709.65,772407.73
+G125_BOB_Sunita-Kulkarni.pdf,BOB,salaried,Sales Executive,2,48,235266.2,266695.71
+G126_AXIS_Imran-Yadav.pdf,AXIS,low_income,Retired (PSU),2,47,295053.61,295496.15
+G127_HDFC_Pooja-Fernandes.pdf,HDFC,self_employed,Textile Trader,5,170,2821139.1,3832399.28
+G128_SBI_Asha-Naidu.pdf,SBI,low_income,Domestic Worker,3,71,15262.89,2709.61
+G129_PNB_Karan-Sharma.pdf,PNB,self_employed,Consulting Physician,2,97,104451.77,621699.72
+G130_KOTAK_Imran-Bose.pdf,KOTAK,low_income,Farmer,4,185,247578.51,164055.23
+G131_ICICI_Priya-Joshi.pdf,ICICI,gig,Cab Driver,5,224,817435.26,682191.67
+G132_BOB_Anjali-Pandey.pdf,BOB,gig,Food Delivery Partner,4,160,80870.22,35739.81
+G133_AXIS_Nisha-Thomas.pdf,AXIS,salaried,Bank Clerk,6,179,990803.16,829214.89
+G134_HDFC_Karan-Chatterjee.pdf,HDFC,student,Student,5,194,906902.08,859336.86
+G135_SBI_Divya-Nair.pdf,SBI,salaried,Government School Teacher,1,20,2042.51,688.6
+G136_PNB_Suresh-Kumar.pdf,PNB,salaried,Bank Clerk,4,181,244356.83,256896.83
+G137_KOTAK_Suresh-Mehta.pdf,KOTAK,gig,Freelance Designer,3,138,7457.68,741.45
+G138_ICICI_Sanjay-Yadav.pdf,ICICI,low_income,Farmer,3,102,8622.59,565.66
+G139_BOB_Nitin-Singh.pdf,BOB,salaried,Factory Machine Operator,2,70,86749.9,111496.14
+G140_AXIS_Pooja-Fernandes.pdf,AXIS,self_employed,Kirana Store Owner,5,147,2451361.0,3187732.52

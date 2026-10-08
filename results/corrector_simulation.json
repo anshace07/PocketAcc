@@ -1,0 +1,67 @@
+[
+ {
+  "error_rate": 0.01,
+  "injected": 52.0,
+  "acc_before": 99.46,
+  "acc_after": 99.91,
+  "detected": 100.0,
+  "auto_fixed": 86.5,
+  "flagged": 13.5,
+  "missed": 0.0,
+  "wrong_fix": 0.0,
+  "clean_rows_damaged": 1.2,
+  "clean_rows_flagged": 2.2
+ },
+ {
+  "error_rate": 0.02,
+  "injected": 92.8,
+  "acc_before": 99.03,
+  "acc_after": 99.85,
+  "detected": 100.0,
+  "auto_fixed": 85.8,
+  "flagged": 13.1,
+  "missed": 0.0,
+  "wrong_fix": 1.1,
+  "clean_rows_damaged": 0.6,
+  "clean_rows_flagged": 5.0
+ },
+ {
+  "error_rate": 0.05,
+  "injected": 241.0,
+  "acc_before": 97.48,
+  "acc_after": 99.62,
+  "detected": 100.0,
+  "auto_fixed": 86.6,
+  "flagged": 12.6,
+  "missed": 0.0,
+  "wrong_fix": 0.8,
+  "clean_rows_damaged": 2.2,
+  "clean_rows_flagged": 12.2
+ },
+ {
+  "error_rate": 0.1,
+  "injected": 477.4,
+  "acc_before": 95.0,
+  "acc_after": 99.02,
+  "detected": 99.9,
+  "auto_fixed": 82.7,
+  "flagged": 15.6,
+  "missed": 0.1,
+  "wrong_fix": 1.6,
+  "clean_rows_damaged": 4.8,
+  "clean_rows_flagged": 24.2
+ },
+ {
+  "error_rate": 0.2,
+  "injected": 957.6,
+  "acc_before": 89.97,
+  "acc_after": 97.04,
+  "detected": 99.8,
+  "auto_fixed": 73.6,
+  "flagged": 23.8,
+  "missed": 0.2,
+  "wrong_fix": 2.4,
+  "clean_rows_damaged": 11.4,
+  "clean_rows_flagged": 56.6
+ }
+]
