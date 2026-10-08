@@ -1,0 +1,52 @@
+{
+ "image": "images/G054_ICICI_Sneha-Saikia_p1_heavy.jpg",
+ "bank": "ICICI",
+ "level": "heavy",
+ "target_first_5_rows": {
+  "header": {
+   "bank": "ICICI Bank",
+   "holder": "SNEHA SAIKIA",
+   "account_no": "462224782431",
+   "period": "01-Mar-2026 to 31-Mar-2026",
+   "opening_balance": "2,536.34",
+   "closing_balance": "340.89"
+  },
+  "rows": [
+   [
+    "01-03-2026",
+    "NEFT-ICICN599517147-STATE HEALTH SOCIETY-SALARY",
+    "",
+    "18,203.79",
+    "20,740.13"
+   ],
+   [
+    "01-03-2026",
+    "UPI/316264546836/Payment to Ola Cabs/ola@icici/ICIC",
+    "236.13",
+    "",
+    "20,504.00"
+   ],
+   [
+    "02-03-2026",
+    "UPI/513558683338/Payment to Sai Medical/q6330103031@apl/ICIC",
+    "645.34",
+    "",
+    "19,858.66"
+   ],
+   [
+    "02-03-2026",
+    "UPI/049357627974/Payment to Maa Durga Dairy/maa.yadav@okicici/ICIC",
+    "96.05",
+    "",
+    "19,762.61"
+   ],
+   [
+    "02-03-2026",
+    "UPI/820437979847/Payment to Chaayos/chaayos34@okaxis/ICIC",
+    "3,289.96",
+    "",
+    "16,472.65"
+   ]
+  ]
+ }
+}
