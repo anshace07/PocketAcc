@@ -115,12 +115,56 @@
   .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-left: auto; }
   footer { color: var(--ink-3); font-size: 12.5px; margin-top: 26px; }
   @media (max-width: 860px) { .upload, .two { grid-template-columns: 1fr; } .kpis { grid-template-columns: 1fr 1fr; } .kpi.hero { grid-column: 1 / -1; } }
+
+  /* saved results + evaluation + page image (v1.1) */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; align-items: start; }
+  .savedlist { display: flex; flex-direction: column; gap: 8px; }
+  .savedrow { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; justify-content: space-between; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
+  .savedrow > div:first-child { flex: 1 1 230px; min-width: 0; }
+  .savedrow b { display: block; font-weight: 600; }
+  .savedrow span { color: var(--ink-2); font-size: 12.5px; }
+  .savedrow .btns { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .savedrow button { font-size: 12.5px; padding: 5px 9px; white-space: nowrap; }
+  .savedrow button.vlm { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  details.card > summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 10px; }
+  details.card > summary::-webkit-details-marker { display: none; }
+  details.card > summary::before { content: "▸"; color: var(--ink-3); }
+  details.card[open] > summary::before { content: "▾"; }
+  details.card > summary h2 { margin: 0; }
+  .evaltable { border-collapse: collapse; width: 100%; font-size: 13px; margin: 10px 0 4px; }
+  .evaltable th, .evaltable td { padding: 6px 9px; border-bottom: 1px solid var(--line); text-align: right; font-variant-numeric: tabular-nums; position: static; }
+  .evaltable th { background: transparent; color: var(--ink-2); font-weight: 600; }
+  .evaltable th:first-child, .evaltable td:first-child { text-align: left; }
+  .evaltable tr.ours td { font-weight: 650; }
+  .evaltable tr.best td { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+  .evaltable .tag { display: block; font-weight: 400; color: var(--ink-3); font-size: 12px; }
+  .evaltable th.group { text-align: center; border-bottom: 1px solid var(--line-strong); }
+  .evalnote { color: var(--ink-2); font-size: 12.5px; margin: 6px 0 0; }
+  .losscurve { max-width: 520px; width: 100%; border: 1px solid var(--line); border-radius: 8px; margin-top: 10px; background: #fff; }
+  .note.key { background: var(--good-bg); border-color: color-mix(in srgb, var(--good) 35%, transparent); color: var(--good-ink); }
+  .note.saved { background: color-mix(in srgb, var(--accent) 7%, var(--surface)); border-color: color-mix(in srgb, var(--accent) 30%, transparent); color: var(--ink); }
+  .readview { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 13fr); gap: 12px; align-items: start; }
+  .readview.nopage, .readview.pagehidden { grid-template-columns: 1fr; }
+  .readview table { font-size: 12.5px; }
+  .readview td, .readview th { padding: 6px 7px; }
+  .readview td.nar { min-width: 210px; }
+  .readview td:nth-child(2), td.date { white-space: nowrap; }
+  .readview.nopage .pagecard { display: none; }
+  .pagecard { position: sticky; top: 10px; }
+  .pagecard .pagewrap { max-height: 80vh; overflow: auto; border: 1px solid var(--line); border-radius: 8px; margin-top: 10px; background: #fff; }
+  .pagecard img { width: 100%; display: block; cursor: zoom-in; }
+  .pagecard img.zoom { width: 200%; max-width: none; cursor: zoom-out; }
+  .readview .tablewrap { max-height: 80vh; }
+  .offline-banner { padding: 10px 12px; border-radius: 8px; background: color-mix(in srgb, var(--accent) 7%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); margin-bottom: 14px; }
+  @media (max-width: 1000px) { .readview { grid-template-columns: 1fr; } .pagecard { position: static; } }
+  @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } .savedrow .btns { justify-content: flex-start; } }
 </style>
 </head>
 <body>
 <header><div class="wrap"><span class="brand">PocketAcc</span><span class="tagline">Bank statement photo or PDF → verified, categorised transactions</span></div></header>
 <main class="wrap">
-  <section class="card upload" aria-label="Upload a statement">
+  <div class="offline-banner" id="offline" style="display:none"></div>
+  <section class="card upload" aria-label="Upload a statement" id="uploadcard">
     <div>
       <h2>Your statement</h2>
       <div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose a PDF or photo of a bank statement">
@@ -150,6 +194,18 @@
 
   <div id="status" role="status" aria-live="polite"></div>
 
+  <div class="grid2" id="extras">
+    <section class="card" id="savedcard" style="display:none" aria-label="Saved results">
+      <h2>Saved results <span class="muted small" style="font-weight:400">· read earlier by the fine-tuned model on a GPU, open instantly</span></h2>
+      <div class="savedlist" id="saved"></div>
+    </section>
+    <details class="card" id="evalcard" style="display:none">
+      <summary><h2>How good is the fine-tuned model?</h2><span class="muted small">test results</span></summary>
+      <div id="eval"></div>
+    </details>
+  </div>
+
+
   <section id="results" aria-label="Results">
     <div class="meta">
       <span class="title" id="m-bank"></span>
@@ -160,10 +216,11 @@
     </div>
     <div class="notes" id="notes"></div>
 
+
     <div class="kpis">
       <div class="card kpi hero"><div class="k">Trust score</div><div class="v" id="k-trust"></div><div class="s" id="k-trust-s"></div></div>
       <div class="card kpi"><div class="k">Transactions</div><div class="v" id="k-n"></div><div class="s" id="k-n-s"></div></div>
-      <div class="card kpi"><div class="k">Auto-corrected</div><div class="v" id="k-fix"></div><div class="s">misreads repaired by the balance chain</div></div>
+      <div class="card kpi"><div class="k">Auto-corrected</div><div class="v" id="k-fix"></div><div class="s">misreads or misplaced columns repaired with the balance arithmetic</div></div>
       <div class="card kpi"><div class="k">Needs review</div><div class="v" id="k-rev"></div><div class="s">could not be repaired safely</div></div>
       <div class="card kpi"><div class="k">Unusual</div><div class="v" id="k-ano"></div><div class="s">for this account’s own pattern</div></div>
     </div>
@@ -179,6 +236,11 @@
       </div>
     </div>
 
+    <div class="readview" id="readview">
+    <details class="card pagecard" id="pagecard" open>
+      <summary><h2>The page that was read</h2><span class="muted small" id="pagehint"></span></summary>
+      <div class="pagewrap"><img id="pageimg" alt="First page of the statement that was read"></div>
+    </details>
     <div class="card">
       <div class="tablebar">
         <h2 style="margin:0 8px 0 0">Transactions</h2>
@@ -199,6 +261,7 @@
         </table>
       </div>
     </div>
+    </div>
     <footer>Reader: <span id="f-reader"></span>. Every row is checked with previous balance − debit + credit = balance. A misread is fixed only when it is a plausible misreading and the arithmetic confirms it; otherwise the row is marked for review. Categories: Linear SVM on TF-IDF features. Unusual: Isolation Forest + duplicate-debit and robust z-score rules.</footer>
   </section>
 </main>
@@ -209,61 +272,158 @@ const $ = (id) => document.getElementById(id);
 const inr = new Intl.NumberFormat("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const money = (x) => (x === null || x === undefined || x === "") ? "" : "₹" + inr.format(x);
 const plain = (x) => (x === null || x === undefined) ? "" : inr.format(x);
+const pct = (x) => (x === null || x === undefined) ? "–" : x.toFixed(1);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const mmss = (s) => s < 60 ? `${Math.round(s)} s` : `${Math.floor(s / 60)} min ${String(Math.round(s % 60)).padStart(2, "0")} s`;
+// OFFLINE: scripts/build_demo_viewer.py embeds saved results so this page works as a single file, no server
+const OFF = window.POCKETACC_OFFLINE || null;
 let current = null, filter = "all", busy = false, vlmOK = false;
 
+async function getJSON(url, opts) {
+  const res = await fetch(url, opts);
+  const body = await res.json();
+  if (!res.ok && res.status !== 202) throw new Error(body.detail || res.statusText);
+  return body;
+}
+
 async function init() {
+  if (OFF) return initOffline();
   try {
-    const h = await (await fetch("/api/health")).json();
+    const h = await getJSON("/api/health");
     vlmOK = h.readers.vlm;
     for (const [code, name] of Object.entries(h.banks)) $("bank").insertAdjacentHTML("beforeend", `<option value="${code}">${esc(name)}</option>`);
     $("reader").querySelector('option[value="vlm"]').disabled = !vlmOK;
+    if (vlmOK) $("reader").value = "vlm";
     $("readerinfo").textContent = vlmOK
-      ? "Automatic uses the fine-tuned vision model (GPU found)."
-      : "Automatic uses Tesseract OCR: no GPU or trained adapter on this server. Tesseract is reliable on PDFs and clean scans, weak on damaged photos.";
-    const samples = await (await fetch("/api/samples")).json();
+      ? "The fine-tuned vision model is available (GPU found): about 2–3 minutes per page. Tesseract OCR takes ~5 seconds per page but fails on damaged photos."
+      : "Automatic uses Tesseract OCR: no GPU or trained adapter on this machine. Tesseract is reliable on PDFs and clean scans, weak on damaged photos. The fine-tuned model's results are under Saved results.";
+    const samples = await getJSON("/api/samples");
     for (const s of samples) {
       const b = document.createElement("button");
       b.className = "sample"; b.innerHTML = `<b>${esc(s.label)}</b><span>${esc(s.detail)}</span>`;
-      b.onclick = () => go(() => { const f = new FormData(); f.append("reader", $("reader").value); return fetch(`/api/samples/${s.name}`, { method: "POST", body: f }); }, s.label);
+      b.onclick = () => go(() => { const f = new FormData(); f.append("reader", $("reader").value); f.append("wait", "0"); return fetch(`/api/samples/${s.name}`, { method: "POST", body: f }); }, s.label);
       $("samples").appendChild(b);
     }
-  } catch (e) { setStatus(`Could not reach the server: ${e}`, false, true); }
+    drawSaved(await getJSON("/api/saved"));
+    drawEval(await getJSON("/api/evaluation"), "/api/evaluation/loss_curve.png");
+  } catch (e) { setStatus(`Could not reach the server: ${e.message || e}`, false, true); }
+}
+
+function initOffline() {
+  $("uploadcard").style.display = "none";
+  $("offline").style.display = "block";
+  $("offline").innerHTML = `<b>PocketAcc – saved results.</b> <span class="muted">${esc(OFF.title || "")} Everything below was produced by the real pipeline; this page only displays it (no server needed). Pick a statement and a reader.</span>`;
+  drawSaved(OFF.index);
+  drawEval(OFF.evaluation, OFF.loss_curve);
+  const first = OFF.index.find((x) => x.backend === "vlm") || OFF.index[0];
+  if (first) openSaved(first.name, first.label, false);
 }
 
 function setStatus(msg, spin = false, err = false) {
   $("status").innerHTML = (spin ? '<span class="spinner" aria-hidden="true"></span>' : "") + `<span class="${err ? "error" : ""}">${esc(msg)}</span>`;
 }
 
+function lock(on) {
+  busy = on;
+  document.querySelectorAll("button, select").forEach((el) => el.disabled = on);
+  if (!on && !OFF) $("reader").querySelector('option[value="vlm"]').disabled = !vlmOK;
+}
+
+// start a reading; the server answers with a job id at once, then we poll for progress
+async function runJob(request) {
+  const res = await request();
+  const body = await res.json();
+  if (!res.ok && res.status !== 202) throw new Error(body.detail || res.statusText);
+  if (!body.job) return body;
+  while (true) {
+    await sleep(1500);
+    const j = await getJSON(`/api/jobs/${body.job}`);
+    if (j.status === "done") return j.result;
+    if (j.status === "error") throw new Error(j.error);
+    setStatus(`${j.message} … ${mmss(j.elapsed)}`, true);
+  }
+}
+
 async function go(request, label) {
   if (busy) return;
-  busy = true;
-  document.querySelectorAll("button, select").forEach((el) => el.disabled = true);
-  setStatus(`Reading ${label} … about 5 seconds per page with OCR`, true);
+  lock(true);
+  const slow = $("reader").value === "vlm" || ($("reader").value === "auto" && vlmOK);
+  setStatus(`Reading ${label} … ${slow ? "the fine-tuned vision model takes about 2–3 minutes per page" : "about 5 seconds per page with OCR"}`, true);
   const t0 = performance.now();
   try {
-    const res = await request();
-    const body = await res.json();
-    if (!res.ok) throw new Error(body.detail || res.statusText);
-    current = body; filter = "all";
-    render(body);
-    setStatus(`Done in ${((performance.now() - t0) / 1000).toFixed(1)} s.`);
+    current = await runJob(request); filter = "all";
+    render(current);
+    setStatus(`Done in ${mmss((performance.now() - t0) / 1000)}.`);
   } catch (e) {
     setStatus(`Could not read this statement: ${e.message}`, false, true);
-  } finally {
-    busy = false;
-    document.querySelectorAll("button, select").forEach((el) => el.disabled = false);
-    $("reader").querySelector('option[value="vlm"]').disabled = !vlmOK;
-  }
+  } finally { lock(false); }
+}
+
+async function openSaved(name, label, scroll = true) {
+  if (busy) return;
+  try {
+    current = OFF ? { ...OFF.results[name], id: null } : await getJSON(`/api/saved/${encodeURIComponent(name)}`);
+    filter = "all";
+    render(current, scroll);
+    setStatus(`Showing the saved result: ${label} – ${current.saved?.reader || current.backend}.`);
+  } catch (e) { setStatus(`Could not open the saved result: ${e.message}`, false, true); }
 }
 
 function upload(file) {
   if (!file) return;
   go(() => {
     const f = new FormData();
-    f.append("file", file); f.append("reader", $("reader").value); f.append("bank", $("bank").value);
+    f.append("file", file); f.append("reader", $("reader").value); f.append("bank", $("bank").value); f.append("wait", "0");
     return fetch("/api/extract", { method: "POST", body: f });
   }, file.name);
+}
+
+function drawSaved(items) {
+  if (!items || !items.length) return;
+  $("savedcard").style.display = "block";
+  const groups = new Map();
+  for (const it of items) { if (!groups.has(it.file)) groups.set(it.file, []); groups.get(it.file).push(it); }
+  $("saved").innerHTML = "";
+  for (const [file, list] of groups) {
+    const row = document.createElement("div");
+    row.className = "savedrow";
+    row.innerHTML = `<div><b>${esc(list[0].label)}</b><span>${esc(list[0].detail)}</span></div><div class="btns"></div>`;
+    for (const it of list) {
+      const b = document.createElement("button");
+      const k = it.answer_key;
+      b.className = it.backend === "vlm" ? "vlm" : "";
+      b.textContent = (it.backend === "vlm" ? "Fine-tuned model" : "Tesseract") + (k ? ` · ${k.numbers_right}/${k.answer_rows} right` : ` · ${it.rows} rows`);
+      b.title = `${it.reader}${it.hardware ? " on " + it.hardware : ""}${it.created ? ", " + it.created.replace("T", " ") : ""}`;
+      b.onclick = () => openSaved(it.name, it.label);
+      row.querySelector(".btns").appendChild(b);
+    }
+    $("saved").appendChild(row);
+  }
+}
+
+function drawEval(ev, lossSrc) {
+  if (!ev || !ev.readers || !ev.readers.length) return;
+  $("evalcard").style.display = "block";
+  const S = ev.scores, sp = ev.splits;
+  const bestKey = ev.readers[ev.readers.length - 1].key;
+  const head1 = `<tr><th></th>${sp.map((s) => `<th class="group" colspan="2">${esc(s.label)}</th>`).join("")}</tr>
+                 <tr><th>Reader</th>${sp.map(() => "<th>Rows found</th><th>Amounts right</th>").join("")}</tr>`;
+  const body1 = ev.readers.map((r) => `<tr class="${r.key.startsWith("ft") ? "ours" : ""} ${r.key === bestKey ? "best" : ""}">
+      <td>${esc(r.label)}<span class="tag">${esc(r.tag)}</span></td>
+      ${sp.map((s) => { const a = S[r.key]?.[s.key]?.all || {}; return `<td>${pct(a.row_recall)}%</td><td>${pct(a.numeric_field_acc)}%</td>`; }).join("")}</tr>`).join("");
+  const lv = ["clean", "medium", "heavy"];
+  const head2 = `<tr><th></th>${sp.map((s) => `<th class="group" colspan="3">${esc(s.key === "seen" ? "Seen banks" : "New banks")} – amounts right</th>`).join("")}</tr>
+                 <tr><th>Reader</th>${sp.map(() => lv.map((l) => `<th>${l === "clean" ? "clean scan" : l + " photo"}</th>`).join("")).join("")}</tr>`;
+  const body2 = ev.readers.map((r) => `<tr class="${r.key.startsWith("ft") ? "ours" : ""} ${r.key === bestKey ? "best" : ""}"><td>${esc(r.label)}</td>
+      ${sp.map((s) => lv.map((l) => `<td>${pct(S[r.key]?.[s.key]?.amounts_by_damage?.[l])}%</td>`).join("")).join("")}</tr>`).join("");
+  const t = ev.training || {};
+  const train = t.base_model ? `<p class="evalnote"><b>Training:</b> ${esc(t.base_model)} + LoRA rank ${t.lora_rank} (QLoRA, base model in 4-bit), ${t.train_pages || "all"} training pages, ${t.epochs} epoch = ${t.steps} optimiser steps (gradient accumulation ${t.grad_accum}), learning rate ${t.lr}, pages ≤ ${Number(t.max_pixels).toLocaleString("en-IN")} pixels, best validation loss ${t.best_val_loss}.</p>` : "";
+  $("eval").innerHTML = `<p class="evalnote">${esc(ev.pages_note)}</p>
+    <table class="evaltable">${head1}${body1}</table>
+    <table class="evaltable">${head2}${body2}</table>
+    <p class="evalnote">"Row repair" = step 5a, added after the error analysis: tolerant reading of slightly broken JSON and putting numbers back in their columns using the balance arithmetic. Same saved model outputs, no retraining. It was designed by looking at these test outputs, so the demo statements (new, never looked at) are the fair check.</p>
+    ${train}${lossSrc ? `<img class="losscurve" src="${esc(lossSrc)}" alt="Training and validation loss falling during fine-tuning" onerror="this.remove()">` : ""}`;
 }
 
 function status(t) {
@@ -273,13 +433,28 @@ function status(t) {
   return "ok";
 }
 
-function render(r) {
+function pageSrc(r) {
+  if (OFF) return OFF.pages[r.saved?.source] || null;
+  return r.has_page && r.id ? `/api/results/${r.id}/page.jpg` : null;
+}
+
+function render(r, scroll = true) {
   const s = r.summary;
   $("results").style.display = "block";
   $("m-bank").textContent = r.bank_label;
-  $("m-file").textContent = `${r.file} · ${r.pages.length} page${r.pages.length > 1 ? "s" : ""} · ${r.seconds} s`;
-  $("f-reader").textContent = r.backend === "vlm" ? "fine-tuned Qwen2-VL-2B (QLoRA)" : "Tesseract OCR + rule-based column parser";
-  $("notes").innerHTML = r.notes.map((n) => `<div class="note ${n.startsWith("LOW TRUST") ? "low" : ""}"><span aria-hidden="true">${n.startsWith("LOW TRUST") ? "!" : "i"}</span><span>${esc(n)}</span></div>`).join("");
+  $("m-file").textContent = `${r.file} · ${r.pages.length} page${r.pages.length > 1 ? "s" : ""} · ${mmss(r.seconds)}`;
+  const vlm = r.backend === "vlm";
+  $("f-reader").textContent = vlm ? "fine-tuned Qwen2-VL-2B (QLoRA) + row repair" : "Tesseract OCR + rule-based column parser";
+  const notes = [];
+  if (r.saved) notes.push(["saved", "▣", `Saved result: read by ${r.saved.reader}${r.saved.hardware ? " on " + r.saved.hardware : ""}${r.saved.created ? ", " + r.saved.created.replace("T", " ") : ""}. Reading took ${mmss(r.seconds)}.`]);
+  const k = r.answer_key;
+  if (k) notes.push(["key", "✓", `Answer key (a demo statement, so the right answers are known): ${k.numbers_right} of ${k.answer_rows} transactions have the date and every amount exactly right (${k.numbers_pct}%); ${k.fully_right} also have the exact description text. ${k.read_rows} rows were read.`]);
+  for (const n of r.notes) notes.push([n.startsWith("LOW TRUST") ? "low" : "", n.startsWith("LOW TRUST") ? "!" : "i", n]);
+  $("notes").innerHTML = notes.map(([c, icon, n]) => `<div class="note ${c}"><span aria-hidden="true">${icon}</span><span>${esc(n)}</span></div>`).join("");
+
+  const src = pageSrc(r);
+  $("readview").classList.toggle("nopage", !src);
+  if (src) { $("pageimg").src = src; $("pageimg").classList.remove("zoom"); $("pagehint").textContent = (r.pages.length > 1 ? `page 1 of ${r.pages.length} · ` : "") + "click to zoom"; }
 
   $("k-trust").textContent = s.trust_score === null ? "–" : `${s.trust_score}%`;
   $("k-trust-s").textContent = s.trust_score === null ? "opening balance not found, chain not checked" : `${s.verified} of ${s.transactions} rows pass the balance check`;
@@ -305,8 +480,9 @@ function render(r) {
     el.onmousemove = (e) => { const t = $("tip"); t.textContent = el.dataset.tip; t.style.display = "block"; t.style.left = (e.clientX + 12) + "px"; t.style.top = (e.clientY + 12) + "px"; };
     el.onmouseleave = () => $("tip").style.display = "none";
   });
+  $("x-xlsx").style.display = OFF ? "none" : "";
   drawRows();
-  $("results").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (scroll) $("results").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function drawRows() {
@@ -317,7 +493,7 @@ function drawRows() {
     const fixes = t.flags.filter((f) => f.includes("->"));
     const why = [...fixes.map((f) => "fixed: " + f), ...(t.anomaly ? ["unusual: " + t.anomaly_reason] : [])];
     return `<tr class="${st === "ok" ? "" : st}">
-      <td class="num">${i + 1}</td><td>${esc(t.date || "?")}</td>
+      <td class="num">${i + 1}</td><td class="date">${esc(t.date || "?")}</td>
       <td class="nar">${esc(t.narration)}${why.length ? `<span class="why">${why.map(esc).join(" · ")}</span>` : ""}</td>
       <td class="num">${plain(t.debit)}</td><td class="num">${plain(t.credit)}</td><td class="num">${plain(t.balance)}</td>
       <td>${esc(t.category_label)}</td>
@@ -325,12 +501,35 @@ function drawRows() {
   }).join("") || `<tr><td colspan="8" class="muted">No rows in this view.</td></tr>`;
 }
 
+// exports: from the server, or built here in the offline page
+const COLS = ["date", "narration", "debit", "credit", "balance", "category", "status", "corrections", "unusual", "why_unusual"];
+function csvOf(r) {
+  const q = (v) => { const s = String(v ?? ""); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
+  const lines = [COLS.join(",")].concat(r.transactions.map((t) => [t.date || "", t.narration, t.debit ?? "", t.credit ?? "", t.balance ?? "",
+    t.category_label, t.status, t.flags.filter((f) => !f.includes("UNRESOLVED")).join("; "), t.anomaly ? "yes" : "", t.anomaly_reason].map(q).join(",")));
+  return lines.join("\n") + "\n";
+}
+function download(name, text, type) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+function exportAs(fmt) {
+  if (!current) return;
+  const stem = current.file.replace(/\.[^.]+$/, "") + "_pocketacc";
+  if (!OFF && current.id) { location.href = `/api/results/${current.id}.${fmt}`; return; }
+  if (fmt === "csv") download(stem + ".csv", csvOf(current), "text/csv");
+  if (fmt === "json") download(stem + ".json", JSON.stringify(current, null, 1), "application/json");
+}
+
 document.querySelectorAll(".chip").forEach((c) => c.onclick = () => {
   filter = c.dataset.f;
   document.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", String(x === c)));
   if (current) drawRows();
 });
-["csv", "xlsx", "json"].forEach((f) => $("x-" + f).onclick = () => current && (location.href = `/api/results/${current.id}.${f}`));
+["csv", "xlsx", "json"].forEach((f) => $("x-" + f).onclick = () => exportAs(f));
+$("pageimg").onclick = () => $("pageimg").classList.toggle("zoom");
+$("pagecard").addEventListener("toggle", () => $("readview").classList.toggle("pagehidden", !$("pagecard").open));
 const drop = $("drop");
 drop.onclick = () => $("file").click();
 drop.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("file").click(); } };

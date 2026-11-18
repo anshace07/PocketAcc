@@ -1,16 +1,16 @@
 {
  "file": "A_page1_photo_medium.jpg",
  "backend": "tesseract",
- "bank": "ICICI",
- "bank_label": "ICICI Bank",
+ "bank": "DEMO",
+ "bank_label": "PocketAcc Demo Bank (sample)",
  "pages": [
   {
    "page": 1,
    "rows": 44,
-   "seconds": 3.2
+   "seconds": 3.7
   }
  ],
- "seconds": 3.2,
+ "seconds": 3.7,
  "notes": [
   "Read with Tesseract OCR (CPU). It is reliable on clean PDFs and scans, weak on damaged photos; the fine-tuned vision model is used automatically when a GPU and adapter are available."
  ],
@@ -29,20 +29,36 @@
   "closing_matches": false,
   "spend_by_category": [
    [
-    "Bill payment",
-    43561.82
+    "UPI to merchant",
+    36643.45
    ],
    [
     "Loan EMI (NACH)",
     10820.0
    ],
    [
-    "UPI to merchant",
-    7269.34
+    "IMPS sent",
+    9000.0
    ],
    [
     "UPI to person",
-    1162.71
+    3000.0
+   ],
+   [
+    "ATM withdrawal",
+    2000.0
+   ],
+   [
+    "Card payment (POS)",
+    1027.5
+   ],
+   [
+    "Bill payment",
+    204.92
+   ],
+   [
+    "Bank charges",
+    118.0
    ]
   ],
   "income_by_category": [
@@ -55,7 +71,7 @@
  "transactions": [
   {
    "date": "2026-10-01",
-   "narration": "RETAIL LTD-SALARY 929920414173",
+   "narration": "NEFT CR-UTIBO0000688-RELIANCE RETAIL LTD-SALARY",
    "debit": null,
    "credit": 63943.14,
    "balance": 112193.89,
@@ -65,17 +81,17 @@
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.602
+   "anomaly_score": 0.603
   },
   {
    "date": "2026-10-01",
-   "narration": "574386308027 574386308027",
+   "narration": "UPI-RAPIDO-rapido. kulkarni@okaxis- 574386308027",
    "debit": 167.63,
    "credit": null,
    "balance": 112026.26,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
@@ -83,79 +99,79 @@
   },
   {
    "date": "2026-10-01",
-   "narration": "yadav@icici 556099273558",
+   "narration": "UPVDR/556099273558/Apollo Pharmacy/apollo yadav@icici",
    "debit": 1162.71,
    "credit": null,
    "balance": 110863.55,
-   "flags": [],
-   "category": "upi_p2p_out",
-   "category_label": "UPI to person",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.494
-  },
-  {
-   "date": "2026-10-01",
-   "narration": "146613520156 146613520156",
-   "debit": 942.64,
-   "credit": null,
-   "balance": 109920.91,
-   "flags": [
-    "debit missing -> 942.64"
-   ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "corrected",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.415
-  },
-  {
-   "date": "2026-10-01",
-   "narration": "142954466589",
-   "debit": 2000.0,
-   "credit": null,
-   "balance": 107920.91,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.45
-  },
-  {
-   "date": "2026-10-04",
-   "narration": "PHARMACY 375872224726",
-   "debit": 1027.5,
-   "credit": null,
-   "balance": 106893.41,
    "flags": [],
    "category": "upi_p2m",
    "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.45
+   "anomaly_score": 0.421
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI-NETMEDS netmeds84@aut- 146613520156",
+   "debit": 942.64,
+   "credit": null,
+   "balance": 109920.91,
+   "flags": [
+    "debit missing -> 942.64"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.417
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPVDR 142954466589 Rohan Mehta'q5750146919@ybi",
+   "debit": 2000.0,
+   "credit": null,
+   "balance": 107920.91,
+   "flags": [],
+   "category": "upi_p2p_out",
+   "category_label": "UPI to person",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.493
+  },
+  {
+   "date": "2026-10-04",
+   "narration": "POS 5}O0000XXK04789 APOLLO PHARMACY",
+   "debit": 1027.5,
+   "credit": null,
+   "balance": 106893.41,
+   "flags": [],
+   "category": "pos",
+   "category_label": "Card payment (POS)",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.472
   },
   {
    "date": "2026-10-05",
-   "narration": "Repay 435403672877",
+   "narration": "IMPS/P2A 435403672877 Ritu Khan/Loan Repay",
    "debit": 9000.0,
    "credit": null,
    "balance": 97893.41,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "imps_out",
+   "category_label": "IMPS sent",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.505
+   "anomaly_score": 0.522
   },
   {
    "date": "2026-10-05",
-   "narration": "LOAN EMI 477194659953",
+   "narration": "NACH OR-HOB FINANCIAL SERVICES-BUSINESS LOAN EMI",
    "debit": 2400.0,
    "credit": null,
    "balance": 95493.41,
@@ -167,11 +183,11 @@
    "status": "corrected",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.466
+   "anomaly_score": 0.468
   },
   {
    "date": "2026-10-05",
-   "narration": "LOAN EMI 551375484430",
+   "narration": "NACH OR-HDFC BANK LTD-HOME LOAN EMI",
    "debit": 8420.0,
    "credit": null,
    "balance": 87073.41,
@@ -181,239 +197,239 @@
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.513
+   "anomaly_score": 0.515
   },
   {
    "date": "2026-10-05",
-   "narration": "224330538818",
+   "narration": "UPVDR/2243305388 1 8/Venkat Femandes’/venkat@ptys",
    "debit": 1000.0,
    "credit": null,
    "balance": 86073.41,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.393
-  },
-  {
-   "date": "2026-10-06",
-   "narration": "1282546291 591282546291",
-   "debit": 110.43,
-   "credit": null,
-   "balance": 85962.98,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.441
-  },
-  {
-   "date": "2026-10-06",
-   "narration": "",
-   "debit": 2000.0,
-   "credit": null,
-   "balance": 83962.98,
-   "flags": [
-    "balance missing -> 83962.98"
-   ],
-   "category": "upi_p2m",
-   "category_label": "UPI to merchant",
-   "status": "corrected",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.445
-  },
-  {
-   "date": "2026-10-07",
-   "narration": "514479555460",
-   "debit": 458.33,
-   "credit": null,
-   "balance": 83504.65,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.381
-  },
-  {
-   "date": "2026-10-08",
-   "narration": "922008263422",
-   "debit": 320.85,
-   "credit": null,
-   "balance": 83183.8,
-   "flags": [
-    "balance 83163.8 -> 83183.8"
-   ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "corrected",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.386
-  },
-  {
-   "date": "2026-10-09",
-   "narration": "19@paytm 330105395028",
-   "debit": 626.5,
-   "credit": null,
-   "balance": 82557.3,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.374
-  },
-  {
-   "date": "2026-10-10",
-   "narration": "1745249607 411745249607",
-   "debit": 3554.21,
-   "credit": null,
-   "balance": 79003.09,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2p_out",
+   "category_label": "UPI to person",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
    "anomaly_score": 0.455
   },
   {
+   "date": "2026-10-06",
+   "narration": "UPHIRCTC-q34432593 | S@ybi-59 1282546291",
+   "debit": 110.43,
+   "credit": null,
+   "balance": 85962.98,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.443
+  },
+  {
+   "date": "2026-10-06",
+   "narration": "ATM WOL-GUWAHATI-SX000000KKXK0479",
+   "debit": 2000.0,
+   "credit": null,
+   "balance": 83962.98,
+   "flags": [
+    "balance missing -> 83962.98"
+   ],
+   "category": "atm_wdl",
+   "category_label": "ATM withdrawal",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.469
+  },
+  {
+   "date": "2026-10-07",
+   "narration": "UPVDR’514479555460/Amma Mess/amma7958@icici",
+   "debit": 458.33,
+   "credit": null,
+   "balance": 83504.65,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.384
+  },
+  {
+   "date": "2026-10-08",
+   "narration": "UPVDR/922008263422/Shel india'shell6749@apt",
+   "debit": 320.85,
+   "credit": null,
+   "balance": 83183.8,
+   "flags": [
+    "balance 83163.8 -> 83183.8"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.388
+  },
+  {
+   "date": "2026-10-09",
+   "narration": "UPVDRV330 105395028 Medpius/medpius 19@paytm",
+   "debit": 626.5,
+   "credit": null,
+   "balance": 82557.3,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.378
+  },
+  {
+   "date": "2026-10-10",
+   "narration": "UPLAIRTEL PREPAID. airtol8 1 @axi-41 1745249607",
+   "debit": 3554.21,
+   "credit": null,
+   "balance": 79003.09,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.458
+  },
+  {
    "date": "2026-10-11",
-   "narration": "150498 398984 150498",
+   "narration": "UPIRCTC-irctc73@apt- 398984 150498",
    "debit": 395.16,
    "credit": null,
    "balance": 78607.93,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.376
-  },
-  {
-   "date": "2026-10-11",
-   "narration": "755916343951 755916343951",
-   "debit": 345.81,
-   "credit": null,
-   "balance": 78262.12,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.379
-  },
-  {
-   "date": "2026-10-11",
-   "narration": "456316337201",
-   "debit": 1678.37,
-   "credit": null,
-   "balance": 76583.75,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": true,
-   "anomaly_reason": "same amount twice on the same day - possible double debit",
-   "anomaly_score": 1.399
-  },
-  {
-   "date": "2026-10-11",
-   "narration": "762770229826",
-   "debit": 1678.37,
-   "credit": null,
-   "balance": 74905.38,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": true,
-   "anomaly_reason": "same amount twice on the same day - possible double debit",
-   "anomaly_score": 1.399
-  },
-  {
-   "date": "2026-10-12",
-   "narration": "657343314741",
-   "debit": 164.59,
-   "credit": null,
-   "balance": 74740.79,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
-   "status": "ok",
-   "anomaly": false,
-   "anomaly_reason": "",
-   "anomaly_score": 0.406
-  },
-  {
-   "date": "2026-10-14",
-   "narration": "390306674565",
-   "debit": 344.95,
-   "credit": null,
-   "balance": 74395.84,
-   "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
    "anomaly_score": 0.38
   },
   {
+   "date": "2026-10-11",
+   "narration": "UPLAIRTEL PREPAID-airtel94@ivi- 755916343951",
+   "debit": 345.81,
+   "credit": null,
+   "balance": 78262.12,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.383
+  },
+  {
+   "date": "2026-10-11",
+   "narration": "UPVDR/456316337201 /Gupta Frults'q!458888216@ptys",
+   "debit": 1678.37,
+   "credit": null,
+   "balance": 76583.75,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": true,
+   "anomaly_reason": "same amount twice on the same day - possible double debit",
+   "anomaly_score": 1.401
+  },
+  {
+   "date": "2026-10-11",
+   "narration": "UPVDR/762770229826/Gupta Frults/gupta@okaxis",
+   "debit": 1678.37,
+   "credit": null,
+   "balance": 74905.38,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": true,
+   "anomaly_reason": "same amount twice on the same day - possible double debit",
+   "anomaly_score": 1.401
+  },
+  {
+   "date": "2026-10-12",
+   "narration": "UPI-ANNAPURNA TIFFIN-q7514720867@hdicbank-657343314741 657343314741",
+   "debit": 164.59,
+   "credit": null,
+   "balance": 74740.79,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.407
+  },
+  {
+   "date": "2026-10-14",
+   "narration": "UPI-UBER INDIA -ubderS686@ax)-390306674565 390306674565",
+   "debit": 344.95,
+   "credit": null,
+   "balance": 74395.84,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.383
+  },
+  {
    "date": "2026-10-18",
-   "narration": "1 165014656 591165014656",
+   "narration": "UPI-RELIANCE FRESH-q2174137569@icic}-59 1 165014656",
    "debit": 2399.01,
    "credit": null,
    "balance": 71996.83,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.433
+   "anomaly_score": 0.434
   },
   {
    "date": "2026-10-15",
-   "narration": "759246 490695759246",
+   "narration": "UP BOOKMYSHOW.-bookmyshow@paytm-490695 - 759246 490695759246",
    "debit": 558.33,
    "credit": null,
    "balance": 71438.5,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.369
+   "anomaly_score": 0.374
   },
   {
    "date": "2026-10-18",
-   "narration": "1 @hdicbank-51 1474167532 511474167532",
+   "narration": "UPI-MCOONALDS-medonaids929 1 @hdicbank-51 1474167532",
    "debit": 2167.8,
    "credit": null,
    "balance": 69270.7,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.418
+   "anomaly_score": 0.42
   },
   {
    "date": "2026-10-16",
-   "narration": "General Store’q6235719730@oksbi =. 228757271074",
+   "narration": "UPWDR/228757271074/Sharma General Store’q6235719730@oksbi =.",
    "debit": 3901.11,
    "credit": null,
    "balance": 65369.59,
@@ -423,57 +439,57 @@
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.472
+   "anomaly_score": 0.464
   },
   {
    "date": "2026-10-16",
-   "narration": "rao@okaxis- 797567058470 797567058470",
+   "narration": "UPI-PARKING CHARGES parking rao@okaxis- 797567058470 797567058470",
    "debit": 656.68,
    "credit": null,
    "balance": 64712.91,
    "flags": [
     "debit missing -> 656.68"
    ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "corrected",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.373
+   "anomaly_score": 0.376
   },
   {
    "date": "2026-10-17",
-   "narration": "925607500371",
+   "narration": "UPI-NYKAA-nykaa@icici- 925607500371 925607500371",
    "debit": 174.11,
    "credit": null,
    "balance": 64538.8,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.402
+   "anomaly_score": 0.403
   },
   {
    "date": "2026-10-19",
-   "narration": "@ax!-00374 1451339 003741451339",
+   "narration": "UPIL-METRO CASH CARRY -metro2701 @ax!-00374 1451339 003741451339",
    "debit": 372.37,
    "credit": null,
    "balance": 62004.72,
    "flags": [
     "UNRESOLVED - needs human review"
    ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "review",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.38
+   "anomaly_score": 0.382
   },
   {
    "date": "2026-10-20",
-   "narration": "998568994378",
+   "narration": "BILLPAY-MAHANAGAR GAS LTD-0533403096 998568994378",
    "debit": 204.92,
    "credit": null,
    "balance": 61799.8,
@@ -483,47 +499,47 @@
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.396
+   "anomaly_score": 0.486
   },
   {
    "date": "2026-10-21",
-   "narration": "sakkia@ybi 436879321846",
+   "narration": "UPVDR/436879321846/Apolio Pharmacy/apolio sakkia@ybi 436879321846",
    "debit": 2552.35,
    "credit": null,
    "balance": 59247.45,
    "flags": [
     "balance missing -> 59247.45"
    ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "corrected",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.438
+   "anomaly_score": 0.44
   },
   {
    "date": "2026-10-21",
-   "narration": "580859987515 §80859987515",
+   "narration": "UPI-RAJU TEA STALL -raju30@paytm- 580859987515 §80859987515",
    "debit": 3722.5,
    "credit": null,
    "balance": 55524.95,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.459
+   "anomaly_score": 0.465
   },
   {
    "date": "2026-10-21",
-   "narration": "78051 035057678051",
+   "narration": "UPI-STARBUCKS q9784544502@icici-0350576 78051 035057678051",
    "debit": 117.44,
    "credit": null,
    "balance": 55407.51,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
@@ -531,49 +547,49 @@
   },
   {
    "date": "2026-10-21",
-   "narration": "014390253171",
+   "narration": "UPI-MAA DURGA DAIRY-maa.chauhan@yb!-014390253171",
    "debit": 3290.13,
    "credit": null,
    "balance": 52117.38,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.45
+   "anomaly_score": 0.453
   },
   {
    "date": "2026-10-22",
-   "narration": "573205523643",
+   "narration": "UPI-SAI MEDICAL .q7742776754@okicici-573205523643 573205523643",
    "debit": 119.99,
    "credit": null,
    "balance": 51997.39,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.431
+   "anomaly_score": 0.432
   },
   {
    "date": "2026-10-22",
-   "narration": "1 1640782@hdicbank 014243286426",
+   "narration": "UPVDR/014243286426 Nykaa/q06 1 1640782@hdicbank",
    "debit": 381.11,
    "credit": null,
    "balance": 51616.28,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.383
+   "anomaly_score": 0.385
   },
   {
    "date": "2026-10-25",
-   "narration": "Tiffirvannapuma9s@axt 723506644997",
+   "narration": "UPVOR/723506644997 Annapuma Tiffirvannapuma9s@axt 723506644997",
    "debit": 340.73,
    "credit": null,
    "balance": 51275.55,
@@ -583,79 +599,79 @@
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.478
+   "anomaly_score": 0.4
   },
   {
    "date": "2026-10-25",
-   "narration": "905168295516",
+   "narration": "UPVDR/905 1682955 16/Gupta Frults/gupta96@paytm 905168295516",
    "debit": 861.87,
    "credit": null,
    "balance": 50413.68,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.396
+   "anomaly_score": 0.399
   },
   {
    "date": "2026-10-26",
-   "narration": "767921078996 767921078998",
+   "narration": "—_— UPI-BALAJI SWEETS-q1830850935@ibi- 767921078996 767921078998",
    "debit": null,
    "credit": null,
    "balance": 50365.75,
    "flags": [
     "UNRESOLVED - needs human review"
    ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "review",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.62
+   "anomaly_score": 0.621
   },
   {
    "date": "2026-10-28",
-   "narration": "OCT26",
+   "narration": "SMS ALERT CHARGES INCL GST OCT26",
    "debit": 118.0,
    "credit": null,
    "balance": 80247.75,
    "flags": [
     "UNRESOLVED - needs human review"
    ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "charge",
+   "category_label": "Bank charges",
    "status": "review",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.462
+   "anomaly_score": 0.545
   },
   {
    "date": "2026-10-28",
-   "narration": "(682648348583",
+   "narration": "UPVDR 682648348583 Dmarldman@ap (682648348583",
    "debit": 762.38,
    "credit": null,
    "balance": 49485.37,
    "flags": [
     "UNRESOLVED - needs human review"
    ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "review",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.412
+   "anomaly_score": 0.414
   },
   {
    "date": "2026-10-28",
-   "narration": "639946257975 639946257975",
+   "narration": "UPI-MAA DURGA DAIRY -maa33@okaxis- 639946257975 639946257975",
    "debit": 2107.61,
    "credit": null,
    "balance": 47377.76,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
@@ -663,42 +679,42 @@
   },
   {
    "date": "2026-10-29",
-   "narration": "330434070982",
+   "narration": "(UPVDR/330434070982/Blinkit binkRt@oksbi 330434070982",
    "debit": 207.38,
    "credit": null,
    "balance": 47170.38,
    "flags": [],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "ok",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.437
+   "anomaly_score": 0.439
   },
   {
    "date": "2026-10-30",
-   "narration": "413770531702",
+   "narration": "UPVDR/413770531702/Bikanervaia/bikanervala3966@icici 413770531702",
    "debit": null,
    "credit": null,
    "balance": 44320.49,
    "flags": [
     "UNRESOLVED - needs human review"
    ],
-   "category": "bill_pay",
-   "category_label": "Bill payment",
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
    "status": "review",
    "anomaly": false,
    "anomaly_reason": "",
-   "anomaly_score": 0.629
+   "anomaly_score": 0.631
   }
  ],
  "answer_key": {
   "answer_rows": 46,
   "read_rows": 44,
   "numbers_right": 39,
-  "fully_right": 0,
+  "fully_right": 1,
   "numbers_pct": 84.8,
-  "fully_pct": 0.0
+  "fully_pct": 2.2
  },
  "saved": {
   "label": "Page 1 as a phone photo · medium damage",
@@ -707,6 +723,6 @@
   "backend": "tesseract",
   "source": "demo/samples/A_page1_photo_medium.jpg",
   "hardware": "CPU",
-  "created": "2026-11-18T17:55:08"
+  "created": "2026-11-18T18:22:28"
  }
 }

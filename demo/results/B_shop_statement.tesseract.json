@@ -7,20 +7,20 @@
   {
    "page": 1,
    "rows": 43,
-   "seconds": 2.5
+   "seconds": 3.6
   },
   {
    "page": 2,
    "rows": 58,
-   "seconds": 2.9
+   "seconds": 3.8
   },
   {
    "page": 3,
    "rows": 1,
-   "seconds": 0.5
+   "seconds": 0.4
   }
  ],
- "seconds": 6.1,
+ "seconds": 8.0,
  "notes": [
   "Read with Tesseract OCR (CPU). It is reliable on clean PDFs and scans, weak on damaged photos; the fine-tuned vision model is used automatically when a GPU and adapter are available."
  ],
@@ -1555,6 +1555,6 @@
   "backend": "tesseract",
   "source": "demo/samples/B_shop_statement.pdf",
   "hardware": "CPU",
-  "created": "2026-11-18T17:55:18"
+  "created": "2026-11-18T18:22:40"
  }
 }

@@ -3,6 +3,7 @@ pipeline.py - STEP 10 engine: one statement in -> verified, categorised, checked
 
     PDF / photo -> pages -> pre-process (crop, deskew, resize)
                 -> reader: fine-tuned Qwen2-VL (GPU + adapter)  or  Tesseract + rule parser (CPU)
+                -> vision model only: tolerant JSON parsing + column re-alignment  (common.py, rowfix.py, step 5a)
                 -> balance-chain verifier + corrector            (corrector.py, steps 5-6)
                 -> transaction category, Linear SVM               (classifier.py, step 7)
                 -> unusual-transaction check, hybrid forest       (anomaly.py, step 8)
@@ -27,9 +28,10 @@ from PIL import Image
 
 from anomaly import AnomalyDetector
 from classifier import TxnClassifier, all_transactions
-from common import parse_amount
+from common import parse_amount, parse_model_output_tolerant
 from corrector import finalize
 from preprocess import prepare, render_pages
+from rowfix import repair_rows
 
 ROOT = Path(__file__).resolve().parents[1]
 MODELS = Path(os.environ.get("POCKETACC_MODELS", ROOT / "models"))
@@ -112,10 +114,9 @@ def detect_bank(lines):
             if m:
                 return IFSC_PREFIX[m.group(1)]
     head = " ".join(lines[:15]).upper()
-    for name, code in BANK_NAMES.items():
-        if name in head:
-            return code
-    return None
+    # the bank's own name is printed at the top; other names (UPI handles like "@icici") come later
+    found = [(head.find(name), code) for name, code in BANK_NAMES.items() if name in head]
+    return min(found)[1] if found else None
 
 
 def header_from_lines(lines):
@@ -137,10 +138,12 @@ def header_from_lines(lines):
     return {"opening_balance": opening, "closing_balance": closing}
 
 
-def read_tesseract(pages, bank=None):
+def read_tesseract(pages, bank=None, progress=None):
     from ocr_baseline import lines_of, ocr_page, words
     header, rows, info = {}, [], []
     for i, page in enumerate(pages):
+        if progress:
+            progress(f"Reading page {i + 1} of {len(pages)} with Tesseract OCR")
         t0 = time.time()
         img = Image.fromarray(cv2.cvtColor(prepare(page), cv2.COLOR_BGR2RGB))
         lines = lines_of(words(img))
@@ -170,15 +173,20 @@ def vlm_settings():
     return four_bit, int(os.environ.get("POCKETACC_MAX_PIXELS", 900_000))
 
 
-def read_vlm(pages):
+def read_vlm(pages, progress=None):
     global _EXTRACTOR
     if _EXTRACTOR is None:
+        if progress:
+            progress("Loading the fine-tuned vision model (first use only, about 1-2 minutes)")
         from extract import Extractor
         four_bit, max_pixels = vlm_settings()
         _EXTRACTOR = Extractor(adapter=ADAPTER, four_bit=four_bit, max_pixels=max_pixels)
     header, rows, info = None, [], []
     for i, page in enumerate(pages):
-        raw, parsed, secs = _EXTRACTOR.read_image(page)
+        if progress:
+            progress(f"Reading page {i + 1} of {len(pages)} with the fine-tuned vision model (about 2-3 minutes per page on a T4)")
+        raw, _, secs = _EXTRACTOR.read_image(page)
+        parsed = parse_model_output_tolerant(raw)        # recovers rows from slightly broken JSON (step 5a)
         page_header, page_rows = parsed.get("header"), parsed.get("rows")
         page_rows = [r for r in page_rows if isinstance(r, (list, tuple))] if isinstance(page_rows, list) else []
         header = header or (page_header if isinstance(page_header, dict) else None)
@@ -186,6 +194,23 @@ def read_vlm(pages):
         info.append({"page": i + 1, "rows": len(page_rows), "seconds": round(secs, 1), "raw": raw})
     header = header or {}
     return header, rows, detect_bank(["IFSC " + str(header.get("ifsc", "")), str(header.get("bank", ""))]), info
+
+
+def page_preview(path, height=1500, quality=82):
+    """First page of a PDF / the photo itself, as JPEG bytes (shown next to the table in the dashboard)."""
+    import numpy as np
+    path = Path(path)
+    if path.suffix.lower() == ".pdf":
+        from pdf2image import convert_from_path
+        img = cv2.cvtColor(np.array(convert_from_path(str(path), dpi=130, first_page=1, last_page=1)[0]),
+                           cv2.COLOR_RGB2BGR)
+    else:
+        img = cv2.imread(str(path))
+    if img is None:
+        return None
+    s = min(1.0, height / img.shape[0])
+    img = cv2.resize(img, (int(img.shape[1] * s), int(img.shape[0] * s)), interpolation=cv2.INTER_AREA)
+    return cv2.imencode(".jpg", img, [cv2.IMWRITE_JPEG_QUALITY, quality])[1].tobytes()
 
 
 # ------------------------------------------------------------------------------- analysis
@@ -198,18 +223,39 @@ def status_of(flags):
     return "ok"
 
 
-def analyse(path, backend="auto", bank=None, models=None):
+def analyse(path, backend="auto", bank=None, models=None, progress=None):
+    """progress: optional callback(str) - the web app shows these messages while a statement is read."""
     t0 = time.time()
-    clf, det = models or load_models()
+    models = models or load_models()
     if backend == "auto":
         backend = "vlm" if vlm_available() else "tesseract"
     pages = load_pages(path)
     if backend == "vlm":
-        header, rows, bank_found, info = read_vlm(pages)
+        header, rows, bank_found, info = read_vlm(pages, progress)
     else:
-        header, rows, bank_found, info = read_tesseract(pages, bank)
+        header, rows, bank_found, info = read_tesseract(pages, bank, progress)
+    if progress:
+        progress("Checking the balance chain, categorising, looking for unusual rows")
+    return build_result(Path(path).name, backend, header, rows, bank_found, info, models, t0)
+
+
+def build_result(file, backend, header, rows, bank_found, info, models, t0=None):
+    """Everything after reading: row repair (vision model), balance chain, categories, unusual rows, summary.
+    Separate from analyse() so saved raw model outputs can be re-processed without a GPU."""
+    t0 = t0 or time.time()
+    clf, det = models
     header = dict(header or {})
     notes = []
+    repaired = []
+    if backend == "vlm":
+        rows, rep = repair_rows(rows, header.get("opening_balance"))
+        repaired = rep["fixed_rows"]
+        if rep["fixed"]:
+            notes.append(f"Row repair: {rep['fixed']} row(s) had their numbers in the wrong columns (an extra "
+                         "reference-number column or a missing empty cell) and were put back using the balance "
+                         "arithmetic.")
+        if rep["dropped"]:
+            notes.append(f"Skipped {rep['dropped']} 'opening balance' / summary line(s) that are not transactions.")
     opening_source = "printed"
     if parse_amount(header.get("opening_balance")) is None and rows:
         # not printed / not read: take it from the first row (balance + debit - credit) and say so
@@ -222,6 +268,9 @@ def analyse(path, backend="auto", bank=None, models=None):
                          "an error in that row cannot be detected.")
     res = finalize(header, rows)
     txns = res["transactions"]
+    for i in repaired:
+        if i < len(txns):
+            txns[i].setdefault("flags", []).insert(0, "columns re-aligned -> amount and balance moved to their columns")
     cats = clf.predict(txns)
     scores, anomalous, reasons = det.score(txns, cats)
     for t, c, s, a, r in zip(txns, cats, scores, anomalous, reasons):
@@ -245,7 +294,7 @@ def analyse(path, backend="auto", bank=None, models=None):
         notes.append("Read with Tesseract OCR (CPU). It is reliable on clean PDFs and scans, weak on damaged photos; "
                      "the fine-tuned vision model is used automatically when a GPU and adapter are available.")
     return {
-        "file": Path(path).name, "backend": backend, "bank": bank_found, "bank_label": BANK_LABEL.get(bank_found, "Unknown bank"),
+        "file": file, "backend": backend, "bank": bank_found, "bank_label": BANK_LABEL.get(bank_found, "Unknown bank"),
         "pages": info, "seconds": round(time.time() - t0, 1), "notes": notes,
         "opening_balance": parse_amount(header.get("opening_balance")), "opening_source": opening_source,
         "closing_balance": parse_amount(header.get("closing_balance")),
@@ -264,6 +313,50 @@ def analyse(path, backend="auto", bank=None, models=None):
         },
         "transactions": txns,
     }
+
+
+# ------------------------------------------------------------------------------- evaluation summary
+
+EVAL_READERS = [("tess", "Tesseract OCR + rule parser", "traditional baseline", "score24_tess_{}.json"),
+                ("base", "Qwen2-VL-2B, not fine-tuned", "zero-shot", "score24_base_{}.json"),
+                ("ft", "Qwen2-VL-2B fine-tuned (QLoRA)", "ours, model output as is", "score24_ft_{}.json"),
+                ("ft_rowfix", "Fine-tuned + row repair", "ours, as used in the app", "score24_ft_{}_rowfix.json")]
+EVAL_SPLITS = [("seen", "Banks used in training (HDFC, SBI, PNB, Kotak)"),
+               ("unseen", "New banks, never trained on (ICICI, Bank of Baroda, Axis)")]
+EVAL_METRICS = [("row_recall", "Rows found"), ("numeric_field_acc", "Amounts exactly right"),
+                ("balance_acc", "Balances exactly right"), ("date_acc", "Dates right"),
+                ("narration_cer", "Text error rate (lower = better)"), ("row_exact", "Rows 100% right")]
+
+
+def evaluation_summary(stage="after"):
+    """Scores of every reader on the same 24 test pages per split (results/score24_*.json)."""
+    res = ROOT / "results"
+    scores = {}
+    for key, _, _, pattern in EVAL_READERS:
+        for split, _ in EVAL_SPLITS:
+            f = res / pattern.format(split)
+            if not f.exists():
+                continue
+            d = json.load(open(f))
+            scores.setdefault(key, {})[split] = {
+                "pages": d[f"{stage}|all"]["pages"],
+                "all": {m: d[f"{stage}|all"][m] for m, _ in EVAL_METRICS},
+                "rows_by_damage": {lv: d.get(f"{stage}|level={lv}", {}).get("row_recall") for lv in ("clean", "medium", "heavy")},
+                "amounts_by_damage": {lv: d.get(f"{stage}|level={lv}", {}).get("numeric_field_acc")
+                                      for lv in ("clean", "medium", "heavy")}}
+    training = {}
+    cfg = res / "finetune/run_config.json"
+    if cfg.exists():
+        c = json.load(open(cfg))
+        training = {"base_model": c["model"], "lora_rank": c["rank"], "train_pages": c["limit"] or None,
+                    "epochs": c["epochs"], "steps": c["steps"], "grad_accum": c["grad_accum"], "lr": c["lr"],
+                    "max_pixels": c["max_pixels"], "four_bit": not c["no_4bit"],
+                    "best_val_loss": round(c["best_val_loss"], 4)}
+    return {"stage": stage, "readers": [{"key": k, "label": l, "tag": t} for k, l, t, _ in EVAL_READERS if k in scores],
+            "splits": [{"key": k, "label": l} for k, l in EVAL_SPLITS],
+            "metrics": [{"key": k, "label": l} for k, l in EVAL_METRICS], "scores": scores, "training": training,
+            "pages_note": "Same 24 test pages per split for every reader: 8 pages, each as a clean scan, a "
+                          "medium-damage photo and a heavy-damage photo. Numbers after the balance corrector."}
 
 
 # ------------------------------------------------------------------------------- demo answer key

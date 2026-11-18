@@ -118,6 +118,60 @@ def parse_model_output(text: str) -> dict:
     return {"header": None, "rows": [list(r) for r in rows]}
 
 
+_ROW_RE = re.compile(r'\[\s*"(?:[^"\\]|\\.)*"(?:\s*,\s*"(?:[^"\\]|\\.)*"){2,9}\s*\]')
+_DATE_TOKEN = re.compile(r"^\d{1,2}[/\-. ](\d{1,2}|[A-Za-z]{3})[/\-. ]\d{2,4}$")
+_HEADER_RE = re.compile(r'"header"\s*:\s*(\{[^{}]*\})')
+
+
+def parse_model_output_tolerant(text: str) -> dict:
+    """parse_model_output() + recovery of rows from slightly broken JSON (error analysis of the test outputs):
+      1. a stray quote around a row bracket  ...],"["01/03/2026",...  (the whole page failed to parse)
+      2. output cut off at the token limit, or rows with 4 / 6 / 7 values (the strict fallback only kept
+         rows with exactly 5) - every complete list of 3-10 strings is recovered
+      3. all rows written as ONE flat list of strings - split again where a date starts
+    Used by the app and by `evaluate.py score --repair`; the published scores use the strict parser."""
+    out = parse_model_output(text)
+    best = out.get("rows") or []
+    fixed = re.sub(r'\]\s*,\s*"\s*\[', "],[", text)
+    fixed = re.sub(r'\[\s*"\s*\[', "[[", fixed)
+    if fixed != text:
+        again = parse_model_output(fixed)
+        if len(again.get("rows") or []) > len(best):
+            out, best = again, again["rows"]
+    found = []
+    for m in _ROW_RE.finditer(fixed):
+        try:
+            found.append(json.loads(m.group(0)))
+        except json.JSONDecodeError:
+            continue
+    if len(found) > len(best):
+        out, best = {"header": out.get("header"), "rows": found}, found
+    if not best:
+        flat = re.search(r'"rows"\s*:\s*\[(.*)', fixed, re.S)
+        if flat:
+            rows, cur = [], None
+            for item in re.findall(r'"((?:[^"\\]|\\.)*)"', flat.group(1)):
+                if _DATE_TOKEN.match(item.strip()):
+                    if cur:
+                        rows.append(cur)
+                    cur = [item]
+                elif cur is not None:
+                    cur.append(item)
+            if cur:
+                rows.append(cur)
+            rows = [r for r in rows if len(r) >= 3]
+            if rows:
+                out = {"header": out.get("header"), "rows": rows}
+    if not isinstance(out.get("header"), dict):
+        m = _HEADER_RE.search(fixed)
+        if m:
+            try:
+                out["header"] = json.loads(m.group(1))
+            except json.JSONDecodeError:
+                pass
+    return out
+
+
 def rows_to_transactions(rows: list) -> list[dict]:
     """Model rows (printed strings) -> normalised transactions."""
     out = []

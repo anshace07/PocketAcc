@@ -56,4 +56,39 @@ print("[5] OK errors: wrong file type 415, unreadable image 422, expired result 
 p = c.post("/api/samples/icici_photo_light", data={"reader": "tesseract"}).json()
 print(f"[6] OK phone-photo sample (light damage): {p['bank_label']}, {p['summary']['transactions']} rows, "
       f"trust {p['summary']['trust_score']}%, notes: {len(p['notes'])}")
+
+# --- v1.1: demo statements, answer key, page image, progress jobs, saved results, evaluation
+d = c.post("/api/samples/demo_a_pdf", data={"reader": "tesseract"}).json()
+k = d["answer_key"]
+assert d["bank"] == "DEMO" and k["answer_rows"] == 49 and k["numbers_right"] == 49, k
+img = c.get(f"/api/results/{d['id']}/page.jpg")
+assert d["has_page"] and img.status_code == 200 and img.headers["content-type"] == "image/jpeg"
+flagged = [t for t in d["transactions"] if t["anomaly"]]
+assert any("double debit" in t["anomaly_reason"] for t in flagged), flagged
+print(f"[7] OK demo statement: {d['bank_label']}, answer key {k['numbers_right']}/{k['answer_rows']}, page image, "
+      f"planted double debit flagged")
+
+import time  # noqa: E402
+j = c.post("/api/samples/demo_a_heavy", data={"reader": "tesseract", "wait": "0"})
+assert j.status_code == 202 and "job" in j.json(), j.text
+for _ in range(120):
+    st = c.get(f"/api/jobs/{j.json()['job']}").json()
+    if st["status"] != "running":
+        break
+    time.sleep(0.5)
+assert st["status"] == "done" and st["result"]["answer_key"]["answer_rows"] == 46, st.get("error")
+print(f"[8] OK background job with progress: heavy-damage photo, Tesseract read {st['result']['summary']['transactions']} rows")
+
+saved = c.get("/api/saved").json()
+assert saved, "no saved results in demo/results"
+o = c.get(f"/api/saved/{saved[0]['name']}").json()
+assert o["id"] and o["summary"]["transactions"] == saved[0]["rows"] and c.get(f"/api/results/{o['id']}.csv").status_code == 200
+assert c.get("/api/saved/nope").status_code == 404
+print(f"[9] OK saved results: {len(saved)} ({', '.join(sorted({x['backend'] for x in saved}))}); opened {saved[0]['name']}, export works")
+
+ev = c.get("/api/evaluation").json()
+assert {r["key"] for r in ev["readers"]} >= {"tess", "base", "ft"} and ev["scores"]["ft"]["unseen"]["pages"] == 24
+assert c.get("/api/evaluation/loss_curve.png").status_code == 200
+print(f"[10] OK evaluation: readers {[r['key'] for r in ev['readers']]}, "
+      f"fine-tuned rows found (new banks) {ev['scores']['ft']['unseen']['all']['row_recall']}%")
 print("\nALL APP TESTS PASSED")

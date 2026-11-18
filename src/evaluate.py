@@ -13,11 +13,14 @@ Metrics (all per page, then averaged / pooled):
   * narration CER               - character error rate of the narration text
   * chain-verified rows         - % of predicted rows whose balance arithmetic checks out
   * the same numbers AFTER running the balance corrector
+  * --repair: post-processing of step 5a - tolerant JSON parsing (common.parse_model_output_tolerant) and
+    re-aligning rows whose values are in the wrong columns (rowfix.py)
 
 Usage:
     python src/evaluate.py predict --system vlm --adapter runs/lora_r8/best_adapter --split test_unseen --out results/ft_unseen.jsonl
     python src/evaluate.py predict --system tesseract --split test_unseen --out results/tess_unseen.jsonl
     python src/evaluate.py score results/ft_unseen.jsonl --split test_unseen
+    python src/evaluate.py score results/ft_unseen.jsonl --split test_unseen --limit 24 --repair
 """
 import argparse
 import json
@@ -25,8 +28,9 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-from common import parse_model_output, rows_to_transactions
+from common import parse_model_output, parse_model_output_tolerant, rows_to_transactions
 from corrector import Txn, correct, verify
+from rowfix import repair_rows
 
 NUM_FIELDS = ("debit", "credit", "balance")
 
@@ -128,8 +132,9 @@ def summarise(counts):
     }
 
 
-def score(pred_file, data_dir, split, limit=0):
-    """limit: score only the first N pages of the split, so every system is compared on the same pages."""
+def score(pred_file, data_dir, split, limit=0, repair=False):
+    """limit: score only the first N pages of the split, so every system is compared on the same pages.
+    repair: re-align rows with values in the wrong columns before scoring (rowfix.repair_rows)."""
     recs = {json.loads(l)["id"]: json.loads(l) for l in open(Path(data_dir) / f"{split}.jsonl")}
     if limit:
         recs = dict(list(recs.items())[:limit])
@@ -137,8 +142,14 @@ def score(pred_file, data_dir, split, limit=0):
     groups = defaultdict(lambda: defaultdict(float))
     for pr in preds:
         r = recs[pr["id"]]
-        parsed = parse_model_output(pr["raw"]) if "raw" in pr else {"rows": pr["rows"]}
-        txns = rows_to_transactions(parsed.get("rows", []))
+        if "raw" in pr:
+            parsed = (parse_model_output_tolerant if repair else parse_model_output)(pr["raw"])
+        else:
+            parsed = {"rows": pr["rows"]}
+        rows = parsed.get("rows", [])
+        if repair:
+            rows, _ = repair_rows(rows, r["prev_balance"])
+        txns = rows_to_transactions(rows)
         gt = r["gt"]
         for stage, t in (("before", txns), ("after", apply_corrector(r["prev_balance"], txns))):
             c = score_page(t, gt)
@@ -215,11 +226,12 @@ def main():
     s.add_argument("--split", default="test_unseen")
     s.add_argument("--json-out", default=None)
     s.add_argument("--limit", type=int, default=0, help="score only the first N pages of the split")
+    s.add_argument("--repair", action="store_true", help="tolerant parsing + re-align misplaced columns (step 5a)")
     a = ap.parse_args()
     if a.cmd == "predict":
         predict(a)
     else:
-        res = score(a.pred_file, a.data, a.split, a.limit)
+        res = score(a.pred_file, a.data, a.split, a.limit, a.repair)
         print_table(res)
         if a.json_out:
             json.dump(res, open(a.json_out, "w"), indent=1)

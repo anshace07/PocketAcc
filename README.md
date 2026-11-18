@@ -21,6 +21,7 @@ Mini-project, CSET312, Bennett University — Ansh Singh, Navya Khandelwal.
 | 2 | Domain-randomised damage (desk, rotation, perspective, blur, shadow, stamp, noise, JPEG) | `src/degrade.py` |
 | 3 | Classical pre-processing: paper crop (Otsu + contours), deskew (Hough), resize to the VLM patch grid | `src/preprocess.py` |
 | 4 | Page → JSON dataset, QLoRA fine-tuning, extraction, evaluation | `src/build_dataset.py`, `src/finetune.py`, `src/extract.py`, `src/evaluate.py` |
+| 5a | Vision-model output repair: tolerant JSON parsing, values put back in their columns | `src/common.py`, `src/rowfix.py` |
 | 5–6 | Balance-chain verification and correction | `src/corrector.py` |
 | 7 | Transaction classifier (LR / NB / Linear SVM / RF) | `src/classifier.py` |
 | 8 | Unusual-transaction detection: Isolation Forest on per-account features + duplicate-debit and robust z-score rules | `src/anomaly.py` |
@@ -49,9 +50,27 @@ All statements are synthetic — no real customer data. Every balance chain in b
 | Deskew (heavy damage) | mean tilt 1.53° → 0.57° |
 | Tesseract OCR baseline (unseen banks) | amounts 89.8% on clean pages (**98.0%** with corrector), 3.2% on heavy damage |
 | Whole app on a real 9-page PDF (PNB, 592 rows, Tesseract) | 98.1% of rows verified, closing balance matches, 574/592 rows exactly right, categories 592/592 |
-| Qwen2-VL-2B fine-tuning | **in progress** — needs a GPU, see below |
+| Qwen2-VL-2B QLoRA fine-tuning (Kaggle T4, 300 pages, 37 steps) | best validation loss **0.060**; adapter in `adapters/lora_r8` (8.7 MB) |
+| Fine-tuned model vs Tesseract vs base model (same 24 test pages per split) | see the table below |
 
-All numbers: `docs/milestone2.md`.
+### Fine-tuned Qwen2-VL-2B vs the baselines
+
+Same 24 test pages per split for every reader (8 pages × clean scan / medium-damage photo / heavy-damage photo),
+after the balance corrector. `results/score24_*.json`; reproduce with `python src/evaluate.py score ... --limit 24`.
+
+| Reader | Seen banks: rows found | Seen banks: amounts right | New banks: rows found | New banks: amounts right |
+|---|---|---|---|---|
+| Tesseract OCR + rule parser (traditional) | 46.2% | 42.7% | 64.0% | 59.2% |
+| Qwen2-VL-2B, not fine-tuned (zero-shot) | 2.8% | 2.2% | 39.1% | 14.9% |
+| Qwen2-VL-2B fine-tuned (QLoRA), model output as is | 79.8% | 48.0% | 71.9% | 61.8% |
+| **Fine-tuned + step 5a post-processing (used in the app)** | **91.3%** | **61.4%** | **96.1%** | **89.0%** |
+
+Heavy-damage phone photos, new banks, amounts right: Tesseract 5.1% → fine-tuned + 5a **95.6%**.
+Step 5a (tolerant JSON parsing + re-aligning values with the balance arithmetic, `src/rowfix.py`) was added after an
+error analysis of these outputs (`docs/FAILURES.md`) and re-scores the same saved outputs (`evaluate.py score --repair`,
+`results/score24_*_rowfix.json`); because it was designed on these pages, the new demo statements are the fair check.
+
+All earlier numbers: `docs/milestone2.md`.
 
 ## Setup
 
@@ -112,11 +131,24 @@ Upload a PDF or phone photo (or click a sample). The table marks rows **correcte
 
 ![dashboard](docs/proof/5_app_dashboard.png)
 
+## Demo (fine-tuned model)
+
+* `demo/samples/` – statements of a made-up bank layout the model never saw ("PocketAcc Demo Bank"), the first page as
+  light / medium / heavy-damage phone photos, and an answer key (`scripts/make_demo_statements.py`)
+* `notebooks/pocketacc_demo_kaggle.ipynb` – on Kaggle (GPU T4 x2): saves the fine-tuned model's results on the demo
+  files (`scripts/run_demo.py`), reads any statement live (`scripts/demo_live.py`), or serves the web app with the
+  fine-tuned model behind a public link (`scripts/start_public_app.py`)
+* the web app shows those saved results under **Saved results**, next to the page image and the answer-key check
+* `python scripts/build_demo_viewer.py` – the same dashboard as one offline HTML file with every saved result inside
+* `python scripts/reprocess_saved.py` – re-run the steps after reading on saved model output (no GPU)
+
 ## Repository layout
 
 ```
 src/        all pipeline code (each file explains itself at the top); static/ = dashboard page
-scripts/    smoke_test.py, check_4bit_vision.py, vram_test.py, corrector_sim.py, test_app.py
+scripts/    smoke_test.py, check_4bit_vision.py, vram_test.py, corrector_sim.py, test_app.py, demo scripts
+adapters/   the trained LoRA adapter (lora_r8)
+demo/       demo statements + answer key, saved results, offline results page
 notebooks/  Kaggle notebook for GPU training
 data/       original/ and generated/ statements + ground truth
 results/    experiment outputs
