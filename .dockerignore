@@ -1,0 +1,8 @@
+.git
+data/vlm
+runs
+models
+results
+docs
+notebooks
+**/__pycache__

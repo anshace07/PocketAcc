@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PocketAcc – bank statement to verified data</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M9 22V10h7a4 4 0 0 1 0 8h-7' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f4f4f1; --surface: #fcfcfb; --line: #e4e3df; --line-strong: #cfcdc7;
+    --ink: #0b0b0b; --ink-2: #52514e; --ink-3: #6f6e69;
+    --accent: #2a78d6; --accent-ink: #ffffff; --bar: #2a78d6;
+    --good: #0ca30c; --good-bg: #e3f4e3; --good-ink: #0b5e0b;
+    --crit: #d03b3b; --crit-bg: #fbe4e4; --crit-ink: #9b2222;
+    --warn: #fab219; --warn-bg: #fff3d6; --warn-ink: #7a5200;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page: #111110; --surface: #1a1a19; --line: #2c2c2a; --line-strong: #3d3d3a;
+      --ink: #f0efec; --ink-2: #c3c2b7; --ink-3: #9a998f;
+      --accent: #3987e5; --bar: #3987e5;
+      --good-bg: #13301a; --good-ink: #8fdc8f; --crit-bg: #3a1919; --crit-ink: #f2a3a3;
+      --warn-bg: #3a2e10; --warn-ink: #f6cf72;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--page); color: var(--ink); }
+  header { background: var(--surface); border-bottom: 1px solid var(--line); }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  header .wrap { display: flex; align-items: baseline; gap: 14px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { font-weight: 700; font-size: 20px; letter-spacing: -0.01em; }
+  .tagline { color: var(--ink-2); }
+  main { padding: 20px 0 60px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; }
+  h2 { font-size: 15px; margin: 0 0 12px; }
+  .muted { color: var(--ink-2); }
+  .small { font-size: 12.5px; }
+
+  /* upload */
+  .upload { display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px; }
+  .drop { border: 1.5px dashed var(--line-strong); border-radius: var(--radius); padding: 26px 18px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s; }
+  .drop.over, .drop:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); }
+  .drop strong { display: block; font-size: 15px; margin-bottom: 4px; }
+  .controls { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; align-items: end; }
+  label.field { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; color: var(--ink-2); }
+  select, button { font: inherit; }
+  select { padding: 7px 10px; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); color: var(--ink); min-width: 170px; }
+  button { cursor: pointer; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink); padding: 7px 12px; }
+  button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  button:disabled { opacity: .5; cursor: default; }
+  .samples { display: flex; flex-direction: column; gap: 8px; }
+  .sample { text-align: left; padding: 9px 12px; }
+  .sample b { display: block; font-weight: 600; }
+  .sample span { color: var(--ink-2); font-size: 12.5px; }
+
+  /* status line */
+  #status { margin: 16px 0 0; min-height: 22px; color: var(--ink-2); display: flex; gap: 10px; align-items: center; }
+  .spinner { width: 16px; height: 16px; border: 2px solid var(--line-strong); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .error { color: var(--crit-ink); }
+
+  /* results */
+  #results { display: none; margin-top: 18px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; margin-bottom: 14px; }
+  .meta .title { font-size: 18px; font-weight: 700; }
+  .exports { margin-left: auto; display: flex; gap: 8px; }
+  .notes { margin: 0 0 14px; display: flex; flex-direction: column; gap: 8px; }
+  .note { padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); display: flex; gap: 8px; }
+  .note.low { background: var(--crit-bg); border-color: color-mix(in srgb, var(--crit) 35%, transparent); color: var(--crit-ink); }
+  .kpis { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+  .kpi { padding: 14px 16px; }
+  .kpi .k { color: var(--ink-2); font-size: 12.5px; }
+  .kpi .v { font-size: 26px; font-weight: 650; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .kpi.hero .v { font-size: 48px; line-height: 1.05; }
+  .kpi .s { color: var(--ink-3); font-size: 12.5px; }
+  .two { display: grid; grid-template-columns: 1.25fr 1fr; gap: 12px; margin-bottom: 14px; }
+
+  /* bar list (single series: one hue, no legend; title names it) */
+  .bars { display: flex; flex-direction: column; gap: 6px; }
+  .barrow { display: grid; grid-template-columns: 150px 1fr 110px; align-items: center; gap: 10px; padding: 2px 0; border-radius: 6px; }
+  .barrow:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+  .barrow .name { color: var(--ink-2); font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .track { height: 18px; position: relative; }
+  .fill { height: 18px; max-height: 24px; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 2px; }
+  .barrow .amt { text-align: right; font-variant-numeric: tabular-nums; font-size: 13px; }
+  .tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--surface); padding: 6px 9px; border-radius: 6px; font-size: 12.5px; display: none; z-index: 10; }
+
+  dl.facts { display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin: 0; }
+  dl.facts dt { color: var(--ink-2); }
+  dl.facts dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* table */
+  .tablebar { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+  .chip { border-radius: 999px; padding: 4px 11px; font-size: 13px; }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+  .tablewrap { max-height: 620px; overflow: auto; border: 1px solid var(--line); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th { position: sticky; top: 0; background: var(--surface); text-align: left; font-weight: 600; color: var(--ink-2); padding: 8px 10px; border-bottom: 1px solid var(--line-strong); z-index: 1; }
+  td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td.nar { max-width: 360px; overflow-wrap: anywhere; }
+  tr.corrected td { background: var(--good-bg); }
+  tr.review td { background: var(--crit-bg); }
+  tr.unusual td { background: var(--warn-bg); }
+  .badge { display: inline-flex; gap: 5px; align-items: center; white-space: nowrap; font-size: 12.5px; font-weight: 600; }
+  .badge .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .b-ok { color: var(--ink-3); font-weight: 500; }
+  .b-corrected { color: var(--good-ink); } .b-corrected .dot { background: var(--good); }
+  .b-review { color: var(--crit-ink); } .b-review .dot { background: var(--crit); }
+  .b-unusual { color: var(--warn-ink); } .b-unusual .dot { background: var(--warn); }
+  .why { display: block; font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-left: auto; }
+  footer { color: var(--ink-3); font-size: 12.5px; margin-top: 26px; }
+  @media (max-width: 860px) { .upload, .two { grid-template-columns: 1fr; } .kpis { grid-template-columns: 1fr 1fr; } .kpi.hero { grid-column: 1 / -1; } }
+</style>
+</head>
+<body>
+<header><div class="wrap"><span class="brand">PocketAcc</span><span class="tagline">Bank statement photo or PDF → verified, categorised transactions</span></div></header>
+<main class="wrap">
+  <section class="card upload" aria-label="Upload a statement">
+    <div>
+      <h2>Your statement</h2>
+      <div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose a PDF or photo of a bank statement">
+        <strong>Drop a PDF or phone photo here</strong>
+        <span class="muted">or click to choose · PDF, JPG, PNG · up to 25 MB</span>
+        <input type="file" id="file" accept=".pdf,.jpg,.jpeg,.png,.webp,.tif,.tiff,.bmp" hidden>
+      </div>
+      <div class="controls">
+        <label class="field">Reader
+          <select id="reader">
+            <option value="auto">Automatic</option>
+            <option value="tesseract">Tesseract OCR (CPU)</option>
+            <option value="vlm">Fine-tuned vision model (GPU)</option>
+          </select>
+        </label>
+        <label class="field">Bank
+          <select id="bank"><option value="auto">Detect automatically</option></select>
+        </label>
+      </div>
+      <p class="muted small" id="readerinfo"></p>
+    </div>
+    <div>
+      <h2>Or try a sample</h2>
+      <div class="samples" id="samples"></div>
+    </div>
+  </section>
+
+  <div id="status" role="status" aria-live="polite"></div>
+
+  <section id="results" aria-label="Results">
+    <div class="meta">
+      <span class="title" id="m-bank"></span>
+      <span class="muted" id="m-file"></span>
+      <span class="exports">
+        <button id="x-csv">CSV</button><button id="x-xlsx">Excel</button><button id="x-json">JSON</button>
+      </span>
+    </div>
+    <div class="notes" id="notes"></div>
+
+    <div class="kpis">
+      <div class="card kpi hero"><div class="k">Trust score</div><div class="v" id="k-trust"></div><div class="s" id="k-trust-s"></div></div>
+      <div class="card kpi"><div class="k">Transactions</div><div class="v" id="k-n"></div><div class="s" id="k-n-s"></div></div>
+      <div class="card kpi"><div class="k">Auto-corrected</div><div class="v" id="k-fix"></div><div class="s">misreads repaired by the balance chain</div></div>
+      <div class="card kpi"><div class="k">Needs review</div><div class="v" id="k-rev"></div><div class="s">could not be repaired safely</div></div>
+      <div class="card kpi"><div class="k">Unusual</div><div class="v" id="k-ano"></div><div class="s">for this account’s own pattern</div></div>
+    </div>
+
+    <div class="two">
+      <div class="card">
+        <h2>Spending by category</h2>
+        <div class="bars" id="bars"></div>
+      </div>
+      <div class="card">
+        <h2>Balances</h2>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tablebar">
+        <h2 style="margin:0 8px 0 0">Transactions</h2>
+        <button class="chip" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" data-f="corrected" aria-pressed="false">Corrected</button>
+        <button class="chip" data-f="review" aria-pressed="false">Needs review</button>
+        <button class="chip" data-f="unusual" aria-pressed="false">Unusual</button>
+        <span class="legend small">
+          <span class="badge b-corrected"><span class="dot"></span>✓ corrected</span>
+          <span class="badge b-review"><span class="dot"></span>! needs review</span>
+          <span class="badge b-unusual"><span class="dot"></span>◆ unusual</span>
+        </span>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="num">#</th><th>Date</th><th>Narration</th><th class="num">Debit</th><th class="num">Credit</th><th class="num">Balance</th><th>Category</th><th>Check</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </div>
+    <footer>Reader: <span id="f-reader"></span>. Every row is checked with previous balance − debit + credit = balance. A misread is fixed only when it is a plausible misreading and the arithmetic confirms it; otherwise the row is marked for review. Categories: Linear SVM on TF-IDF features. Unusual: Isolation Forest + duplicate-debit and robust z-score rules.</footer>
+  </section>
+</main>
+<div class="tip" id="tip"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const inr = new Intl.NumberFormat("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const money = (x) => (x === null || x === undefined || x === "") ? "" : "₹" + inr.format(x);
+const plain = (x) => (x === null || x === undefined) ? "" : inr.format(x);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+let current = null, filter = "all", busy = false, vlmOK = false;
+
+async function init() {
+  try {
+    const h = await (await fetch("/api/health")).json();
+    vlmOK = h.readers.vlm;
+    for (const [code, name] of Object.entries(h.banks)) $("bank").insertAdjacentHTML("beforeend", `<option value="${code}">${esc(name)}</option>`);
+    $("reader").querySelector('option[value="vlm"]').disabled = !vlmOK;
+    $("readerinfo").textContent = vlmOK
+      ? "Automatic uses the fine-tuned vision model (GPU found)."
+      : "Automatic uses Tesseract OCR: no GPU or trained adapter on this server. Tesseract is reliable on PDFs and clean scans, weak on damaged photos.";
+    const samples = await (await fetch("/api/samples")).json();
+    for (const s of samples) {
+      const b = document.createElement("button");
+      b.className = "sample"; b.innerHTML = `<b>${esc(s.label)}</b><span>${esc(s.detail)}</span>`;
+      b.onclick = () => go(() => { const f = new FormData(); f.append("reader", $("reader").value); return fetch(`/api/samples/${s.name}`, { method: "POST", body: f }); }, s.label);
+      $("samples").appendChild(b);
+    }
+  } catch (e) { setStatus(`Could not reach the server: ${e}`, false, true); }
+}
+
+function setStatus(msg, spin = false, err = false) {
+  $("status").innerHTML = (spin ? '<span class="spinner" aria-hidden="true"></span>' : "") + `<span class="${err ? "error" : ""}">${esc(msg)}</span>`;
+}
+
+async function go(request, label) {
+  if (busy) return;
+  busy = true;
+  document.querySelectorAll("button, select").forEach((el) => el.disabled = true);
+  setStatus(`Reading ${label} … about 5 seconds per page with OCR`, true);
+  const t0 = performance.now();
+  try {
+    const res = await request();
+    const body = await res.json();
+    if (!res.ok) throw new Error(body.detail || res.statusText);
+    current = body; filter = "all";
+    render(body);
+    setStatus(`Done in ${((performance.now() - t0) / 1000).toFixed(1)} s.`);
+  } catch (e) {
+    setStatus(`Could not read this statement: ${e.message}`, false, true);
+  } finally {
+    busy = false;
+    document.querySelectorAll("button, select").forEach((el) => el.disabled = false);
+    $("reader").querySelector('option[value="vlm"]').disabled = !vlmOK;
+  }
+}
+
+function upload(file) {
+  if (!file) return;
+  go(() => {
+    const f = new FormData();
+    f.append("file", file); f.append("reader", $("reader").value); f.append("bank", $("bank").value);
+    return fetch("/api/extract", { method: "POST", body: f });
+  }, file.name);
+}
+
+function status(t) {
+  if (t.status === "review") return "review";
+  if (t.status === "corrected") return "corrected";
+  if (t.anomaly) return "unusual";
+  return "ok";
+}
+
+function render(r) {
+  const s = r.summary;
+  $("results").style.display = "block";
+  $("m-bank").textContent = r.bank_label;
+  $("m-file").textContent = `${r.file} · ${r.pages.length} page${r.pages.length > 1 ? "s" : ""} · ${r.seconds} s`;
+  $("f-reader").textContent = r.backend === "vlm" ? "fine-tuned Qwen2-VL-2B (QLoRA)" : "Tesseract OCR + rule-based column parser";
+  $("notes").innerHTML = r.notes.map((n) => `<div class="note ${n.startsWith("LOW TRUST") ? "low" : ""}"><span aria-hidden="true">${n.startsWith("LOW TRUST") ? "!" : "i"}</span><span>${esc(n)}</span></div>`).join("");
+
+  $("k-trust").textContent = s.trust_score === null ? "–" : `${s.trust_score}%`;
+  $("k-trust-s").textContent = s.trust_score === null ? "opening balance not found, chain not checked" : `${s.verified} of ${s.transactions} rows pass the balance check`;
+  $("k-n").textContent = s.transactions.toLocaleString("en-IN");
+  $("k-n-s").textContent = `${money(s.total_debit)} out · ${money(s.total_credit)} in`;
+  $("k-fix").textContent = s.auto_corrected; $("k-rev").textContent = s.needs_review; $("k-ano").textContent = s.anomalies;
+
+  const facts = [["Opening balance", money(r.opening_balance) + (r.opening_source !== "printed" ? " (inferred)" : "")],
+                 ["Money in", money(s.total_credit)], ["Money out", money(s.total_debit)],
+                 ["Last balance read", money(r.transactions.length ? r.transactions[r.transactions.length - 1].balance : null)],
+                 ["Printed closing balance", money(r.closing_balance) || "not found"],
+                 ["Closing balance matches", s.closing_matches === null ? "–" : (s.closing_matches ? "✓ yes" : "✗ no")]];
+  $("facts").innerHTML = facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");
+
+  const spend = s.spend_by_category.slice(0, 10);
+  const total = s.total_debit || 1, max = spend.length ? spend[0][1] : 1;
+  $("bars").innerHTML = spend.length ? spend.map(([k, v]) =>
+    `<div class="barrow" data-tip="${esc(k)}: ${money(v)} · ${(100 * v / total).toFixed(1)}% of spending">
+       <span class="name" title="${esc(k)}">${esc(k)}</span>
+       <span class="track"><span class="fill" style="display:block;width:${Math.max(0.5, 100 * v / max)}%"></span></span>
+       <span class="amt">${money(v)}</span></div>`).join("") : '<span class="muted">No debits read.</span>';
+  document.querySelectorAll(".barrow").forEach((el) => {
+    el.onmousemove = (e) => { const t = $("tip"); t.textContent = el.dataset.tip; t.style.display = "block"; t.style.left = (e.clientX + 12) + "px"; t.style.top = (e.clientY + 12) + "px"; };
+    el.onmouseleave = () => $("tip").style.display = "none";
+  });
+  drawRows();
+  $("results").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function drawRows() {
+  const label = { ok: "✓ ok", corrected: "✓ corrected", review: "! needs review", unusual: "◆ unusual" };
+  const rows = current.transactions.map((t, i) => [t, i]).filter(([t]) => filter === "all" || status(t) === filter || (filter === "unusual" && t.anomaly));
+  $("rows").innerHTML = rows.map(([t, i]) => {
+    const st = status(t);
+    const fixes = t.flags.filter((f) => f.includes("->"));
+    const why = [...fixes.map((f) => "fixed: " + f), ...(t.anomaly ? ["unusual: " + t.anomaly_reason] : [])];
+    return `<tr class="${st === "ok" ? "" : st}">
+      <td class="num">${i + 1}</td><td>${esc(t.date || "?")}</td>
+      <td class="nar">${esc(t.narration)}${why.length ? `<span class="why">${why.map(esc).join(" · ")}</span>` : ""}</td>
+      <td class="num">${plain(t.debit)}</td><td class="num">${plain(t.credit)}</td><td class="num">${plain(t.balance)}</td>
+      <td>${esc(t.category_label)}</td>
+      <td><span class="badge b-${st}">${st === "ok" ? "" : '<span class="dot"></span>'}${label[st]}</span></td></tr>`;
+  }).join("") || `<tr><td colspan="8" class="muted">No rows in this view.</td></tr>`;
+}
+
+document.querySelectorAll(".chip").forEach((c) => c.onclick = () => {
+  filter = c.dataset.f;
+  document.querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", String(x === c)));
+  if (current) drawRows();
+});
+["csv", "xlsx", "json"].forEach((f) => $("x-" + f).onclick = () => current && (location.href = `/api/results/${current.id}.${f}`));
+const drop = $("drop");
+drop.onclick = () => $("file").click();
+drop.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("file").click(); } };
+$("file").onchange = (e) => { upload(e.target.files[0]); e.target.value = ""; };
+drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
+drop.ondragleave = () => drop.classList.remove("over");
+drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); upload(e.dataTransfer.files[0]); };
+init();
+</script>
+</body>
+</html>

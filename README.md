@@ -6,7 +6,8 @@ transactions — and know which numbers to trust.
 * **Reads** the page with a small vision-language model (Qwen2-VL-2B) fine-tuned with **QLoRA** on a 6 GB GPU
 * **Verifies** every row with the statement's own arithmetic: `previous balance − debit + credit = balance`
 * **Corrects** misread digits (3↔8, 1↔7, dropped digits, swapped columns) and flags anything it cannot prove
-* **Categorises** transactions with classical ML (TF-IDF + Linear SVM) and flags anomalies
+* **Categorises** transactions with classical ML (TF-IDF + Linear SVM) and flags unusual ones (Isolation Forest + rules)
+* **Web app**: upload a PDF or photo → table with corrected / needs-review / unusual rows, trust score, spending by category, CSV / Excel / JSON
 
 Mini-project, CSET312, Bennett University — Ansh Singh, Navya Khandelwal.
 
@@ -22,6 +23,8 @@ Mini-project, CSET312, Bennett University — Ansh Singh, Navya Khandelwal.
 | 4 | Page → JSON dataset, QLoRA fine-tuning, extraction, evaluation | `src/build_dataset.py`, `src/finetune.py`, `src/extract.py`, `src/evaluate.py` |
 | 5–6 | Balance-chain verification and correction | `src/corrector.py` |
 | 7 | Transaction classifier (LR / NB / Linear SVM / RF) | `src/classifier.py` |
+| 8 | Unusual-transaction detection: Isolation Forest on per-account features + duplicate-debit and robust z-score rules | `src/anomaly.py` |
+| 10 | Web app: FastAPI + dashboard + Docker | `src/pipeline.py`, `src/app.py`, `src/static/index.html`, `Dockerfile` |
 | — | Traditional baseline: Tesseract OCR + rule-based parser | `src/ocr_baseline.py` |
 
 ## Data
@@ -40,17 +43,21 @@ All statements are synthetic — no real customer data. Every balance chain in b
 
 | Component | Result |
 |---|---|
-| Balance corrector (simulation, 5% of rows with injected digit errors) | numeric field accuracy 97.5% → **99.6%**; 86.5% auto-fixed, 12.8% flagged, 0% missed |
+| Balance corrector (simulation, 5% of rows with injected digit errors) | numeric field accuracy 97.5% → **99.7%**; 90.2% auto-fixed, 9.4% flagged, 0% missed, 0.4% wrong fixes |
 | Transaction classifier, original data, unseen bank | Linear SVM **95.7%** accuracy (LR 94.5, NB 84.3, RF 68.8) |
+| Unusual transactions (1% injected, leave-one-statement-out) | hybrid: AUC **95.6**, recall **61.9%** at 1.2% false alarms (3-sigma rule: AUC 92.6, recall 41.9%, 0.5%) |
 | Deskew (heavy damage) | mean tilt 1.53° → 0.57° |
-| Tesseract OCR baseline (unseen banks) | amounts 89.8% on clean pages (97.4% with corrector), 3.2% on heavy damage |
+| Tesseract OCR baseline (unseen banks) | amounts 89.8% on clean pages (**98.0%** with corrector), 3.2% on heavy damage |
+| Whole app on a real 9-page PDF (PNB, 592 rows, Tesseract) | 98.1% of rows verified, closing balance matches, 574/592 rows exactly right, categories 592/592 |
 | Qwen2-VL-2B fine-tuning | **in progress** — needs a GPU, see below |
+
+All numbers: `docs/milestone2.md`.
 
 ## Setup
 
 ```bash
-git clone https://github.com/anshace07/pocketacc.git
-cd pocketacc
+git clone https://github.com/anshace07/PocketAcc.git
+cd PocketAcc
 pip install -r requirements.txt
 ```
 System tools: **Poppler** (for `pdf2image`) and, only for the OCR baseline, **Tesseract**.
@@ -79,11 +86,37 @@ python src/extract.py some_statement.pdf --adapter runs/lora_r8/best_adapter --o
 
 No local GPU? Use **`notebooks/pocketacc_kaggle.ipynb`** on Kaggle (free T4 GPU) — it runs every step above.
 
+Classical ML (CPU):
+```bash
+python src/classifier.py data/original/ground_truth.json --out results/classifier_original.json   # step 7
+python src/anomaly.py --out results/anomaly.json                                                  # step 8
+python scripts/corrector_sim.py data/original/ground_truth.json results/corrector_simulation.json # steps 5-6
+```
+
+## Web app (step 10)
+
+```bash
+pip install -r requirements.txt -r requirements-app.txt
+uvicorn app:app --app-dir src --port 8000          # open http://localhost:8000
+python scripts/test_app.py                         # end-to-end API test
+python src/pipeline.py statement.pdf --csv out.csv --xlsx out.xlsx    # same pipeline, command line
+```
+or with Docker (CPU, Tesseract reader):
+```bash
+docker build -t pocketacc .
+docker run -p 8000:8000 pocketacc
+```
+Upload a PDF or phone photo (or click a sample). The table marks rows **corrected** (green), **needs review** (red) and
+**unusual** (amber), with the reason; export CSV, Excel or JSON. On a GPU machine with the trained adapter in
+`runs/lora_r8/best_adapter`, the reader switches to the fine-tuned vision model automatically.
+
+![dashboard](docs/proof/5_app_dashboard.png)
+
 ## Repository layout
 
 ```
-src/        all pipeline code (each file explains itself at the top)
-scripts/    smoke_test.py, vram_test.py, corrector_sim.py
+src/        all pipeline code (each file explains itself at the top); static/ = dashboard page
+scripts/    smoke_test.py, check_4bit_vision.py, vram_test.py, corrector_sim.py, test_app.py
 notebooks/  Kaggle notebook for GPU training
 data/       original/ and generated/ statements + ground truth
 results/    experiment outputs

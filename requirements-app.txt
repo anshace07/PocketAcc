@@ -1,0 +1,6 @@
+# web app (step 10) - on top of requirements.txt
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+openpyxl>=3.1
+httpx>=0.27              # only for scripts/test_app.py

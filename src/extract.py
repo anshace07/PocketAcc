@@ -18,8 +18,8 @@ import cv2
 import torch
 from PIL import Image
 
-from common import PROMPT, parse_amount, parse_model_output, rows_to_transactions
-from corrector import Txn, correct
+from common import PROMPT, parse_model_output
+from corrector import finalize
 from preprocess import prepare, render_pages
 from vlm import DEFAULT_MODEL, build_inputs, load_model, load_processor
 
@@ -55,20 +55,6 @@ class Extractor:
             rows += parsed.get("rows", [])
             print(f"page {i}/{len(pages)}: {len(parsed.get('rows', []))} rows in {secs:.1f}s", flush=True)
         return finalize(header, rows) | {"seconds_per_page": timing}
-
-
-def finalize(header, rows):
-    """Normalise rows and run the balance-chain verifier/corrector."""
-    txns = rows_to_transactions(rows)
-    opening = parse_amount((header or {}).get("opening_balance"))
-    closing = parse_amount((header or {}).get("closing_balance"))
-    report = None
-    if opening is not None and txns:
-        chain = [Txn(t["debit"], t["credit"], t["balance"] if t["balance"] is not None else 0.0) for t in txns]
-        report = correct(opening, chain, closing)
-        for t, c in zip(txns, chain):
-            t["debit"], t["credit"], t["balance"], t["flags"] = c.debit, c.credit, c.balance, c.flags
-    return {"header": header, "transactions": txns, "verification": report}
 
 
 def main():

@@ -96,12 +96,12 @@ def score_page(pred, gt):
 def chain_ok_frac(prev_balance, txns):
     if not txns:
         return 0.0
-    chain = [Txn(t["debit"], t["credit"], t["balance"] if t["balance"] is not None else 0.0) for t in txns]
+    chain = [Txn(t["debit"], t["credit"], t["balance"] if t["balance"] is not None else float("nan")) for t in txns]
     return sum(verify(prev_balance, chain)) / len(chain)
 
 
 def apply_corrector(prev_balance, txns):
-    chain = [Txn(t["debit"], t["credit"], t["balance"] if t["balance"] is not None else 0.0) for t in txns]
+    chain = [Txn(t["debit"], t["credit"], t["balance"] if t["balance"] is not None else float("nan")) for t in txns]
     if chain:
         correct(prev_balance, chain)
     out = []

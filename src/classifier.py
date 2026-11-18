@@ -15,6 +15,7 @@ Usage:
 import argparse
 import json
 import re
+from pathlib import Path
 
 import numpy as np
 from scipy.sparse import csr_matrix, hstack
@@ -73,11 +74,58 @@ def evaluate(y, text, num, splits):
     return out
 
 
+class TxnClassifier:
+    """The deployed classifier: Linear SVM on the same features, trained on every labelled transaction.
+    Used by the app (src/app.py) and by the anomaly detector (src/anomaly.py)."""
+
+    def __init__(self, C=1.0):
+        self.vec = TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 5), min_df=2, sublinear_tf=True)
+        self.model = LinearSVC(C=C)
+
+    @staticmethod
+    def _num(txns):
+        amount = np.array([(t.get("debit") or t.get("credit") or 0.0) for t in txns], dtype=float)
+        is_credit = np.array([t.get("credit") is not None for t in txns], dtype=float)
+        return np.c_[np.log1p(np.abs(amount)) / 16, is_credit, 1 - is_credit]
+
+    def _X(self, txns, fit=False):
+        text = [clean(t.get("narration") or "") for t in txns]
+        T = self.vec.fit_transform(text) if fit else self.vec.transform(text)
+        return hstack([T, csr_matrix(self._num(txns))]).tocsr()
+
+    def fit(self, txns):
+        self.model.fit(self._X(txns, fit=True), [t["txn_type"] for t in txns])
+        return self
+
+    def predict(self, txns):
+        return list(self.model.predict(self._X(txns))) if txns else []
+
+    def save(self, path):
+        import joblib
+        joblib.dump(self, path)
+
+    @staticmethod
+    def load(path):
+        import joblib
+        return joblib.load(path)
+
+
+def all_transactions(*paths):
+    return [t for p in paths for st in json.load(open(p)).values() for t in st["transactions"]]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("ground_truth")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--save-model", default=None,
+                    help="also train the deployed Linear SVM on original + generated data and save it here")
     a = ap.parse_args()
+    if a.save_model:
+        root = Path(__file__).resolve().parents[1] / "data"
+        txns = all_transactions(root / "original/ground_truth.json", root / "generated/ground_truth.json")
+        TxnClassifier().fit(txns).save(a.save_model)
+        print(f"saved {a.save_model} ({len(txns)} transactions)")
     banks, y, text, num = load(a.ground_truth)
     idx = np.arange(len(y))
     cv = list(StratifiedKFold(n_splits=5, shuffle=True, random_state=42).split(idx, y))

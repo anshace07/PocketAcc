@@ -94,14 +94,21 @@ def header_spans(lines, fallback):
     return fallback
 
 
-def ocr_page(img: Image.Image, bank: str):
+def ocr_page(img: Image.Image, bank: str, lines=None, max_gap=None):
+    """lines: optional output of lines_of(words(img)) if the page was already OCR'd.
+    max_gap: if set, a wrapped narration line must sit within max_gap line-heights of the row above;
+    anything further down (page footer, end-of-statement note) is not glued onto the last narration.
+    Off by default so the baseline's reported numbers are unchanged; the app (pipeline.py) uses 1.8."""
     t0 = time.time()
-    lines = lines_of(words(img))
+    lines = lines if lines is not None else lines_of(words(img))
     spans = header_spans(lines, column_spans(bank))
     centres = {k: (a + b) / 2 for k, (a, b) in spans.items() if k in ("debit", "credit", "balance")}
     nar_lo, nar_hi = spans.get("narration", (0.2, 0.6))
     rows = []
+    lh = float(np.median([w["h"] for ln in lines for w in ln])) if lines else 1.0
+    last_y, closed = None, False
     for ln in lines:
+        y = float(np.mean([w["y"] for w in ln]))
         texts = [w["text"] for w in ln]
         # date at the start of the line (one token like 01/03/26, or three like 01 Mar 2026)
         date_str, start = None, 0
@@ -124,7 +131,12 @@ def ocr_page(img: Image.Image, bank: str):
                 if not row[col]:
                     row[col] = txt
             rows.append(row)
-        elif rows and not date_str and nar and not amounts:
+            last_y, closed = y, False
+        elif rows and not date_str and nar and not amounts and not closed:
+            if max_gap is not None and last_y is not None and y - last_y > max_gap * lh:
+                closed = True                            # too far below: footer / note, not a wrapped line
+                continue
             rows[-1]["narration"] += nar                 # wrapped narration line
+            last_y = y
     out = [[r["date"], r["narration"], r["debit"], r["credit"], r["balance"]] for r in rows]
     return out, time.time() - t0

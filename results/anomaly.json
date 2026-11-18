@@ -1,0 +1,89 @@
+{
+ "setup": {
+  "protocol": "leave-one-statement-out on the 20 original statements: fit on 19 clean statements (no labels), test on the 20th with injected anomalies",
+  "categories": "predicted by Linear SVM trained on the 140 generated statements",
+  "rate": 0.01,
+  "seeds": 5,
+  "robust_z": 3.5,
+  "false_alarm_target": 0.01,
+  "features": [
+   "log_amount",
+   "is_credit",
+   "day_of_month",
+   "category_z",
+   "rarity",
+   "vs_income",
+   "same_day_dup",
+   "round_large"
+  ]
+ },
+ "classifier_accuracy_on_test": 98.3,
+ "results": {
+  "3-sigma amount rule (per account)": {
+   "roc_auc": 92.6,
+   "avg_precision": 44.0,
+   "precision": 46.5,
+   "recall": 41.9,
+   "false_alarm_rate": 0.5,
+   "recall_amount_spike": 13.9,
+   "recall_large_new_transfer": 74.5,
+   "recall_duplicate_debit": 0.0,
+   "recall_big_cash_deposit": 75.0
+  },
+  "Isolation Forest, raw features": {
+   "roc_auc": 69.6,
+   "avg_precision": 4.6,
+   "precision": 12.2,
+   "recall": 7.0,
+   "false_alarm_rate": 0.6,
+   "recall_amount_spike": 0.0,
+   "recall_large_new_transfer": 2.7,
+   "recall_duplicate_debit": 0.0,
+   "recall_big_cash_deposit": 80.0
+  },
+  "Isolation Forest, account features": {
+   "roc_auc": 90.6,
+   "avg_precision": 21.0,
+   "precision": 23.6,
+   "recall": 27.0,
+   "false_alarm_rate": 1.0,
+   "recall_amount_spike": 0.0,
+   "recall_large_new_transfer": 47.3,
+   "recall_duplicate_debit": 4.0,
+   "recall_big_cash_deposit": 100.0
+  },
+  "  same, without day-of-month & direction": {
+   "roc_auc": 93.2,
+   "avg_precision": 27.4,
+   "precision": 29.0,
+   "recall": 40.0,
+   "false_alarm_rate": 1.1,
+   "recall_amount_spike": 3.5,
+   "recall_large_new_transfer": 74.5,
+   "recall_duplicate_debit": 8.0,
+   "recall_big_cash_deposit": 100.0
+  },
+  "Hybrid: forest + 2 rules (deployed)": {
+   "roc_auc": 95.6,
+   "avg_precision": 61.7,
+   "precision": 36.2,
+   "recall": 61.9,
+   "false_alarm_rate": 1.2,
+   "recall_amount_spike": 25.2,
+   "recall_large_new_transfer": 84.5,
+   "recall_duplicate_debit": 100.0,
+   "recall_big_cash_deposit": 100.0
+  },
+  "  same, with true categories": {
+   "roc_auc": 95.8,
+   "avg_precision": 63.0,
+   "precision": 36.9,
+   "recall": 63.7,
+   "false_alarm_rate": 1.2,
+   "recall_amount_spike": 25.2,
+   "recall_large_new_transfer": 89.1,
+   "recall_duplicate_debit": 100.0,
+   "recall_big_cash_deposit": 100.0
+  }
+ }
+}
