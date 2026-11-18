@@ -1,0 +1,1694 @@
+{
+ "file": "B_shop_statement.pdf",
+ "backend": "vlm",
+ "bank": null,
+ "bank_label": "Unknown bank",
+ "pages": [
+  {
+   "page": 1,
+   "rows": 44,
+   "seconds": 140.3,
+   "raw": "{\"header\":null,\"rows\":[[\"01/09/2026\",\"OPENING BALANCE B/F\",\"1,86,400.00\",\"\",\"\"],[\"01/09/2026\",\"UPI/DR/346217654521/Hp Petrol Pump/hp32@ybl\",\"\",\"1,861.57\",\"\",\"\"],[\"01/09/2026\",\"UPI/DR-MART-q0422134640@ptys-681389502096\",\"\",\"877.08\",\"\",\"\"],[\"01/09/2026\",\"UPI/DR/68803544240/Ola Cabs/ola@okaxis\",\"\",\"269.37\",\"\",\"\"],[\"01/09/2026\",\"UPI/DR/225349467546/Rapido/rapido3016@oksi\",\"\",\"3,972.44\",\"\",\"\"],[\"01/09/2026\",\"NEFT DR-INDB0005219-GST PAYMENT\",\"591150177932\",\"\",\"1,04,794.15\",\"\",\"\"],[\"02/09/2026\",\"UPI/DR/010696377012/Hp Petrol Pump/q2684653106@ibl\",\"\",\"3,463.52\",\"\",\"\"],[\"02/09/2026\",\"CHQ DEP-484721-NEXT ERA GARMENTS\",\"1,17,386.27\",\"\",\"1,88,548.14\",\"\",\"\"],[\"02/09/2026\",\"NEFT DR-UTIB0001051-ITC LTD DISTRIBUTOR\",\"\",\"31,396.95\",\"\",\"\"],[\"02/09/2026\",\"UPI/CR/994752984421/Karan Pillai/karan@okicici\",\"\",\"2,637.58\",\"\",\"\"],[\"03/09/2026\",\"UPI/MEDPLUS-medplus66@axi-725265784129\",\"\",\"5,751.14\",\"\",\"\"],[\"03/09/2026\",\"UPI/DR/093969480685/Rapido/rapido3016@oksi\",\"\",\"2,073.08\",\"\",\"\"],[\"04/09/2026\",\"UPI/DR/437626119711/Parking Charges/q8550788826@ybl\",\"\",\"1,427.17\",\"\",\"\"],[\"04/09/2026\",\"UPI/DR/456467695627/Amit Yadav/amil.reddy@apl\",\"\",\"200.00\",\"\",\"\"],[\"04/09/2026\",\"NEFT CR-ICIC0005444-MAHAVIR TEXTILES PVT LTD\",\"\",\"7,837.13\",\"\",\"1,58,174.51\",\"\",\"\"],[\"05/09/2026\",\"IMPS/P2A/237381870536/Amit Gupta/Fees\",\"\",\"6,000.00\",\"\",\"\"],[\"05/09/2026\",\"NACH DR-MAHINDRA FINANCE-VEHICLE LOAN EMI\",\"\",\"14,600.00\",\"\",\"\"],[\"05/09/2026\",\"UPI/DR/501236773893/Maa Durga Dairy/maa8563@apl\",\"\",\"456.28\",\"\",\"\"],[\"05/09/2026\",\"UPI/DR/992203436754/Nykaa/nykaa.khan@ybl\",\"\",\"2,102.90\",\"\",\"\"],[\"05/09/2026\",\"NEFT CR-YESB0003153-NEXT ERA GARMENTS\",\"1,14,176.47\",\"\",\"2,49,191.80\",\"\",\"\"],[\"05/09/2026\",\"NEFT DR-BARB0008451-SURAT POLY PACK\",\"\",\"1,28,973.68\",\"\",\"\"],[\"06/09/2026\",\"UPI/KHAN LAUNDRY-khan@paytm-891418422125\",\"\",\"1,733.90\",\"\",\"\"],[\"07/09/2026\",\"UPI-FILPKART-filpkart.singh@okicici-724108189815\",\"\",\"1,798.86\",\"\",\"\"],[\"07/09/2026\",\"UPI/CR/429877408927/Amit Yadav/q2868303543@apl\",\"\",\"500.00\",\"\",\"\"],[\"07/09/2026\",\"CASH DEPOSIT-PATNA BRANCH\",\"\",\"12,000.00\",\"\",\"\"],[\"08/09/2026\",\"UPI/DR/428141909255/Cafe Coffee Day/cafe@ibl\",\"\",\"1,739.24\",\"\",\"\"],[\"08/09/2026\",\"UPI/DR/519548689171/Starpubs/starpubs1602@okicici\",\"\",\"2,399.81\",\"\",\"\"],[\"09/09/2026\",\"UPI/DR/033713799697/Netmeds/netmeds.verma@ybl\",\"\",\"141.89\",\"\",\"\"],[\"09/09/2026\",\"UPI/CR/205277867446/Rohan Reddy/rohan48@oksi\",\"\",\"176.29\",\"\",\"\"],[\"09/09/2026\",\"NACH DR-SBI BLUECHIP FUND-SIP\",\"\",\"500.00\",\"\",\"\"],[\"09/09/2026\",\"NACH DR-MOTILAL OSWAL MIDCAP-SIP\",\"\",\"2,000.00\",\"\",\"\"],[\"09/09/2026\",\"UPI/DR/714538781519/Mcdonalds/mcdonalds.bhatti@ybl\",\"\",\"932.29\",\"\",\"\"],[\"09/09/2026\",\"CHQ PAID-207779-ITC LTD DISTRIBUTOR\",\"\",\"27,068.50\",\"\",\"\"],[\"09/09/2026\",\"UPI/CR/027250626513/Parking Charges/q0500076549@ybl\",\"\",\"1,081.94\",\"\",\"\"],[\"09/09/2026\",\"UPI/DR/815423019549/Swiggy/swiggy6174@icici\",\"\",\"591.57\",\"\",\"\"],[\"09/09/2026\",\"UPI/DR/513554066627/KIc India/q3789114936@ibl\",\"\",\"509.09\",\"\",\"\"],[\"09/09/2026\",\"CHQ DEP-894132-NEXT ERA GARMENTS\",\"\",\"98,127.56\",\"\",\"\"],[\"09/09/2026\",\"BILLPAY-MAHANAGAR GAS LTD-0500422367\",\"\",\"2,157.79\",\"\",\"\"],[\"09/09/2026\",\"UPI/MEDPLUS-medplus419@ptys-242027190775\",\"\",\"3,269.06\",\"\",\"\"],[\"09/09/2026\",\"UPI/SHARMA GENERAL STORE-q1411256827@hdfcbank-712185518163\",\"\",\"289.87\",\"\",\"\"],[\"09/09/2026\",\"UPI-METRO CASH CARRY-metro.khan@paytm-149834771834\",\"\",\"573.37\",\"\",\"\"],[\"09/09/2026\",\"UPI-HALDIRAMS-q0415247427@ibl-972997483836\",\"\",\"365.99\",\"\",\"\"],[\"09/09/2026\",\"UPI/DR/473557548207/Zepto/q5297709445@hdfcbank\",\"\",\"3,121.63\",\"\",\"\"],[\"09/09/2026\",\"CHQ PAID-561619-ALOK INDUSTRIES\",\"\",\"51,860.31\",\"\",\"\"]]}"
+  },
+  {
+   "page": 2,
+   "rows": 58,
+   "seconds": 215.8,
+   "raw": "{\"header\":null,\"rows\":[[\"14/09/2026\",\"CASH DEPOSIT-PATNA BRANCH\",\"12,000.00\",\"\",\"40,886.86\"],[\"16/09/2026\",\"UPI-DOMINOS PIZZA-dominos.yadav@apl-671123243833\",\"\",\"248.60\",\"\",\"14,638.26\"],[\"16/09/2026\",\"CHQ PAID-903908-SURAT POLY PACK\",\"86,535.80\",\"\",\"54,104.46\"],[\"16/09/2026\",\"CASH DEPOSIT-PATNA BRANCH\",\"\",\"40,000.00\",\"\",\"94,102.46\"],[\"17/09/2026\",\"UPI/CR/416070131397/Amit Yadav/amil@ibl\",\"\",\"1,200.00\",\"\",\"95,302.26\"],[\"18/09/2026\",\"UPI-DMART-dmart23@oicicici-453519537862\",\"\",\"579.19\",\"\",\"94,723.27\"],[\"19/09/2026\",\"UPI/DR/228921068412/Annapurna Tiffin/q3425277936@oakxis\",\"\",\"1,477.52\",\"\",\"93,245.75\"],[\"19/09/2026\",\"UPI/DR/642755366225/Rapido/q102038887@oksbi\",\"\",\"5,300.37\",\"\",\"87,945.38\"],[\"19/09/2026\",\"UPI/DR/218460741716/Khan Laundry/khan@ibl\",\"\",\"482.57\",\"\",\"87,462.81\"],[\"19/09/2026\",\"UPI/DR/200766134127/Myntra/q4802345869@oksbi\",\"\",\"814.67\",\"\",\"86,648.14\"],[\"19/09/2026\",\"CHQ DEP-205007-GOKUL FASHION HOUSE\",\"\",\"21,568.55\",\"\",\"1,081,266.69\"],[\"20/09/2026\",\"BILLPAY-DELHI JAL BOARD-6236297491\",\"\",\"348.46\",\"\",\"1,07,868.23\"],[\"20/09/2026\",\"UPI-JO RECHARGE-q6628334258@apl-000744986591\",\"\",\"629.22\",\"\",\"1,07,239.01\"],[\"20/09/2026\",\"UPI/310904538920/Dominos Pizza/q5051870472@ybl\",\"\",\"346.10\",\"\",\"1,06,892.19\"],[\"20/09/2026\",\"UPI/DR/401447842313/Chayos/q4149640941@oicicici\",\"\",\"192.97\",\"\",\"1,06,699.94\"],[\"20/09/2026\",\"UPI-IRCTC-ircot57@axl-256075263168\",\"\",\"3,018.11\",\"\",\"1,03,681.83\"],[\"21/09/2026\",\"UPI-COFFEE DAY-cafe.bhatt@ici-cilin7562942641\",\"\",\"6,179.56\",\"\",\"97,502.27\"],[\"21/09/2026\",\"UPI-ZOMATO-zomato7166@oicicici-429195778361\",\"\",\"181.98\",\"\",\"97,320.29\"],[\"21/09/2026\",\"NEFT CR-ICIC0006938-GOKUL FASHION HOUSE\",\"\",\"92,338.46\",\"\",\"1,89,658.75\"],[\"21/09/2026\",\"NEFT DR-BARB000685-ALOK INDUSTRIES\",\"\",\"1,06,132.56\",\"\",\"83,526.19\"],[\"21/09/2026\",\"CASH DEPOSIT-PATNA BRANCH\",\"\",\"12,000.00\",\"\",\"95,526.19\"],[\"21/09/2026\",\"UPI/CR/631532407294/Ajay Chauhan/ajay.singh@oakxis\",\"\",\"1,329.03\",\"\",\"96,855.22\"],[\"21/09/2026\",\"UPI-RAJU TEA STALL-raju@axl-150730740401\",\"\",\"600.13\",\"\",\"96,255.09\"],[\"21/09/2026\",\"UPI-PARKING CHARGES-parking@apl-78625944109\",\"\",\"316.88\",\"\",\"95,936.21\"],[\"21/09/2026\",\"UPI/DR/089055890126/Metro Cash Carry/q4899312554@paytm\",\"\",\"292.27\",\"\",\"95,645.94\"],[\"21/09/2026\",\"ATM WDL-PATNA-5XXXXXXX9752\",\"\",\"2,000.00\",\"\",\"93,645.94\"],[\"21/09/2026\",\"NEFT CR-KKBK0000081-PATEL BROTHERS\",\"\",\"62,137.36\",\"\",\"1,55,783.30\"],[\"23/09/2026\",\"UPI/DR/055889101275/Bookmyshow/bookmyshow@ybl\",\"\",\"2,045.40\",\"\",\"1,53,737.90\"],[\"23/09/2026\",\"UPI/DR/487266366733/Starbucks/q0134951584@oicicici\",\"\",\"238.12\",\"\",\"1,53,499.78\"],[\"23/09/2026\",\"POS 5XXXXXXX9752 MAKEMYTRIP\",\"\",\"3,876.52\",\"\",\"1,49,623.26\"],[\"23/09/2026\",\"NEFT CR-FDRL0002301-MAHAVIR TEXTILES PVT LTD\",\"\",\"1,39,893.21\",\"\",\"2,89,516.47\"],[\"24/09/2026\",\"UPI/CR/254296936558/Imran Shah/imran.patel@paytm\",\"\",\"1,182.36\",\"\",\"2,90,698.83\"],[\"25/09/2026\",\"UPI/DR/86542484069/Shell India/q0395104053@ibl\",\"\",\"6,215.48\",\"\",\"2,84,483.35\"],[\"25/09/2026\",\"UPI/DR/670422883546/Dominos Pizza/dominos@hdfcbank\",\"\",\"1,348.92\",\"\",\"2,83,134.43\"],[\"25/09/2026\",\"UPI-KHAN LAUNDRY-khan.naidu@ibl-040003005491\",\"\",\"1,280.05\",\"\",\"2,81,854.38\"],[\"25/09/2026\",\"UPI-ANAPURNA TIFFIN-anapurna50@ptys-844108838597\",\"\",\"368.69\",\"\",\"2,81,485.69\"],[\"25/09/2026\",\"ATM WDL-PATNA-5XXXXXXX9752\",\"\",\"5,000.00\",\"\",\"2,76,485.69\"],[\"26/09/2026\",\"RTGS CR-NEW ERA GARMENTS-551079571\",\"\",\"1,59,561.85\",\"\",\"4,36,047.54\"],[\"27/09/2026\",\"UPI/DR/699328126971/Uber India/uber@hdfcbank\",\"\",\"1,387.79\",\"\",\"4,34,659.75\"],[\"27/09/2026\",\"UPI/DR/581344764602/Nykaa/q1050224696@oicicici\",\"\",\"4,119.60\",\"\",\"4,30,540.15\"],[\"27/09/2026\",\"UPI/DR/981824776998/Reliance Fresh/reliance3356@apl\",\"\",\"630.23\",\"\",\"2,90,909.92\"],[\"27/09/2026\",\"NEFT CR-ICIC0006109-MAHAVIR TEXTILES PVT LTD\",\"\",\"1,32,382.40\",\"\",\"5,62,292.32\"],[\"27/09/2026\",\"CHQ PAID-976069-SURAT POLY PACK\",\"\",\"48,496.66\",\"\",\"4,64,673.80\"],[\"27/09/2026\",\"UPI/CR/287170636832/Anjali Nair/anjali.mehta@ybl\",\"\",\"811.38\",\"\",\"4,65,485.18\"],[\"28/09/2026\",\"SMS ALERT CHARGES INCL GST SEP26\",\"\",\"23.60\",\"\",\"4,65,461.58\"],[\"28/09/2026\",\"UPI/DR/889991871983/Uber India/uber@hdfcbank\",\"\",\"2,525.07\",\"\",\"4,62,936.51\"],[\"28/09/2026\",\"UPI-BARBEQUE NATION-barbeque21@hdfcbank-837305052174\",\"\",\"4,131.05\",\"\",\"4,58,805.46\"],[\"28/09/2026\",\"UPI/DR/949539031974/Apollo Pharmacy/apollo1777@oicicici\",\"\",\"230.87\",\"\",\"4,58,574.59\"],[\"28/09/2026\",\"UPI/DR/24156961048/Shell India/q1534219526@ibl\",\"\",\"3,781.01\",\"\",\"4,54,793.58\"],[\"28/09/2026\",\"UPI/DR/927419118024/Amit Yadav/amil@hdfcbank\",\"\",\"2,500.00\",\"\",\"4,57,293.58\"],[\"28/09/2026\",\"NEFT CR-KKBK0000275-SURAT POLY PACK\",\"\",\"48,496.66\",\"\",\"4,08,796.92\"],[\"28/09/2026\",\"UPI/CR/422308512153/Rohan Reddy/rohan.chauhan@ybl\",\"\",\"2,227.52\",\"\",\"4,11,024.44\"],[\"30/09/2026\",\"SB INTEREST CREDIT\",\"\",\"918.02\",\"\",\"4,11,942.46\"],[\"30/09/2026\",\"UPI/DR/609755929185/Flipkart/flipkart4651@iciic\",\"576.24\",\"\",\"4,11,366.22\"],[\"30/09/2026\",\"UPI-BIGBASKET-bigbasket1142@iciic-565467397732\",\"\",\"1,910.62\",\"\",\"4,09,455.60\"],[\"30/09/2026\",\"UPI/DR/447204663481/Annapurna Tiffin/annapurna.malhotra@ibl\",\"\",\"4,959.02\",\"\",\"4,04,496.58\"],[\"30/09/2026\",\"UPI-SWIGGY-q6438599013@okabi-329514877920\",\"\",\"1,436.92\",\"\",\"4,03,059.66\"],[\"30/09/2026\",\"UPI/DR/171387841626/Amit Yadav/amil.kulkarni@ptys\",\"\",\"500.00\",\"\",\"4,02,559.66\"]]}"
+  },
+  {
+   "page": 3,
+   "rows": 1,
+   "seconds": 13.2,
+   "raw": "{\"header\":null,\"rows\":[[\"30/09/2026\",\"UPI/CR/864165320492/Amit Yadav/amit.reddy@icici\",\"500.00\",\"\",\"4,03,059.66\"]}"
+  }
+ ],
+ "seconds": 372.8,
+ "notes": [
+  "Row repair: 58 row(s) had their numbers in the wrong columns (an extra reference-number column or a missing empty cell) and were put back using the balance arithmetic.",
+  "Skipped 1 'opening balance' / summary line(s) that are not transactions."
+ ],
+ "opening_balance": null,
+ "opening_source": "printed",
+ "closing_balance": null,
+ "summary": {
+  "transactions": 102,
+  "verified": null,
+  "trust_score": null,
+  "auto_corrected": 58,
+  "needs_review": 0,
+  "anomalies": 2,
+  "total_debit": 591150556676.15,
+  "total_credit": 1321463.06,
+  "closing_matches": null,
+  "spend_by_category": [
+   [
+    "NEFT sent",
+    591150340398.35
+   ],
+   [
+    "Cheque paid",
+    135032.46
+   ],
+   [
+    "UPI to merchant",
+    57845.22
+   ],
+   [
+    "Cash deposit",
+    12000.0
+   ],
+   [
+    "ATM withdrawal",
+    7000.0
+   ],
+   [
+    "Card payment (POS)",
+    3876.52
+   ],
+   [
+    "UPI to person",
+    500.0
+   ],
+   [
+    "Bank charges",
+    23.6
+   ]
+  ],
+  "income_by_category": [
+   [
+    "NEFT received",
+    701298.53
+   ],
+   [
+    "Cheque deposited",
+    237082.38
+   ],
+   [
+    "RTGS received",
+    159561.85
+   ],
+   [
+    "Cheque paid",
+    78928.81
+   ],
+   [
+    "Cash deposit",
+    64000.0
+   ],
+   [
+    "UPI received",
+    54067.22
+   ],
+   [
+    "Loan EMI (NACH)",
+    14600.0
+   ],
+   [
+    "IMPS sent",
+    6000.0
+   ],
+   [
+    "Bill payment",
+    2506.25
+   ],
+   [
+    "SIP / investment",
+    2500.0
+   ],
+   [
+    "Interest",
+    918.02
+   ]
+  ]
+ },
+ "transactions": [
+  {
+   "date": "2026-09-01",
+   "narration": "UPI/DR/346217654521/Hp Petrol Pump/hp32@ybl",
+   "debit": null,
+   "credit": 1861.57,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.519
+  },
+  {
+   "date": "2026-09-01",
+   "narration": "UPI/DR-MART-q0422134640@ptys-681389502096",
+   "debit": null,
+   "credit": 877.08,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.528
+  },
+  {
+   "date": "2026-09-01",
+   "narration": "UPI/DR/68803544240/Ola Cabs/ola@okaxis",
+   "debit": null,
+   "credit": 269.37,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.563
+  },
+  {
+   "date": "2026-09-01",
+   "narration": "UPI/DR/225349467546/Rapido/rapido3016@oksi",
+   "debit": null,
+   "credit": 3972.44,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.534
+  },
+  {
+   "date": "2026-09-01",
+   "narration": "NEFT DR-INDB0005219-GST PAYMENT",
+   "debit": 591150177932.0,
+   "credit": null,
+   "balance": 104794.15,
+   "flags": [],
+   "category": "neft_out",
+   "category_label": "NEFT sent",
+   "status": "ok",
+   "anomaly": true,
+   "anomaly_reason": "much larger than this account's usual neft out",
+   "anomaly_score": 1.68
+  },
+  {
+   "date": "2026-09-02",
+   "narration": "UPI/DR/010696377012/Hp Petrol Pump/q2684653106@ibl",
+   "debit": null,
+   "credit": 3463.52,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.527
+  },
+  {
+   "date": "2026-09-02",
+   "narration": "CHQ DEP-484721-NEXT ERA GARMENTS",
+   "debit": null,
+   "credit": 117386.27,
+   "balance": 188548.14,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "cheque_dep",
+   "category_label": "Cheque deposited",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.586
+  },
+  {
+   "date": "2026-09-02",
+   "narration": "NEFT DR-UTIB0001051-ITC LTD DISTRIBUTOR",
+   "debit": null,
+   "credit": 31396.95,
+   "balance": null,
+   "flags": [],
+   "category": "neft_in",
+   "category_label": "NEFT received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.588
+  },
+  {
+   "date": "2026-09-02",
+   "narration": "UPI/CR/994752984421/Karan Pillai/karan@okicici",
+   "debit": null,
+   "credit": 2637.58,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.52
+  },
+  {
+   "date": "2026-09-03",
+   "narration": "UPI/MEDPLUS-medplus66@axi-725265784129",
+   "debit": null,
+   "credit": 5751.14,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.534
+  },
+  {
+   "date": "2026-09-03",
+   "narration": "UPI/DR/093969480685/Rapido/rapido3016@oksi",
+   "debit": null,
+   "credit": 2073.08,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.506
+  },
+  {
+   "date": "2026-09-04",
+   "narration": "UPI/DR/437626119711/Parking Charges/q8550788826@ybl",
+   "debit": null,
+   "credit": 1427.17,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.502
+  },
+  {
+   "date": "2026-09-04",
+   "narration": "UPI/DR/456467695627/Amit Yadav/amil.reddy@apl",
+   "debit": null,
+   "credit": 200.0,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.561
+  },
+  {
+   "date": "2026-09-04",
+   "narration": "NEFT CR-ICIC0005444-MAHAVIR TEXTILES PVT LTD",
+   "debit": 7837.13,
+   "credit": null,
+   "balance": 158174.51,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_out",
+   "category_label": "NEFT sent",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.512
+  },
+  {
+   "date": "2026-09-05",
+   "narration": "IMPS/P2A/237381870536/Amit Gupta/Fees",
+   "debit": null,
+   "credit": 6000.0,
+   "balance": null,
+   "flags": [],
+   "category": "imps_out",
+   "category_label": "IMPS sent",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.572
+  },
+  {
+   "date": "2026-09-05",
+   "narration": "NACH DR-MAHINDRA FINANCE-VEHICLE LOAN EMI",
+   "debit": null,
+   "credit": 14600.0,
+   "balance": null,
+   "flags": [],
+   "category": "nach_emi",
+   "category_label": "Loan EMI (NACH)",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.582
+  },
+  {
+   "date": "2026-09-05",
+   "narration": "UPI/DR/501236773893/Maa Durga Dairy/maa8563@apl",
+   "debit": null,
+   "credit": 456.28,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.525
+  },
+  {
+   "date": "2026-09-05",
+   "narration": "UPI/DR/992203436754/Nykaa/nykaa.khan@ybl",
+   "debit": null,
+   "credit": 2102.9,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.497
+  },
+  {
+   "date": "2026-09-05",
+   "narration": "NEFT CR-YESB0003153-NEXT ERA GARMENTS",
+   "debit": null,
+   "credit": 114176.47,
+   "balance": 249191.8,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_in",
+   "category_label": "NEFT received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.556
+  },
+  {
+   "date": "2026-09-05",
+   "narration": "NEFT DR-BARB0008451-SURAT POLY PACK",
+   "debit": null,
+   "credit": 128973.68,
+   "balance": null,
+   "flags": [],
+   "category": "neft_in",
+   "category_label": "NEFT received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.558
+  },
+  {
+   "date": "2026-09-06",
+   "narration": "UPI/KHAN LAUNDRY-khan@paytm-891418422125",
+   "debit": null,
+   "credit": 1733.9,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.494
+  },
+  {
+   "date": "2026-09-07",
+   "narration": "UPI-FILPKART-filpkart.singh@okicici-724108189815",
+   "debit": null,
+   "credit": 1798.86,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.494
+  },
+  {
+   "date": "2026-09-07",
+   "narration": "UPI/CR/429877408927/Amit Yadav/q2868303543@apl",
+   "debit": null,
+   "credit": 500.0,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.515
+  },
+  {
+   "date": "2026-09-07",
+   "narration": "CASH DEPOSIT-PATNA BRANCH",
+   "debit": null,
+   "credit": 12000.0,
+   "balance": null,
+   "flags": [],
+   "category": "cash_dep",
+   "category_label": "Cash deposit",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.645
+  },
+  {
+   "date": "2026-09-08",
+   "narration": "UPI/DR/428141909255/Cafe Coffee Day/cafe@ibl",
+   "debit": null,
+   "credit": 1739.24,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.491
+  },
+  {
+   "date": "2026-09-08",
+   "narration": "UPI/DR/519548689171/Starpubs/starpubs1602@okicici",
+   "debit": null,
+   "credit": 2399.81,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.493
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/DR/033713799697/Netmeds/netmeds.verma@ybl",
+   "debit": null,
+   "credit": 141.89,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.568
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/CR/205277867446/Rohan Reddy/rohan48@oksi",
+   "debit": null,
+   "credit": 176.29,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.555
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "NACH DR-SBI BLUECHIP FUND-SIP",
+   "debit": null,
+   "credit": 500.0,
+   "balance": null,
+   "flags": [],
+   "category": "sip",
+   "category_label": "SIP / investment",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.567
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "NACH DR-MOTILAL OSWAL MIDCAP-SIP",
+   "debit": null,
+   "credit": 2000.0,
+   "balance": null,
+   "flags": [],
+   "category": "sip",
+   "category_label": "SIP / investment",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.548
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/DR/714538781519/Mcdonalds/mcdonalds.bhatti@ybl",
+   "debit": null,
+   "credit": 932.29,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.491
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "CHQ PAID-207779-ITC LTD DISTRIBUTOR",
+   "debit": null,
+   "credit": 27068.5,
+   "balance": null,
+   "flags": [],
+   "category": "cheque_paid",
+   "category_label": "Cheque paid",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.57
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/CR/027250626513/Parking Charges/q0500076549@ybl",
+   "debit": null,
+   "credit": 1081.94,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.488
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/DR/815423019549/Swiggy/swiggy6174@icici",
+   "debit": null,
+   "credit": 591.57,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.504
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/DR/513554066627/KIc India/q3789114936@ibl",
+   "debit": null,
+   "credit": 509.09,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.508
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "CHQ DEP-894132-NEXT ERA GARMENTS",
+   "debit": null,
+   "credit": 98127.56,
+   "balance": null,
+   "flags": [],
+   "category": "cheque_dep",
+   "category_label": "Cheque deposited",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.559
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "BILLPAY-MAHANAGAR GAS LTD-0500422367",
+   "debit": null,
+   "credit": 2157.79,
+   "balance": null,
+   "flags": [],
+   "category": "bill_pay",
+   "category_label": "Bill payment",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.547
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/MEDPLUS-medplus419@ptys-242027190775",
+   "debit": null,
+   "credit": 3269.06,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.499
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/SHARMA GENERAL STORE-q1411256827@hdfcbank-712185518163",
+   "debit": null,
+   "credit": 289.87,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.526
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI-METRO CASH CARRY-metro.khan@paytm-149834771834",
+   "debit": null,
+   "credit": 573.37,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.505
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI-HALDIRAMS-q0415247427@ibl-972997483836",
+   "debit": null,
+   "credit": 365.99,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.52
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "UPI/DR/473557548207/Zepto/q5297709445@hdfcbank",
+   "debit": null,
+   "credit": 3121.63,
+   "balance": null,
+   "flags": [],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.499
+  },
+  {
+   "date": "2026-09-09",
+   "narration": "CHQ PAID-561619-ALOK INDUSTRIES",
+   "debit": null,
+   "credit": 51860.31,
+   "balance": null,
+   "flags": [],
+   "category": "cheque_paid",
+   "category_label": "Cheque paid",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.579
+  },
+  {
+   "date": "2026-09-14",
+   "narration": "CASH DEPOSIT-PATNA BRANCH",
+   "debit": 12000.0,
+   "credit": null,
+   "balance": 40886.86,
+   "flags": [],
+   "category": "cash_dep",
+   "category_label": "Cash deposit",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.642
+  },
+  {
+   "date": "2026-09-16",
+   "narration": "UPI-DOMINOS PIZZA-dominos.yadav@apl-671123243833",
+   "debit": 248.6,
+   "credit": null,
+   "balance": 14638.26,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.506
+  },
+  {
+   "date": "2026-09-16",
+   "narration": "CHQ PAID-903908-SURAT POLY PACK",
+   "debit": 86535.8,
+   "credit": null,
+   "balance": 54104.46,
+   "flags": [],
+   "category": "cheque_paid",
+   "category_label": "Cheque paid",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.555
+  },
+  {
+   "date": "2026-09-16",
+   "narration": "CASH DEPOSIT-PATNA BRANCH",
+   "debit": null,
+   "credit": 40000.0,
+   "balance": 94102.46,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "cash_dep",
+   "category_label": "Cash deposit",
+   "status": "corrected",
+   "anomaly": true,
+   "anomaly_reason": "much larger than this account's usual cash dep",
+   "anomaly_score": 1.688
+  },
+  {
+   "date": "2026-09-17",
+   "narration": "UPI/CR/416070131397/Amit Yadav/amil@ibl",
+   "debit": null,
+   "credit": 1200.0,
+   "balance": 95302.26,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.483
+  },
+  {
+   "date": "2026-09-18",
+   "narration": "UPI-DMART-dmart23@oicicici-453519537862",
+   "debit": 579.19,
+   "credit": null,
+   "balance": 94723.27,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.476
+  },
+  {
+   "date": "2026-09-19",
+   "narration": "UPI/DR/228921068412/Annapurna Tiffin/q3425277936@oakxis",
+   "debit": 1477.52,
+   "credit": null,
+   "balance": 93245.75,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.461
+  },
+  {
+   "date": "2026-09-19",
+   "narration": "UPI/DR/642755366225/Rapido/q102038887@oksbi",
+   "debit": 5300.37,
+   "credit": null,
+   "balance": 87945.38,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.468
+  },
+  {
+   "date": "2026-09-19",
+   "narration": "UPI/DR/218460741716/Khan Laundry/khan@ibl",
+   "debit": 482.57,
+   "credit": null,
+   "balance": 87462.81,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.482
+  },
+  {
+   "date": "2026-09-19",
+   "narration": "UPI/DR/200766134127/Myntra/q4802345869@oksbi",
+   "debit": 814.67,
+   "credit": null,
+   "balance": 86648.14,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.47
+  },
+  {
+   "date": "2026-09-19",
+   "narration": "CHQ DEP-205007-GOKUL FASHION HOUSE",
+   "debit": null,
+   "credit": 21568.55,
+   "balance": null,
+   "flags": [],
+   "category": "cheque_dep",
+   "category_label": "Cheque deposited",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.581
+  },
+  {
+   "date": "2026-09-20",
+   "narration": "BILLPAY-DELHI JAL BOARD-6236297491",
+   "debit": null,
+   "credit": 348.46,
+   "balance": 107868.23,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "bill_pay",
+   "category_label": "Bill payment",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.573
+  },
+  {
+   "date": "2026-09-20",
+   "narration": "UPI-JO RECHARGE-q6628334258@apl-000744986591",
+   "debit": 629.22,
+   "credit": null,
+   "balance": 107239.01,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.474
+  },
+  {
+   "date": "2026-09-20",
+   "narration": "UPI/310904538920/Dominos Pizza/q5051870472@ybl",
+   "debit": 346.1,
+   "credit": null,
+   "balance": 106892.19,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.495
+  },
+  {
+   "date": "2026-09-20",
+   "narration": "UPI/DR/401447842313/Chayos/q4149640941@oicicici",
+   "debit": 192.97,
+   "credit": null,
+   "balance": 106699.94,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.522
+  },
+  {
+   "date": "2026-09-20",
+   "narration": "UPI-IRCTC-ircot57@axl-256075263168",
+   "debit": 3018.11,
+   "credit": null,
+   "balance": 103681.83,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.457
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "UPI-COFFEE DAY-cafe.bhatt@ici-cilin7562942641",
+   "debit": 6179.56,
+   "credit": null,
+   "balance": 97502.27,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.47
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "UPI-ZOMATO-zomato7166@oicicici-429195778361",
+   "debit": 181.98,
+   "credit": null,
+   "balance": 97320.29,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.523
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "NEFT CR-ICIC0006938-GOKUL FASHION HOUSE",
+   "debit": null,
+   "credit": 92338.46,
+   "balance": 189658.75,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_in",
+   "category_label": "NEFT received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.544
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "NEFT DR-BARB000685-ALOK INDUSTRIES",
+   "debit": 106132.56,
+   "credit": null,
+   "balance": 83526.19,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_out",
+   "category_label": "NEFT sent",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.514
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "CASH DEPOSIT-PATNA BRANCH",
+   "debit": null,
+   "credit": 12000.0,
+   "balance": 95526.19,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "cash_dep",
+   "category_label": "Cash deposit",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.641
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "UPI/CR/631532407294/Ajay Chauhan/ajay.singh@oakxis",
+   "debit": null,
+   "credit": 1329.03,
+   "balance": 96855.22,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.489
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "UPI-RAJU TEA STALL-raju@axl-150730740401",
+   "debit": 600.13,
+   "credit": null,
+   "balance": 96255.09,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.476
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "UPI-PARKING CHARGES-parking@apl-78625944109",
+   "debit": 316.88,
+   "credit": null,
+   "balance": 95936.21,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.493
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "UPI/DR/089055890126/Metro Cash Carry/q4899312554@paytm",
+   "debit": 292.27,
+   "credit": null,
+   "balance": 95645.94,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.495
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "ATM WDL-PATNA-5XXXXXXX9752",
+   "debit": 2000.0,
+   "credit": null,
+   "balance": 93645.94,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "atm_wdl",
+   "category_label": "ATM withdrawal",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.499
+  },
+  {
+   "date": "2026-09-21",
+   "narration": "NEFT CR-KKBK0000081-PATEL BROTHERS",
+   "debit": null,
+   "credit": 62137.36,
+   "balance": 155783.3,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_in",
+   "category_label": "NEFT received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.549
+  },
+  {
+   "date": "2026-09-23",
+   "narration": "UPI/DR/055889101275/Bookmyshow/bookmyshow@ybl",
+   "debit": 2045.4,
+   "credit": null,
+   "balance": 153737.9,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.46
+  },
+  {
+   "date": "2026-09-23",
+   "narration": "UPI/DR/487266366733/Starbucks/q0134951584@oicicici",
+   "debit": 238.12,
+   "credit": null,
+   "balance": 153499.78,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.51
+  },
+  {
+   "date": "2026-09-23",
+   "narration": "POS 5XXXXXXX9752 MAKEMYTRIP",
+   "debit": 3876.52,
+   "credit": null,
+   "balance": 149623.26,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "pos",
+   "category_label": "Card payment (POS)",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.518
+  },
+  {
+   "date": "2026-09-23",
+   "narration": "NEFT CR-FDRL0002301-MAHAVIR TEXTILES PVT LTD",
+   "debit": null,
+   "credit": 139893.21,
+   "balance": 289516.47,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_in",
+   "category_label": "NEFT received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.557
+  },
+  {
+   "date": "2026-09-24",
+   "narration": "UPI/CR/254296936558/Imran Shah/imran.patel@paytm",
+   "debit": null,
+   "credit": 1182.36,
+   "balance": 290698.83,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.489
+  },
+  {
+   "date": "2026-09-25",
+   "narration": "UPI/DR/86542484069/Shell India/q0395104053@ibl",
+   "debit": 6215.48,
+   "credit": null,
+   "balance": 284483.35,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.484
+  },
+  {
+   "date": "2026-09-25",
+   "narration": "UPI/DR/670422883546/Dominos Pizza/dominos@hdfcbank",
+   "debit": 1348.92,
+   "credit": null,
+   "balance": 283134.43,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.471
+  },
+  {
+   "date": "2026-09-25",
+   "narration": "UPI-KHAN LAUNDRY-khan.naidu@ibl-040003005491",
+   "debit": 1280.05,
+   "credit": null,
+   "balance": 281854.38,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.475
+  },
+  {
+   "date": "2026-09-25",
+   "narration": "UPI-ANAPURNA TIFFIN-anapurna50@ptys-844108838597",
+   "debit": 368.69,
+   "credit": null,
+   "balance": 281485.69,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.5
+  },
+  {
+   "date": "2026-09-25",
+   "narration": "ATM WDL-PATNA-5XXXXXXX9752",
+   "debit": 5000.0,
+   "credit": null,
+   "balance": 276485.69,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "atm_wdl",
+   "category_label": "ATM withdrawal",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.519
+  },
+  {
+   "date": "2026-09-26",
+   "narration": "RTGS CR-NEW ERA GARMENTS-551079571",
+   "debit": null,
+   "credit": 159561.85,
+   "balance": 436047.54,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "rtgs_in",
+   "category_label": "RTGS received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.626
+  },
+  {
+   "date": "2026-09-27",
+   "narration": "UPI/DR/699328126971/Uber India/uber@hdfcbank",
+   "debit": 1387.79,
+   "credit": null,
+   "balance": 434659.75,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.484
+  },
+  {
+   "date": "2026-09-27",
+   "narration": "UPI/DR/581344764602/Nykaa/q1050224696@oicicici",
+   "debit": 4119.6,
+   "credit": null,
+   "balance": 430540.15,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.487
+  },
+  {
+   "date": "2026-09-27",
+   "narration": "UPI/DR/981824776998/Reliance Fresh/reliance3356@apl",
+   "debit": 630.23,
+   "credit": null,
+   "balance": 290909.92,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.494
+  },
+  {
+   "date": "2026-09-27",
+   "narration": "NEFT CR-ICIC0006109-MAHAVIR TEXTILES PVT LTD",
+   "debit": null,
+   "credit": 132382.4,
+   "balance": 562292.32,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_in",
+   "category_label": "NEFT received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.567
+  },
+  {
+   "date": "2026-09-27",
+   "narration": "CHQ PAID-976069-SURAT POLY PACK",
+   "debit": 48496.66,
+   "credit": null,
+   "balance": 464673.8,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "cheque_paid",
+   "category_label": "Cheque paid",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.553
+  },
+  {
+   "date": "2026-09-27",
+   "narration": "UPI/CR/287170636832/Anjali Nair/anjali.mehta@ybl",
+   "debit": null,
+   "credit": 811.38,
+   "balance": 465485.18,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.503
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "SMS ALERT CHARGES INCL GST SEP26",
+   "debit": 23.6,
+   "credit": null,
+   "balance": 465461.58,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "charge",
+   "category_label": "Bank charges",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.645
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "UPI/DR/889991871983/Uber India/uber@hdfcbank",
+   "debit": 2525.07,
+   "credit": null,
+   "balance": 462936.51,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.491
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "UPI-BARBEQUE NATION-barbeque21@hdfcbank-837305052174",
+   "debit": 4131.05,
+   "credit": null,
+   "balance": 458805.46,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.494
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "UPI/DR/949539031974/Apollo Pharmacy/apollo1777@oicicici",
+   "debit": 230.87,
+   "credit": null,
+   "balance": 458574.59,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.535
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "UPI/DR/24156961048/Shell India/q1534219526@ibl",
+   "debit": 3781.01,
+   "credit": null,
+   "balance": 454793.58,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.495
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "UPI/DR/927419118024/Amit Yadav/amil@hdfcbank",
+   "debit": null,
+   "credit": 2500.0,
+   "balance": 457293.58,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.517
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "NEFT CR-KKBK0000275-SURAT POLY PACK",
+   "debit": 48496.66,
+   "credit": null,
+   "balance": 408796.92,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "neft_out",
+   "category_label": "NEFT sent",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.525
+  },
+  {
+   "date": "2026-09-28",
+   "narration": "UPI/CR/422308512153/Rohan Reddy/rohan.chauhan@ybl",
+   "debit": null,
+   "credit": 2227.52,
+   "balance": 411024.44,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.517
+  },
+  {
+   "date": "2026-09-30",
+   "narration": "SB INTEREST CREDIT",
+   "debit": null,
+   "credit": 918.02,
+   "balance": 411942.46,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "interest",
+   "category_label": "Interest",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.586
+  },
+  {
+   "date": "2026-09-30",
+   "narration": "UPI/DR/609755929185/Flipkart/flipkart4651@iciic",
+   "debit": 576.24,
+   "credit": null,
+   "balance": 411366.22,
+   "flags": [],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "ok",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.518
+  },
+  {
+   "date": "2026-09-30",
+   "narration": "UPI-BIGBASKET-bigbasket1142@iciic-565467397732",
+   "debit": 1910.62,
+   "credit": null,
+   "balance": 409455.6,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.507
+  },
+  {
+   "date": "2026-09-30",
+   "narration": "UPI/DR/447204663481/Annapurna Tiffin/annapurna.malhotra@ibl",
+   "debit": 4959.02,
+   "credit": null,
+   "balance": 404496.58,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.513
+  },
+  {
+   "date": "2026-09-30",
+   "narration": "UPI-SWIGGY-q6438599013@okabi-329514877920",
+   "debit": 1436.92,
+   "credit": null,
+   "balance": 403059.66,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.506
+  },
+  {
+   "date": "2026-09-30",
+   "narration": "UPI/DR/171387841626/Amit Yadav/amil.kulkarni@ptys",
+   "debit": 500.0,
+   "credit": null,
+   "balance": 402559.66,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_out",
+   "category_label": "UPI to person",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.579
+  },
+  {
+   "date": "2026-09-30",
+   "narration": "UPI/CR/864165320492/Amit Yadav/amit.reddy@icici",
+   "debit": null,
+   "credit": 500.0,
+   "balance": 403059.66,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.538
+  }
+ ],
+ "answer_key": {
+  "answer_rows": 102,
+  "read_rows": 102,
+  "numbers_right": 39,
+  "fully_right": 17,
+  "numbers_pct": 38.2,
+  "fully_pct": 16.7
+ },
+ "saved": {
+  "label": "Kirana-shop owner · digital PDF",
+  "detail": "3 pages · 102 transactions · large business payments",
+  "reader": "Fine-tuned Qwen2-VL-2B",
+  "backend": "vlm",
+  "source": "demo/samples/B_shop_statement.pdf",
+  "hardware": "Tesla T4",
+  "created": "2026-11-18T18:15:53",
+  "settings": {
+   "adapter": "lora_r8",
+   "four_bit": false,
+   "max_pixels": 900000
+  },
+  "reprocessed": "2026-11-18T18:30:10"
+ }
+}

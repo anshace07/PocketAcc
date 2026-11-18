@@ -1,0 +1,828 @@
+{
+ "file": "A_page1_photo_medium.jpg",
+ "backend": "vlm",
+ "bank": null,
+ "bank_label": "Unknown bank",
+ "pages": [
+  {
+   "page": 1,
+   "rows": 46,
+   "seconds": 151.4,
+   "raw": "{\"header\":null,\"rows\":[[\"01/10/2026\",\"OPENING BALANCE B/F\",\"63,943.14\",\"\",\"48,250.75\"],[\"01/10/2026\",\"NEFT CR-UTIB000068-RELIANCE RETAIL LTD-SALARY\",\"1,12,193.89\",\"\",\"63,943.14\"],[\"01/10/2026\",\"UPI-RAPIDO-rapidop.kulkarni@okaxis-574386308027\",\"1,10,863.55\",\"\",\"167.63\"],[\"01/10/2026\",\"UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici\",\"1,09,920.91\",\"\",\"1,162.71\"],[\"01/10/2026\",\"UPI-NETMDS-netmeds84@axl-146613520156\",\"1,07,920.91\",\"\",\"942.64\"],[\"01/10/2026\",\"UPI/DR/14295446658/Rohan Mehta/g5701546919@ybl\",\"\",\"2,000.00\"],[\"01/04/2026\",\"POS SXXX0XXX479 APOLLO PHARMACY\",\"\",\"1,06,893.41\",\"\",\"2,007.50\"],[\"01/04/2026\",\"IMPS/P2A/43540362787/Ritu Khan/Loan Repay\",\"\",\"9,000.00\"],[\"01/05/2026\",\"NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI\",\"95,493.41\",\"\",\"2,400.00\"],[\"01/05/2026\",\"NACH DR-HDFC BANK LTD-HOME LOAN EMI\",\"87,073.41\",\"\",\"4,820.00\"],[\"01/05/2026\",\"UPI/DR/22430358318/Venkat Fernandes/venkati@ptys\",\"\",\"1,000.00\"],[\"01/06/2026\",\"UPI-IRCTC-q3443259319@ybl-591282546291\",\"\",\"110.43\"],[\"01/06/2026\",\"ATM WDL-GUWAHATI-SXXX0XXX0479\",\"\",\"2,000.00\"],[\"01/07/2026\",\"UPI/DR/51447955460/Amma Mess/amma7958@icici\",\"83,504.65\",\"\",\"458.33\"],[\"01/08/2026\",\"UPI/DR/922008263422/Shell India/shehel6749@apjl\",\"\",\"320.85\"],[\"01/09/2026\",\"UPI/DR/330105395028/Medplus/medplus19@paytm\",\"\",\"626.50\"],[\"01/10/2026\",\"UPI-IRCTC-irctc73@apl-398984150498\",\"\",\"3,554.21\"],[\"01/10/2026\",\"UPI-IRCTC-irctc94@bbl-755916343951\",\"\",\"345.81\"],[\"01/10/2026\",\"UPI/DR/456316337201/Gupta Fruits/q1458882818@ptys\",\"\",\"1,678.37\"],[\"01/10/2026\",\"UPI/DR/76270229826/Gupta Fruits/gupta@okaxis\",\"\",\"1,678.37\"],[\"01/12/2026\",\"UPI-ANANPUNRA TIFINN-q7514720867@hdfcbank-657343314741\",\"\",\"164.59\"],[\"01/14/2026\",\"UPI-UBER INDIA-uber5686@axl-390306674565\",\"\",\"344.95\"],[\"01/15/2026\",\"UPI-RELIANCE FRESH-q2174137569@icici-591165014656\",\"\",\"2,399.01\"],[\"01/15/2026\",\"UPI-BOOKMYSHOW-bookmyshow@paytm-490695795246\",\"\",\"558.33\"],[\"01/15/2026\",\"UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532\",\"\",\"2,167.80\"],[\"01/16/2026\",\"UPI/DR/228757271074/Sharma General Store/q6235719370@okabi\",\"\",\"3,901.11\"],[\"01/16/2026\",\"UPI-PARKING CHARGES-parking.rao@okaxis-797567058470\",\"\",\"656.68\"],[\"01/17/2026\",\"UPI-NYKAA-nykaa@icici-925607500371\",\"\",\"174.11\"],[\"01/18/2026\",\"UPI/DR/455517839948/Amma Mess/amma69@icici\",\"\",\"2,161.71\"],[\"01/19/2026\",\"UPI-METRO CASH CARRY-metro2701@axl-003741451339\",\"\",\"372.37\"],[\"01/20/2026\",\"BILLPAY-MAHANAGAR GAS LTD-0534303096\",\"\",\"204.92\"],[\"01/21/2026\",\"UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl\",\"\",\"2,552.35\"],[\"01/21/2026\",\"UPI-RAJU TEA STALL-raju30@paytm-5805899785\",\"\",\"3,722.50\"],[\"01/21/2026\",\"UPI-STARBUCKS-q784544502@icici-030505767805\",\"\",\"117.44\"],[\"01/22/2026\",\"UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171\",\"\",\"2,930.13\"],[\"01/22/2026\",\"UPI-SAI MEDICAL-q774277654@okicici-573205523643\",\"\",\"119.99\"],[\"01/22/2026\",\"UPI/DR/014243286426/Nykaa/q611640782@hdfcbank\",\"\",\"381.11\"],[\"01/25/2026\",\"UPI/DR/723506644997/Annapuma Tiffin/annapuma95@axl\",\"\",\"340.73\"],[\"01/25/2026\",\"UPI/DR/905168295516/Gupta Fruits/gupta96@paytm\",\"\",\"861.87\"],[\"01/26/2026\",\"UPI-BALAJI SWEETS-q1830850935@bbl-767921078998\",\"\",\"47.93\"],[\"01/28/2026\",\"SMS ALERT CHARGES INCL GST OCT26\",\"\",\"118.00\"],[\"01/28/2026\",\"UPI/DR/682648348583/Dmart/dmart@apl\",\"\",\"762.38\"],[\"01/28/2026\",\"UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975\",\"\",\"2,107.61\"],[\"01/29/2026\",\"UPI/DR/330434070982/Blinkit/blinkit@okabi\",\"\",\"207.38\"],[\"01/30/2026\",\"UPI/DR/413770531702/Bikanervala/bikanervala3986@icici\",\"\",\"2,849.89\"],[\"01/30/2026\",\"UPI/DR/495645963243/Decathlon/decathlon@hdfcbank\",\"\",\"593.19\"]]}"
+  }
+ ],
+ "seconds": 152.6,
+ "notes": [
+  "Opening balance taken from the 'OPENING BALANCE B/F' line the model copied.",
+  "The model put the amount and balance columns the other way round on this statement; the balance arithmetic detected it and the columns were swapped back.",
+  "Row repair: 8 row(s) had their numbers in the wrong columns (an extra reference-number column or a missing empty cell) and were put back using the balance arithmetic.",
+  "Skipped 1 'opening balance' / summary line(s) that are not transactions.",
+  "LOW TRUST: only 2.2% of rows pass the balance check. The page is probably too damaged for this reader - retake the photo flat and well lit, upload the PDF, or use the GPU model."
+ ],
+ "opening_balance": 48250.75,
+ "opening_source": "printed",
+ "closing_balance": null,
+ "summary": {
+  "transactions": 45,
+  "verified": 1,
+  "trust_score": 2.2,
+  "auto_corrected": 1,
+  "needs_review": 44,
+  "anomalies": 0,
+  "total_debit": 11958.81,
+  "total_credit": 117075.76,
+  "closing_matches": null,
+  "spend_by_category": [
+   [
+    "Loan EMI (NACH)",
+    7220.0
+   ],
+   [
+    "UPI to merchant",
+    2731.31
+   ],
+   [
+    "Card payment (POS)",
+    2007.5
+   ]
+  ],
+  "income_by_category": [
+   [
+    "Salary",
+    63943.14
+   ],
+   [
+    "UPI received",
+    41809.7
+   ],
+   [
+    "IMPS sent",
+    9000.0
+   ],
+   [
+    "ATM withdrawal",
+    2000.0
+   ],
+   [
+    "Bill payment",
+    204.92
+   ],
+   [
+    "Bank charges",
+    118.0
+   ]
+  ]
+ },
+ "transactions": [
+  {
+   "date": "2026-10-01",
+   "narration": "NEFT CR-UTIB000068-RELIANCE RETAIL LTD-SALARY",
+   "debit": null,
+   "credit": 63943.14,
+   "balance": 112193.89,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns"
+   ],
+   "category": "salary",
+   "category_label": "Salary",
+   "status": "corrected",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.654
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI-RAPIDO-rapidop.kulkarni@okaxis-574386308027",
+   "debit": 167.63,
+   "credit": null,
+   "balance": 110863.55,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns",
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.515
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+   "debit": 1162.71,
+   "credit": null,
+   "balance": 109920.91,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns",
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.517
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI-NETMDS-netmeds84@axl-146613520156",
+   "debit": 942.64,
+   "credit": null,
+   "balance": 107920.91,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns",
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.504
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI/DR/14295446658/Rohan Mehta/g5701546919@ybl",
+   "debit": null,
+   "credit": 2000.0,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.553
+  },
+  {
+   "date": "2026-04-01",
+   "narration": "POS SXXX0XXX479 APOLLO PHARMACY",
+   "debit": 2007.5,
+   "credit": null,
+   "balance": 106893.41,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns",
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "pos",
+   "category_label": "Card payment (POS)",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.538
+  },
+  {
+   "date": "2026-04-01",
+   "narration": "IMPS/P2A/43540362787/Ritu Khan/Loan Repay",
+   "debit": null,
+   "credit": 9000.0,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "imps_out",
+   "category_label": "IMPS sent",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.624
+  },
+  {
+   "date": "2026-05-01",
+   "narration": "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+   "debit": 2400.0,
+   "credit": null,
+   "balance": 95493.41,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns",
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "nach_emi",
+   "category_label": "Loan EMI (NACH)",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.538
+  },
+  {
+   "date": "2026-05-01",
+   "narration": "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+   "debit": 4820.0,
+   "credit": null,
+   "balance": 87073.41,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns",
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "nach_emi",
+   "category_label": "Loan EMI (NACH)",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.571
+  },
+  {
+   "date": "2026-05-01",
+   "narration": "UPI/DR/22430358318/Venkat Fernandes/venkati@ptys",
+   "debit": null,
+   "credit": 1000.0,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.531
+  },
+  {
+   "date": "2026-06-01",
+   "narration": "UPI-IRCTC-q3443259319@ybl-591282546291",
+   "debit": null,
+   "credit": 110.43,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.533
+  },
+  {
+   "date": "2026-06-01",
+   "narration": "ATM WDL-GUWAHATI-SXXX0XXX0479",
+   "debit": null,
+   "credit": 2000.0,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "atm_wdl",
+   "category_label": "ATM withdrawal",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.595
+  },
+  {
+   "date": "2026-07-01",
+   "narration": "UPI/DR/51447955460/Amma Mess/amma7958@icici",
+   "debit": 458.33,
+   "credit": null,
+   "balance": 83504.65,
+   "flags": [
+    "columns re-aligned -> amount and balance moved to their columns",
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2m",
+   "category_label": "UPI to merchant",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.49
+  },
+  {
+   "date": "2026-08-01",
+   "narration": "UPI/DR/922008263422/Shell India/shehel6749@apjl",
+   "debit": null,
+   "credit": 320.85,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.526
+  },
+  {
+   "date": "2026-09-01",
+   "narration": "UPI/DR/330105395028/Medplus/medplus19@paytm",
+   "debit": null,
+   "credit": 626.5,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.529
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI-IRCTC-irctc73@apl-398984150498",
+   "debit": null,
+   "credit": 3554.21,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.578
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI-IRCTC-irctc94@bbl-755916343951",
+   "debit": null,
+   "credit": 345.81,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.523
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI/DR/456316337201/Gupta Fruits/q1458882818@ptys",
+   "debit": null,
+   "credit": 1678.37,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.547
+  },
+  {
+   "date": "2026-10-01",
+   "narration": "UPI/DR/76270229826/Gupta Fruits/gupta@okaxis",
+   "debit": null,
+   "credit": 1678.37,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.547
+  },
+  {
+   "date": "2026-12-01",
+   "narration": "UPI-ANANPUNRA TIFINN-q7514720867@hdfcbank-657343314741",
+   "debit": null,
+   "credit": 164.59,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.526
+  },
+  {
+   "date": null,
+   "narration": "UPI-UBER INDIA-uber5686@axl-390306674565",
+   "debit": null,
+   "credit": 344.95,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.48
+  },
+  {
+   "date": null,
+   "narration": "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+   "debit": null,
+   "credit": 2399.01,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.522
+  },
+  {
+   "date": null,
+   "narration": "UPI-BOOKMYSHOW-bookmyshow@paytm-490695795246",
+   "debit": null,
+   "credit": 558.33,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.481
+  },
+  {
+   "date": null,
+   "narration": "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+   "debit": null,
+   "credit": 2167.8,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.515
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/228757271074/Sharma General Store/q6235719370@okabi",
+   "debit": null,
+   "credit": 3901.11,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.546
+  },
+  {
+   "date": null,
+   "narration": "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+   "debit": null,
+   "credit": 656.68,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.479
+  },
+  {
+   "date": null,
+   "narration": "UPI-NYKAA-nykaa@icici-925607500371",
+   "debit": null,
+   "credit": 174.11,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.48
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/455517839948/Amma Mess/amma69@icici",
+   "debit": null,
+   "credit": 2161.71,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.515
+  },
+  {
+   "date": null,
+   "narration": "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+   "debit": null,
+   "credit": 372.37,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.479
+  },
+  {
+   "date": null,
+   "narration": "BILLPAY-MAHANAGAR GAS LTD-0534303096",
+   "debit": null,
+   "credit": 204.92,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "bill_pay",
+   "category_label": "Bill payment",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.547
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+   "debit": null,
+   "credit": 2552.35,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.528
+  },
+  {
+   "date": null,
+   "narration": "UPI-RAJU TEA STALL-raju30@paytm-5805899785",
+   "debit": null,
+   "credit": 3722.5,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.542
+  },
+  {
+   "date": null,
+   "narration": "UPI-STARBUCKS-q784544502@icici-030505767805",
+   "debit": null,
+   "credit": 117.44,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.484
+  },
+  {
+   "date": null,
+   "narration": "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+   "debit": null,
+   "credit": 2930.13,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.533
+  },
+  {
+   "date": null,
+   "narration": "UPI-SAI MEDICAL-q774277654@okicici-573205523643",
+   "debit": null,
+   "credit": 119.99,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.482
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/014243286426/Nykaa/q611640782@hdfcbank",
+   "debit": null,
+   "credit": 381.11,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.479
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/723506644997/Annapuma Tiffin/annapuma95@axl",
+   "debit": null,
+   "credit": 340.73,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.479
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+   "debit": null,
+   "credit": 861.87,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.486
+  },
+  {
+   "date": null,
+   "narration": "UPI-BALAJI SWEETS-q1830850935@bbl-767921078998",
+   "debit": null,
+   "credit": 47.93,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.504
+  },
+  {
+   "date": null,
+   "narration": "SMS ALERT CHARGES INCL GST OCT26",
+   "debit": null,
+   "credit": 118.0,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "charge",
+   "category_label": "Bank charges",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.558
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/682648348583/Dmart/dmart@apl",
+   "debit": null,
+   "credit": 762.38,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.483
+  },
+  {
+   "date": null,
+   "narration": "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+   "debit": null,
+   "credit": 2107.61,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.514
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/330434070982/Blinkit/blinkit@okabi",
+   "debit": null,
+   "credit": 207.38,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.479
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+   "debit": null,
+   "credit": 2849.89,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.532
+  },
+  {
+   "date": null,
+   "narration": "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+   "debit": null,
+   "credit": 593.19,
+   "balance": null,
+   "flags": [
+    "UNRESOLVED - needs human review"
+   ],
+   "category": "upi_p2p_in",
+   "category_label": "UPI received",
+   "status": "review",
+   "anomaly": false,
+   "anomaly_reason": "",
+   "anomaly_score": 0.48
+  }
+ ],
+ "answer_key": {
+  "answer_rows": 46,
+  "read_rows": 45,
+  "numbers_right": 1,
+  "fully_right": 0,
+  "numbers_pct": 2.2,
+  "fully_pct": 0.0
+ },
+ "saved": {
+  "label": "Page 1 as a phone photo · medium damage",
+  "detail": "tilt, blur, stamp, shadow, JPEG",
+  "reader": "Fine-tuned Qwen2-VL-2B",
+  "backend": "vlm",
+  "source": "demo/samples/A_page1_photo_medium.jpg",
+  "hardware": "Tesla T4",
+  "created": "2026-11-18T18:15:04",
+  "settings": {
+   "adapter": "lora_r8",
+   "four_bit": false,
+   "max_pixels": 900000
+  },
+  "reprocessed": "2026-11-18T18:30:10"
+ }
+}

@@ -258,6 +258,12 @@ def build_result(file, backend, header, rows, bank_found, info, models, t0=None)
     if backend == "vlm":
         rows, rep = repair_rows(rows, header.get("opening_balance"))
         repaired = rep["fixed_rows"]
+        if parse_amount(header.get("opening_balance")) is None and rep.get("opening") is not None:
+            header["opening_balance"] = f"{rep['opening']:.2f}"
+            notes.append("Opening balance taken from the 'OPENING BALANCE B/F' line the model copied.")
+        if rep.get("swapped"):
+            notes.append("The model put the amount and balance columns the other way round on this statement; "
+                         "the balance arithmetic detected it and the columns were swapped back.")
         if rep["fixed"]:
             notes.append(f"Row repair: {rep['fixed']} row(s) had their numbers in the wrong columns (an extra "
                          "reference-number column or a missing empty cell) and were put back using the balance "
