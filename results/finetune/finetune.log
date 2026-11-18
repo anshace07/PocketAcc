@@ -1,0 +1,14 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795012122.370818    1206 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.34s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.16s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.34s/it]
+trainable params: 2,179,072 || all params: 2,211,164,672 || trainable%: 0.0985
+train pages 300  val pages 24
+step 5/38  train_loss 0.1350  val_loss   mem 13.31 GB  908s
+step 10/38  train_loss 0.1118  val_loss   mem 14.13 GB  1828s
+step 15/38  train_loss 0.0918  val_loss   mem 14.13 GB  2706s
+step 20/38  train_loss 0.0788  val_loss   mem 14.13 GB  3601s
+step 25/38  train_loss 0.0711  val_loss 0.06  mem 14.13 GB  4696s
+step 30/38  train_loss 0.0704  val_loss   mem 14.14 GB  5616s
+step 35/38  train_loss 0.0708  val_loss   mem 14.14 GB  6492s
+done. best val loss 0.05997274055844173

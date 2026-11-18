@@ -30,6 +30,8 @@ LAYOUT = {
     "ICICI": [("sr", 4), ("value_date", 9), ("date", 9), ("ref", 8), ("narration", 36), ("debit", 11), ("credit", 11), ("balance", 12)],
     "BOB": [("sr", 4), ("date", 9), ("value_date", 9), ("narration", 36), ("ref", 9), ("debit", 10), ("credit", 10), ("balance", 12)],
     "AXIS": [("date", 9), ("ref", 8), ("narration", 40), ("debit", 11), ("credit", 11), ("balance", 12), ("init", 5)],
+    # made-up bank of the demo statements (scripts/make_demo_statements.py); not used in any evaluation
+    "DEMO": [("date", 9), ("narration", 40), ("ref", 13), ("debit", 11), ("credit", 11), ("balance", 12)],
 }
 HEADER_WORDS = {"debit": ["withdrawal", "debit", "amount(dr)", "dr)"], "credit": ["deposit", "credit", "amount(cr)", "cr)"],
                 "balance": ["balance"], "narration": ["narration", "description", "remarks", "particulars"]}

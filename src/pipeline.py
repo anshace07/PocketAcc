@@ -19,7 +19,7 @@ import json
 import os
 import re
 import time
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 import cv2
@@ -33,13 +33,25 @@ from preprocess import prepare, render_pages
 
 ROOT = Path(__file__).resolve().parents[1]
 MODELS = Path(os.environ.get("POCKETACC_MODELS", ROOT / "models"))
-ADAPTER = os.environ.get("POCKETACC_ADAPTER", str(ROOT / "runs/lora_r8/best_adapter"))
 
-IFSC_PREFIX = {"HDFC": "HDFC", "SBIN": "SBI", "PUNB": "PNB", "KKBK": "KOTAK", "ICIC": "ICICI", "BARB": "BOB", "UTIB": "AXIS"}
+
+def find_adapter():
+    """The trained LoRA adapter: $POCKETACC_ADAPTER, else a fresh training run, else the copy kept in the repo."""
+    for p in (os.environ.get("POCKETACC_ADAPTER"), ROOT / "runs/lora_r8/best_adapter", ROOT / "adapters/lora_r8"):
+        if p and (Path(p) / "adapter_config.json").exists():
+            return str(p)
+    return str(ROOT / "runs/lora_r8/best_adapter")
+
+
+ADAPTER = find_adapter()
+
+# "DEMO" = PocketAcc Demo Bank, the made-up bank of the demo statements (scripts/make_demo_statements.py)
+IFSC_PREFIX = {"HDFC": "HDFC", "SBIN": "SBI", "PUNB": "PNB", "KKBK": "KOTAK", "ICIC": "ICICI", "BARB": "BOB", "UTIB": "AXIS",
+               "DEMO": "DEMO"}
 BANK_NAMES = {"HDFC BANK": "HDFC", "STATE BANK OF INDIA": "SBI", "PUNJAB NATIONAL": "PNB", "KOTAK": "KOTAK",
-              "ICICI": "ICICI", "BANK OF BARODA": "BOB", "AXIS BANK": "AXIS"}
+              "ICICI": "ICICI", "BANK OF BARODA": "BOB", "AXIS BANK": "AXIS", "POCKETACC DEMO BANK": "DEMO"}
 BANK_LABEL = {"HDFC": "HDFC Bank", "SBI": "State Bank of India", "PNB": "Punjab National Bank", "KOTAK": "Kotak Mahindra Bank",
-              "ICICI": "ICICI Bank", "BOB": "Bank of Baroda", "AXIS": "Axis Bank"}
+              "ICICI": "ICICI Bank", "BOB": "Bank of Baroda", "AXIS": "Axis Bank", "DEMO": "PocketAcc Demo Bank (sample)"}
 CATEGORY_LABEL = {
     "upi_p2m": "UPI to merchant", "upi_p2p_in": "UPI received", "upi_p2p_out": "UPI to person", "neft_in": "NEFT received",
     "neft_out": "NEFT sent", "imps_out": "IMPS sent", "rtgs_in": "RTGS received", "salary": "Salary", "atm_wdl": "ATM withdrawal",
@@ -96,7 +108,7 @@ def detect_bank(lines):
     for ln in lines:
         up = ln.upper()
         if "IFSC" in up:
-            m = re.search(r"(HDFC|SBIN|PUNB|KKBK|ICIC|BARB|UTIB)\s?0[A-Z0-9]{6}", up)
+            m = re.search(r"(HDFC|SBIN|PUNB|KKBK|ICIC|BARB|UTIB|DEMO)\s?0[A-Z0-9]{6}", up)
             if m:
                 return IFSC_PREFIX[m.group(1)]
     head = " ".join(lines[:15]).upper()
@@ -144,17 +156,34 @@ def read_tesseract(pages, bank=None):
 _EXTRACTOR = None
 
 
+def vlm_settings():
+    """Same settings as the evaluation (results/score24_ft_*.json): pages resized to <= 900,000 pixels
+    (what the adapter was trained on) and, on a GPU with >= 12 GB (Kaggle T4), the base model in fp16
+    (--no-4bit). A small laptop GPU (e.g. 6 GB RTX 3050) loads it in 4-bit instead.
+    Override with POCKETACC_4BIT=0/1 and POCKETACC_MAX_PIXELS."""
+    import torch
+    env = os.environ.get("POCKETACC_4BIT")
+    if env is not None:
+        four_bit = env == "1"
+    else:
+        four_bit = torch.cuda.get_device_properties(0).total_memory < 12e9
+    return four_bit, int(os.environ.get("POCKETACC_MAX_PIXELS", 900_000))
+
+
 def read_vlm(pages):
     global _EXTRACTOR
     if _EXTRACTOR is None:
         from extract import Extractor
-        _EXTRACTOR = Extractor(adapter=ADAPTER)
+        four_bit, max_pixels = vlm_settings()
+        _EXTRACTOR = Extractor(adapter=ADAPTER, four_bit=four_bit, max_pixels=max_pixels)
     header, rows, info = None, [], []
     for i, page in enumerate(pages):
-        _, parsed, secs = _EXTRACTOR.read_image(page)
-        header = header or parsed.get("header")
-        rows += parsed.get("rows", [])
-        info.append({"page": i + 1, "rows": len(parsed.get("rows", [])), "seconds": round(secs, 1)})
+        raw, parsed, secs = _EXTRACTOR.read_image(page)
+        page_header, page_rows = parsed.get("header"), parsed.get("rows")
+        page_rows = [r for r in page_rows if isinstance(r, (list, tuple))] if isinstance(page_rows, list) else []
+        header = header or (page_header if isinstance(page_header, dict) else None)
+        rows += page_rows
+        info.append({"page": i + 1, "rows": len(page_rows), "seconds": round(secs, 1), "raw": raw})
     header = header or {}
     return header, rows, detect_bank(["IFSC " + str(header.get("ifsc", "")), str(header.get("bank", ""))]), info
 
@@ -235,6 +264,54 @@ def analyse(path, backend="auto", bank=None, models=None):
         },
         "transactions": txns,
     }
+
+
+# ------------------------------------------------------------------------------- demo answer key
+
+DEMO_KEY_FILE = ROOT / "demo/samples/ground_truth.json"
+
+
+def _norm_text(s):
+    return re.sub(r"\s+", "", str(s or "")).upper()
+
+
+def _money_key(t):
+    r = lambda x: None if x is None else round(float(x), 2)      # noqa: E731
+    return t.get("date"), r(t.get("debit")), r(t.get("credit")), r(t.get("balance"))
+
+
+def answer_key_check(txns, key):
+    """Compare what was read with the demo statement's answer key (made by the generator).
+    numbers_right: date, debit, credit and balance all exactly right.
+    fully_right:   the same, and the narration text exactly right too."""
+    gt = key["transactions"]
+    nums = Counter(_money_key(t) for t in txns)
+    full = Counter(_money_key(t) + (_norm_text(t.get("narration")),) for t in txns)
+    numbers_right = fully_right = 0
+    for g in gt:
+        kn = _money_key(g)
+        if nums[kn] > 0:
+            nums[kn] -= 1
+            numbers_right += 1
+        kf = kn + (_norm_text(g["narration"]),)
+        if full[kf] > 0:
+            full[kf] -= 1
+            fully_right += 1
+    n = max(len(gt), 1)
+    return {"answer_rows": len(gt), "read_rows": len(txns), "numbers_right": numbers_right,
+            "fully_right": fully_right, "numbers_pct": round(100 * numbers_right / n, 1),
+            "fully_pct": round(100 * fully_right / n, 1)}
+
+
+def attach_answer_key(result, name=None):
+    """If the file is one of the demo statements, add result['answer_key'] (else leave it out)."""
+    name = Path(name or result.get("file", "")).name
+    if not DEMO_KEY_FILE.exists():
+        return result
+    keys = json.load(open(DEMO_KEY_FILE))
+    if name in keys:
+        result["answer_key"] = answer_key_check(result["transactions"], keys[name])
+    return result
 
 
 # ------------------------------------------------------------------------------- exports

@@ -1,0 +1,51 @@
+{
+ "file": "A_page1_photo_heavy.jpg",
+ "backend": "tesseract",
+ "bank": "DEMO",
+ "bank_label": "PocketAcc Demo Bank (sample)",
+ "pages": [
+  {
+   "page": 1,
+   "rows": 0,
+   "seconds": 3.9
+  }
+ ],
+ "seconds": 3.9,
+ "notes": [
+  "No transactions were read. Try a straighter, brighter photo, or a PDF."
+ ],
+ "opening_balance": null,
+ "opening_source": "printed",
+ "closing_balance": null,
+ "summary": {
+  "transactions": 0,
+  "verified": null,
+  "trust_score": null,
+  "auto_corrected": 0,
+  "needs_review": 0,
+  "anomalies": 0,
+  "total_debit": 0,
+  "total_credit": 0,
+  "closing_matches": null,
+  "spend_by_category": [],
+  "income_by_category": []
+ },
+ "transactions": [],
+ "answer_key": {
+  "answer_rows": 46,
+  "read_rows": 0,
+  "numbers_right": 0,
+  "fully_right": 0,
+  "numbers_pct": 0.0,
+  "fully_pct": 0.0
+ },
+ "saved": {
+  "label": "Page 1 as a phone photo · heavy damage",
+  "detail": "strong tilt, blur, stamp, noise, low JPEG quality",
+  "reader": "Tesseract OCR",
+  "backend": "tesseract",
+  "source": "demo/samples/A_page1_photo_heavy.jpg",
+  "hardware": "CPU",
+  "created": "2026-11-18T17:55:11"
+ }
+}

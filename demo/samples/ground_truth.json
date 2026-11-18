@@ -1,0 +1,5628 @@
+{
+ "A_salaried_statement.pdf": {
+  "account": {
+   "bank": "PocketAcc Demo Bank",
+   "bank_code": "DEMO",
+   "holder": "Karan Sharma",
+   "occupation": "Software Engineer",
+   "profile": "salaried",
+   "city": "Guwahati",
+   "account_no": "95908814627165",
+   "account_type": "SAVINGS",
+   "ifsc": "DEMO0391976",
+   "period_from": "2026-10-01",
+   "period_to": "2026-10-31"
+  },
+  "summary": {
+   "opening_balance": 48250.75,
+   "closing_balance": 40815.96,
+   "pages": 2,
+   "transaction_count": 49,
+   "only_page": null
+  },
+  "transactions": [
+   {
+    "sr": 1,
+    "date": "2026-10-01",
+    "narration": "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+    "reference": "929920414173",
+    "debit": null,
+    "credit": 63943.14,
+    "balance": 112193.89,
+    "txn_type": "salary",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+     "",
+     "63,943.14",
+     "1,12,193.89"
+    ]
+   },
+   {
+    "sr": 2,
+    "date": "2026-10-01",
+    "narration": "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+    "reference": "574386308027",
+    "debit": 167.63,
+    "credit": null,
+    "balance": 112026.26,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+     "167.63",
+     "",
+     "1,12,026.26"
+    ]
+   },
+   {
+    "sr": 3,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+    "reference": "556099273558",
+    "debit": 1162.71,
+    "credit": null,
+    "balance": 110863.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+     "1,162.71",
+     "",
+     "1,10,863.55"
+    ]
+   },
+   {
+    "sr": 4,
+    "date": "2026-10-01",
+    "narration": "UPI-NETMEDS-netmeds84@axl-146613520156",
+    "reference": "146613520156",
+    "debit": 942.64,
+    "credit": null,
+    "balance": 109920.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-NETMEDS-netmeds84@axl-146613520156",
+     "942.64",
+     "",
+     "1,09,920.91"
+    ]
+   },
+   {
+    "sr": 5,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+    "reference": "142954466589",
+    "debit": 2000,
+    "credit": null,
+    "balance": 107920.91,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+     "2,000.00",
+     "",
+     "1,07,920.91"
+    ]
+   },
+   {
+    "sr": 6,
+    "date": "2026-10-04",
+    "narration": "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+    "reference": "375872224726",
+    "debit": 1027.5,
+    "credit": null,
+    "balance": 106893.41,
+    "txn_type": "pos",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "04/10/2026",
+     "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+     "1,027.50",
+     "",
+     "1,06,893.41"
+    ]
+   },
+   {
+    "sr": 7,
+    "date": "2026-10-05",
+    "narration": "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+    "reference": "435403672877",
+    "debit": 9000,
+    "credit": null,
+    "balance": 97893.41,
+    "txn_type": "imps_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+     "9,000.00",
+     "",
+     "97,893.41"
+    ]
+   },
+   {
+    "sr": 8,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+    "reference": "477194659953",
+    "debit": 2400,
+    "credit": null,
+    "balance": 95493.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+     "2,400.00",
+     "",
+     "95,493.41"
+    ]
+   },
+   {
+    "sr": 9,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+    "reference": "551375484430",
+    "debit": 8420,
+    "credit": null,
+    "balance": 87073.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+     "8,420.00",
+     "",
+     "87,073.41"
+    ]
+   },
+   {
+    "sr": 10,
+    "date": "2026-10-05",
+    "narration": "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+    "reference": "224330538818",
+    "debit": 1000,
+    "credit": null,
+    "balance": 86073.41,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+     "1,000.00",
+     "",
+     "86,073.41"
+    ]
+   },
+   {
+    "sr": 11,
+    "date": "2026-10-06",
+    "narration": "UPI-IRCTC-q3443259319@ybl-591282546291",
+    "reference": "591282546291",
+    "debit": 110.43,
+    "credit": null,
+    "balance": 85962.98,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "UPI-IRCTC-q3443259319@ybl-591282546291",
+     "110.43",
+     "",
+     "85,962.98"
+    ]
+   },
+   {
+    "sr": 12,
+    "date": "2026-10-06",
+    "narration": "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+    "reference": "",
+    "debit": 2000,
+    "credit": null,
+    "balance": 83962.98,
+    "txn_type": "atm_wdl",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+     "2,000.00",
+     "",
+     "83,962.98"
+    ]
+   },
+   {
+    "sr": 13,
+    "date": "2026-10-07",
+    "narration": "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+    "reference": "514479555460",
+    "debit": 458.33,
+    "credit": null,
+    "balance": 83504.65,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "07/10/2026",
+     "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+     "458.33",
+     "",
+     "83,504.65"
+    ]
+   },
+   {
+    "sr": 14,
+    "date": "2026-10-08",
+    "narration": "UPI/DR/922008263422/Shell India/shell6749@apl",
+    "reference": "922008263422",
+    "debit": 320.85,
+    "credit": null,
+    "balance": 83183.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "08/10/2026",
+     "UPI/DR/922008263422/Shell India/shell6749@apl",
+     "320.85",
+     "",
+     "83,183.80"
+    ]
+   },
+   {
+    "sr": 15,
+    "date": "2026-10-09",
+    "narration": "UPI/DR/330105395028/Medplus/medplus19@paytm",
+    "reference": "330105395028",
+    "debit": 626.5,
+    "credit": null,
+    "balance": 82557.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "09/10/2026",
+     "UPI/DR/330105395028/Medplus/medplus19@paytm",
+     "626.50",
+     "",
+     "82,557.30"
+    ]
+   },
+   {
+    "sr": 16,
+    "date": "2026-10-10",
+    "narration": "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+    "reference": "411745249607",
+    "debit": 3554.21,
+    "credit": null,
+    "balance": 79003.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/10/2026",
+     "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+     "3,554.21",
+     "",
+     "79,003.09"
+    ]
+   },
+   {
+    "sr": 17,
+    "date": "2026-10-11",
+    "narration": "UPI-IRCTC-irctc73@apl-398984150498",
+    "reference": "398984150498",
+    "debit": 395.16,
+    "credit": null,
+    "balance": 78607.93,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-IRCTC-irctc73@apl-398984150498",
+     "395.16",
+     "",
+     "78,607.93"
+    ]
+   },
+   {
+    "sr": 18,
+    "date": "2026-10-11",
+    "narration": "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+    "reference": "755916343951",
+    "debit": 345.81,
+    "credit": null,
+    "balance": 78262.12,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+     "345.81",
+     "",
+     "78,262.12"
+    ]
+   },
+   {
+    "sr": 19,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+    "reference": "456316337201",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 76583.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+     "1,678.37",
+     "",
+     "76,583.75"
+    ]
+   },
+   {
+    "sr": 20,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+    "reference": "762770229826",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 74905.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": true,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+     "1,678.37",
+     "",
+     "74,905.38"
+    ]
+   },
+   {
+    "sr": 21,
+    "date": "2026-10-12",
+    "narration": "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+    "reference": "657343314741",
+    "debit": 164.59,
+    "credit": null,
+    "balance": 74740.79,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "12/10/2026",
+     "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+     "164.59",
+     "",
+     "74,740.79"
+    ]
+   },
+   {
+    "sr": 22,
+    "date": "2026-10-14",
+    "narration": "UPI-UBER INDIA-uber5686@axl-390306674565",
+    "reference": "390306674565",
+    "debit": 344.95,
+    "credit": null,
+    "balance": 74395.84,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/10/2026",
+     "UPI-UBER INDIA-uber5686@axl-390306674565",
+     "344.95",
+     "",
+     "74,395.84"
+    ]
+   },
+   {
+    "sr": 23,
+    "date": "2026-10-15",
+    "narration": "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+    "reference": "591165014656",
+    "debit": 2399.01,
+    "credit": null,
+    "balance": 71996.83,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+     "2,399.01",
+     "",
+     "71,996.83"
+    ]
+   },
+   {
+    "sr": 24,
+    "date": "2026-10-15",
+    "narration": "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+    "reference": "490695759246",
+    "debit": 558.33,
+    "credit": null,
+    "balance": 71438.5,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+     "558.33",
+     "",
+     "71,438.50"
+    ]
+   },
+   {
+    "sr": 25,
+    "date": "2026-10-15",
+    "narration": "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+    "reference": "511474167532",
+    "debit": 2167.8,
+    "credit": null,
+    "balance": 69270.7,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+     "2,167.80",
+     "",
+     "69,270.70"
+    ]
+   },
+   {
+    "sr": 26,
+    "date": "2026-10-16",
+    "narration": "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+    "reference": "228757271074",
+    "debit": 3901.11,
+    "credit": null,
+    "balance": 65369.59,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+     "3,901.11",
+     "",
+     "65,369.59"
+    ]
+   },
+   {
+    "sr": 27,
+    "date": "2026-10-16",
+    "narration": "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+    "reference": "797567058470",
+    "debit": 656.68,
+    "credit": null,
+    "balance": 64712.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+     "656.68",
+     "",
+     "64,712.91"
+    ]
+   },
+   {
+    "sr": 28,
+    "date": "2026-10-17",
+    "narration": "UPI-NYKAA-nykaa@icici-925607500371",
+    "reference": "925607500371",
+    "debit": 174.11,
+    "credit": null,
+    "balance": 64538.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "17/10/2026",
+     "UPI-NYKAA-nykaa@icici-925607500371",
+     "174.11",
+     "",
+     "64,538.80"
+    ]
+   },
+   {
+    "sr": 29,
+    "date": "2026-10-18",
+    "narration": "UPI/DR/455517839948/Amma Mess/amma69@icici",
+    "reference": "455517839948",
+    "debit": 2161.71,
+    "credit": null,
+    "balance": 62377.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "18/10/2026",
+     "UPI/DR/455517839948/Amma Mess/amma69@icici",
+     "2,161.71",
+     "",
+     "62,377.09"
+    ]
+   },
+   {
+    "sr": 30,
+    "date": "2026-10-19",
+    "narration": "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+    "reference": "003741451339",
+    "debit": 372.37,
+    "credit": null,
+    "balance": 62004.72,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "19/10/2026",
+     "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+     "372.37",
+     "",
+     "62,004.72"
+    ]
+   },
+   {
+    "sr": 31,
+    "date": "2026-10-20",
+    "narration": "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+    "reference": "998568994378",
+    "debit": 204.92,
+    "credit": null,
+    "balance": 61799.8,
+    "txn_type": "bill_pay",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "20/10/2026",
+     "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+     "204.92",
+     "",
+     "61,799.80"
+    ]
+   },
+   {
+    "sr": 32,
+    "date": "2026-10-21",
+    "narration": "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+    "reference": "436879321846",
+    "debit": 2552.35,
+    "credit": null,
+    "balance": 59247.45,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+     "2,552.35",
+     "",
+     "59,247.45"
+    ]
+   },
+   {
+    "sr": 33,
+    "date": "2026-10-21",
+    "narration": "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+    "reference": "580859987515",
+    "debit": 3722.5,
+    "credit": null,
+    "balance": 55524.95,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+     "3,722.50",
+     "",
+     "55,524.95"
+    ]
+   },
+   {
+    "sr": 34,
+    "date": "2026-10-21",
+    "narration": "UPI-STARBUCKS-q9784544502@icici-035057678051",
+    "reference": "035057678051",
+    "debit": 117.44,
+    "credit": null,
+    "balance": 55407.51,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-STARBUCKS-q9784544502@icici-035057678051",
+     "117.44",
+     "",
+     "55,407.51"
+    ]
+   },
+   {
+    "sr": 35,
+    "date": "2026-10-21",
+    "narration": "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+    "reference": "014390253171",
+    "debit": 3290.13,
+    "credit": null,
+    "balance": 52117.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+     "3,290.13",
+     "",
+     "52,117.38"
+    ]
+   },
+   {
+    "sr": 36,
+    "date": "2026-10-22",
+    "narration": "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+    "reference": "573205523643",
+    "debit": 119.99,
+    "credit": null,
+    "balance": 51997.39,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+     "119.99",
+     "",
+     "51,997.39"
+    ]
+   },
+   {
+    "sr": 37,
+    "date": "2026-10-22",
+    "narration": "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+    "reference": "014243286426",
+    "debit": 381.11,
+    "credit": null,
+    "balance": 51616.28,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+     "381.11",
+     "",
+     "51,616.28"
+    ]
+   },
+   {
+    "sr": 38,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+    "reference": "723506644997",
+    "debit": 340.73,
+    "credit": null,
+    "balance": 51275.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+     "340.73",
+     "",
+     "51,275.55"
+    ]
+   },
+   {
+    "sr": 39,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+    "reference": "905168295516",
+    "debit": 861.87,
+    "credit": null,
+    "balance": 50413.68,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+     "861.87",
+     "",
+     "50,413.68"
+    ]
+   },
+   {
+    "sr": 40,
+    "date": "2026-10-26",
+    "narration": "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+    "reference": "767921078998",
+    "debit": 47.93,
+    "credit": null,
+    "balance": 50365.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "26/10/2026",
+     "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+     "47.93",
+     "",
+     "50,365.75"
+    ]
+   },
+   {
+    "sr": 41,
+    "date": "2026-10-28",
+    "narration": "SMS ALERT CHARGES INCL GST OCT26",
+    "reference": "",
+    "debit": 118.0,
+    "credit": null,
+    "balance": 50247.75,
+    "txn_type": "charge",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "SMS ALERT CHARGES INCL GST OCT26",
+     "118.00",
+     "",
+     "50,247.75"
+    ]
+   },
+   {
+    "sr": 42,
+    "date": "2026-10-28",
+    "narration": "UPI/DR/682648348583/Dmart/dmart@apl",
+    "reference": "682648348583",
+    "debit": 762.38,
+    "credit": null,
+    "balance": 49485.37,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI/DR/682648348583/Dmart/dmart@apl",
+     "762.38",
+     "",
+     "49,485.37"
+    ]
+   },
+   {
+    "sr": 43,
+    "date": "2026-10-28",
+    "narration": "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+    "reference": "639946257975",
+    "debit": 2107.61,
+    "credit": null,
+    "balance": 47377.76,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+     "2,107.61",
+     "",
+     "47,377.76"
+    ]
+   },
+   {
+    "sr": 44,
+    "date": "2026-10-29",
+    "narration": "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+    "reference": "330434070982",
+    "debit": 207.38,
+    "credit": null,
+    "balance": 47170.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "29/10/2026",
+     "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+     "207.38",
+     "",
+     "47,170.38"
+    ]
+   },
+   {
+    "sr": 45,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+    "reference": "413770531702",
+    "debit": 2849.89,
+    "credit": null,
+    "balance": 44320.49,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+     "2,849.89",
+     "",
+     "44,320.49"
+    ]
+   },
+   {
+    "sr": 46,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+    "reference": "495645963243",
+    "debit": 593.19,
+    "credit": null,
+    "balance": 43727.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+     "593.19",
+     "",
+     "43,727.30"
+    ]
+   },
+   {
+    "sr": 47,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/489121202359/Nykaa/nykaa17@apl",
+    "reference": "489121202359",
+    "debit": 1190.86,
+    "credit": null,
+    "balance": 42536.44,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/489121202359/Nykaa/nykaa17@apl",
+     "1,190.86",
+     "",
+     "42,536.44"
+    ]
+   },
+   {
+    "sr": 48,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/029618423896/Irctc/q7082509834@axl",
+    "reference": "029618423896",
+    "debit": 1404.64,
+    "credit": null,
+    "balance": 41131.8,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/029618423896/Irctc/q7082509834@axl",
+     "1,404.64",
+     "",
+     "41,131.80"
+    ]
+   },
+   {
+    "sr": 49,
+    "date": "2026-10-31",
+    "narration": "UPI/DR/511032913111/Medplus/medplus.ansari@apl",
+    "reference": "511032913111",
+    "debit": 315.84,
+    "credit": null,
+    "balance": 40815.96,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "31/10/2026",
+     "UPI/DR/511032913111/Medplus/medplus.ansari@apl",
+     "315.84",
+     "",
+     "40,815.96"
+    ]
+   }
+  ]
+ },
+ "A_page1_photo_light.jpg": {
+  "account": {
+   "bank": "PocketAcc Demo Bank",
+   "bank_code": "DEMO",
+   "holder": "Karan Sharma",
+   "occupation": "Software Engineer",
+   "profile": "salaried",
+   "city": "Guwahati",
+   "account_no": "95908814627165",
+   "account_type": "SAVINGS",
+   "ifsc": "DEMO0391976",
+   "period_from": "2026-10-01",
+   "period_to": "2026-10-31"
+  },
+  "summary": {
+   "opening_balance": 48250.75,
+   "closing_balance": 40815.96,
+   "pages": 2,
+   "transaction_count": 46,
+   "only_page": 1
+  },
+  "transactions": [
+   {
+    "sr": 1,
+    "date": "2026-10-01",
+    "narration": "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+    "reference": "929920414173",
+    "debit": null,
+    "credit": 63943.14,
+    "balance": 112193.89,
+    "txn_type": "salary",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+     "",
+     "63,943.14",
+     "1,12,193.89"
+    ]
+   },
+   {
+    "sr": 2,
+    "date": "2026-10-01",
+    "narration": "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+    "reference": "574386308027",
+    "debit": 167.63,
+    "credit": null,
+    "balance": 112026.26,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+     "167.63",
+     "",
+     "1,12,026.26"
+    ]
+   },
+   {
+    "sr": 3,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+    "reference": "556099273558",
+    "debit": 1162.71,
+    "credit": null,
+    "balance": 110863.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+     "1,162.71",
+     "",
+     "1,10,863.55"
+    ]
+   },
+   {
+    "sr": 4,
+    "date": "2026-10-01",
+    "narration": "UPI-NETMEDS-netmeds84@axl-146613520156",
+    "reference": "146613520156",
+    "debit": 942.64,
+    "credit": null,
+    "balance": 109920.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-NETMEDS-netmeds84@axl-146613520156",
+     "942.64",
+     "",
+     "1,09,920.91"
+    ]
+   },
+   {
+    "sr": 5,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+    "reference": "142954466589",
+    "debit": 2000,
+    "credit": null,
+    "balance": 107920.91,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+     "2,000.00",
+     "",
+     "1,07,920.91"
+    ]
+   },
+   {
+    "sr": 6,
+    "date": "2026-10-04",
+    "narration": "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+    "reference": "375872224726",
+    "debit": 1027.5,
+    "credit": null,
+    "balance": 106893.41,
+    "txn_type": "pos",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "04/10/2026",
+     "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+     "1,027.50",
+     "",
+     "1,06,893.41"
+    ]
+   },
+   {
+    "sr": 7,
+    "date": "2026-10-05",
+    "narration": "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+    "reference": "435403672877",
+    "debit": 9000,
+    "credit": null,
+    "balance": 97893.41,
+    "txn_type": "imps_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+     "9,000.00",
+     "",
+     "97,893.41"
+    ]
+   },
+   {
+    "sr": 8,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+    "reference": "477194659953",
+    "debit": 2400,
+    "credit": null,
+    "balance": 95493.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+     "2,400.00",
+     "",
+     "95,493.41"
+    ]
+   },
+   {
+    "sr": 9,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+    "reference": "551375484430",
+    "debit": 8420,
+    "credit": null,
+    "balance": 87073.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+     "8,420.00",
+     "",
+     "87,073.41"
+    ]
+   },
+   {
+    "sr": 10,
+    "date": "2026-10-05",
+    "narration": "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+    "reference": "224330538818",
+    "debit": 1000,
+    "credit": null,
+    "balance": 86073.41,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+     "1,000.00",
+     "",
+     "86,073.41"
+    ]
+   },
+   {
+    "sr": 11,
+    "date": "2026-10-06",
+    "narration": "UPI-IRCTC-q3443259319@ybl-591282546291",
+    "reference": "591282546291",
+    "debit": 110.43,
+    "credit": null,
+    "balance": 85962.98,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "UPI-IRCTC-q3443259319@ybl-591282546291",
+     "110.43",
+     "",
+     "85,962.98"
+    ]
+   },
+   {
+    "sr": 12,
+    "date": "2026-10-06",
+    "narration": "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+    "reference": "",
+    "debit": 2000,
+    "credit": null,
+    "balance": 83962.98,
+    "txn_type": "atm_wdl",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+     "2,000.00",
+     "",
+     "83,962.98"
+    ]
+   },
+   {
+    "sr": 13,
+    "date": "2026-10-07",
+    "narration": "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+    "reference": "514479555460",
+    "debit": 458.33,
+    "credit": null,
+    "balance": 83504.65,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "07/10/2026",
+     "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+     "458.33",
+     "",
+     "83,504.65"
+    ]
+   },
+   {
+    "sr": 14,
+    "date": "2026-10-08",
+    "narration": "UPI/DR/922008263422/Shell India/shell6749@apl",
+    "reference": "922008263422",
+    "debit": 320.85,
+    "credit": null,
+    "balance": 83183.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "08/10/2026",
+     "UPI/DR/922008263422/Shell India/shell6749@apl",
+     "320.85",
+     "",
+     "83,183.80"
+    ]
+   },
+   {
+    "sr": 15,
+    "date": "2026-10-09",
+    "narration": "UPI/DR/330105395028/Medplus/medplus19@paytm",
+    "reference": "330105395028",
+    "debit": 626.5,
+    "credit": null,
+    "balance": 82557.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "09/10/2026",
+     "UPI/DR/330105395028/Medplus/medplus19@paytm",
+     "626.50",
+     "",
+     "82,557.30"
+    ]
+   },
+   {
+    "sr": 16,
+    "date": "2026-10-10",
+    "narration": "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+    "reference": "411745249607",
+    "debit": 3554.21,
+    "credit": null,
+    "balance": 79003.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/10/2026",
+     "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+     "3,554.21",
+     "",
+     "79,003.09"
+    ]
+   },
+   {
+    "sr": 17,
+    "date": "2026-10-11",
+    "narration": "UPI-IRCTC-irctc73@apl-398984150498",
+    "reference": "398984150498",
+    "debit": 395.16,
+    "credit": null,
+    "balance": 78607.93,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-IRCTC-irctc73@apl-398984150498",
+     "395.16",
+     "",
+     "78,607.93"
+    ]
+   },
+   {
+    "sr": 18,
+    "date": "2026-10-11",
+    "narration": "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+    "reference": "755916343951",
+    "debit": 345.81,
+    "credit": null,
+    "balance": 78262.12,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+     "345.81",
+     "",
+     "78,262.12"
+    ]
+   },
+   {
+    "sr": 19,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+    "reference": "456316337201",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 76583.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+     "1,678.37",
+     "",
+     "76,583.75"
+    ]
+   },
+   {
+    "sr": 20,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+    "reference": "762770229826",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 74905.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": true,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+     "1,678.37",
+     "",
+     "74,905.38"
+    ]
+   },
+   {
+    "sr": 21,
+    "date": "2026-10-12",
+    "narration": "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+    "reference": "657343314741",
+    "debit": 164.59,
+    "credit": null,
+    "balance": 74740.79,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "12/10/2026",
+     "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+     "164.59",
+     "",
+     "74,740.79"
+    ]
+   },
+   {
+    "sr": 22,
+    "date": "2026-10-14",
+    "narration": "UPI-UBER INDIA-uber5686@axl-390306674565",
+    "reference": "390306674565",
+    "debit": 344.95,
+    "credit": null,
+    "balance": 74395.84,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/10/2026",
+     "UPI-UBER INDIA-uber5686@axl-390306674565",
+     "344.95",
+     "",
+     "74,395.84"
+    ]
+   },
+   {
+    "sr": 23,
+    "date": "2026-10-15",
+    "narration": "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+    "reference": "591165014656",
+    "debit": 2399.01,
+    "credit": null,
+    "balance": 71996.83,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+     "2,399.01",
+     "",
+     "71,996.83"
+    ]
+   },
+   {
+    "sr": 24,
+    "date": "2026-10-15",
+    "narration": "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+    "reference": "490695759246",
+    "debit": 558.33,
+    "credit": null,
+    "balance": 71438.5,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+     "558.33",
+     "",
+     "71,438.50"
+    ]
+   },
+   {
+    "sr": 25,
+    "date": "2026-10-15",
+    "narration": "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+    "reference": "511474167532",
+    "debit": 2167.8,
+    "credit": null,
+    "balance": 69270.7,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+     "2,167.80",
+     "",
+     "69,270.70"
+    ]
+   },
+   {
+    "sr": 26,
+    "date": "2026-10-16",
+    "narration": "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+    "reference": "228757271074",
+    "debit": 3901.11,
+    "credit": null,
+    "balance": 65369.59,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+     "3,901.11",
+     "",
+     "65,369.59"
+    ]
+   },
+   {
+    "sr": 27,
+    "date": "2026-10-16",
+    "narration": "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+    "reference": "797567058470",
+    "debit": 656.68,
+    "credit": null,
+    "balance": 64712.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+     "656.68",
+     "",
+     "64,712.91"
+    ]
+   },
+   {
+    "sr": 28,
+    "date": "2026-10-17",
+    "narration": "UPI-NYKAA-nykaa@icici-925607500371",
+    "reference": "925607500371",
+    "debit": 174.11,
+    "credit": null,
+    "balance": 64538.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "17/10/2026",
+     "UPI-NYKAA-nykaa@icici-925607500371",
+     "174.11",
+     "",
+     "64,538.80"
+    ]
+   },
+   {
+    "sr": 29,
+    "date": "2026-10-18",
+    "narration": "UPI/DR/455517839948/Amma Mess/amma69@icici",
+    "reference": "455517839948",
+    "debit": 2161.71,
+    "credit": null,
+    "balance": 62377.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "18/10/2026",
+     "UPI/DR/455517839948/Amma Mess/amma69@icici",
+     "2,161.71",
+     "",
+     "62,377.09"
+    ]
+   },
+   {
+    "sr": 30,
+    "date": "2026-10-19",
+    "narration": "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+    "reference": "003741451339",
+    "debit": 372.37,
+    "credit": null,
+    "balance": 62004.72,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "19/10/2026",
+     "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+     "372.37",
+     "",
+     "62,004.72"
+    ]
+   },
+   {
+    "sr": 31,
+    "date": "2026-10-20",
+    "narration": "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+    "reference": "998568994378",
+    "debit": 204.92,
+    "credit": null,
+    "balance": 61799.8,
+    "txn_type": "bill_pay",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "20/10/2026",
+     "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+     "204.92",
+     "",
+     "61,799.80"
+    ]
+   },
+   {
+    "sr": 32,
+    "date": "2026-10-21",
+    "narration": "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+    "reference": "436879321846",
+    "debit": 2552.35,
+    "credit": null,
+    "balance": 59247.45,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+     "2,552.35",
+     "",
+     "59,247.45"
+    ]
+   },
+   {
+    "sr": 33,
+    "date": "2026-10-21",
+    "narration": "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+    "reference": "580859987515",
+    "debit": 3722.5,
+    "credit": null,
+    "balance": 55524.95,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+     "3,722.50",
+     "",
+     "55,524.95"
+    ]
+   },
+   {
+    "sr": 34,
+    "date": "2026-10-21",
+    "narration": "UPI-STARBUCKS-q9784544502@icici-035057678051",
+    "reference": "035057678051",
+    "debit": 117.44,
+    "credit": null,
+    "balance": 55407.51,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-STARBUCKS-q9784544502@icici-035057678051",
+     "117.44",
+     "",
+     "55,407.51"
+    ]
+   },
+   {
+    "sr": 35,
+    "date": "2026-10-21",
+    "narration": "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+    "reference": "014390253171",
+    "debit": 3290.13,
+    "credit": null,
+    "balance": 52117.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+     "3,290.13",
+     "",
+     "52,117.38"
+    ]
+   },
+   {
+    "sr": 36,
+    "date": "2026-10-22",
+    "narration": "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+    "reference": "573205523643",
+    "debit": 119.99,
+    "credit": null,
+    "balance": 51997.39,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+     "119.99",
+     "",
+     "51,997.39"
+    ]
+   },
+   {
+    "sr": 37,
+    "date": "2026-10-22",
+    "narration": "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+    "reference": "014243286426",
+    "debit": 381.11,
+    "credit": null,
+    "balance": 51616.28,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+     "381.11",
+     "",
+     "51,616.28"
+    ]
+   },
+   {
+    "sr": 38,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+    "reference": "723506644997",
+    "debit": 340.73,
+    "credit": null,
+    "balance": 51275.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+     "340.73",
+     "",
+     "51,275.55"
+    ]
+   },
+   {
+    "sr": 39,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+    "reference": "905168295516",
+    "debit": 861.87,
+    "credit": null,
+    "balance": 50413.68,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+     "861.87",
+     "",
+     "50,413.68"
+    ]
+   },
+   {
+    "sr": 40,
+    "date": "2026-10-26",
+    "narration": "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+    "reference": "767921078998",
+    "debit": 47.93,
+    "credit": null,
+    "balance": 50365.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "26/10/2026",
+     "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+     "47.93",
+     "",
+     "50,365.75"
+    ]
+   },
+   {
+    "sr": 41,
+    "date": "2026-10-28",
+    "narration": "SMS ALERT CHARGES INCL GST OCT26",
+    "reference": "",
+    "debit": 118.0,
+    "credit": null,
+    "balance": 50247.75,
+    "txn_type": "charge",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "SMS ALERT CHARGES INCL GST OCT26",
+     "118.00",
+     "",
+     "50,247.75"
+    ]
+   },
+   {
+    "sr": 42,
+    "date": "2026-10-28",
+    "narration": "UPI/DR/682648348583/Dmart/dmart@apl",
+    "reference": "682648348583",
+    "debit": 762.38,
+    "credit": null,
+    "balance": 49485.37,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI/DR/682648348583/Dmart/dmart@apl",
+     "762.38",
+     "",
+     "49,485.37"
+    ]
+   },
+   {
+    "sr": 43,
+    "date": "2026-10-28",
+    "narration": "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+    "reference": "639946257975",
+    "debit": 2107.61,
+    "credit": null,
+    "balance": 47377.76,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+     "2,107.61",
+     "",
+     "47,377.76"
+    ]
+   },
+   {
+    "sr": 44,
+    "date": "2026-10-29",
+    "narration": "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+    "reference": "330434070982",
+    "debit": 207.38,
+    "credit": null,
+    "balance": 47170.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "29/10/2026",
+     "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+     "207.38",
+     "",
+     "47,170.38"
+    ]
+   },
+   {
+    "sr": 45,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+    "reference": "413770531702",
+    "debit": 2849.89,
+    "credit": null,
+    "balance": 44320.49,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+     "2,849.89",
+     "",
+     "44,320.49"
+    ]
+   },
+   {
+    "sr": 46,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+    "reference": "495645963243",
+    "debit": 593.19,
+    "credit": null,
+    "balance": 43727.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+     "593.19",
+     "",
+     "43,727.30"
+    ]
+   }
+  ],
+  "damage": {
+   "level": "light",
+   "seed": 3,
+   "angle": -0.26
+  }
+ },
+ "A_page1_photo_medium.jpg": {
+  "account": {
+   "bank": "PocketAcc Demo Bank",
+   "bank_code": "DEMO",
+   "holder": "Karan Sharma",
+   "occupation": "Software Engineer",
+   "profile": "salaried",
+   "city": "Guwahati",
+   "account_no": "95908814627165",
+   "account_type": "SAVINGS",
+   "ifsc": "DEMO0391976",
+   "period_from": "2026-10-01",
+   "period_to": "2026-10-31"
+  },
+  "summary": {
+   "opening_balance": 48250.75,
+   "closing_balance": 40815.96,
+   "pages": 2,
+   "transaction_count": 46,
+   "only_page": 1
+  },
+  "transactions": [
+   {
+    "sr": 1,
+    "date": "2026-10-01",
+    "narration": "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+    "reference": "929920414173",
+    "debit": null,
+    "credit": 63943.14,
+    "balance": 112193.89,
+    "txn_type": "salary",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+     "",
+     "63,943.14",
+     "1,12,193.89"
+    ]
+   },
+   {
+    "sr": 2,
+    "date": "2026-10-01",
+    "narration": "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+    "reference": "574386308027",
+    "debit": 167.63,
+    "credit": null,
+    "balance": 112026.26,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+     "167.63",
+     "",
+     "1,12,026.26"
+    ]
+   },
+   {
+    "sr": 3,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+    "reference": "556099273558",
+    "debit": 1162.71,
+    "credit": null,
+    "balance": 110863.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+     "1,162.71",
+     "",
+     "1,10,863.55"
+    ]
+   },
+   {
+    "sr": 4,
+    "date": "2026-10-01",
+    "narration": "UPI-NETMEDS-netmeds84@axl-146613520156",
+    "reference": "146613520156",
+    "debit": 942.64,
+    "credit": null,
+    "balance": 109920.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-NETMEDS-netmeds84@axl-146613520156",
+     "942.64",
+     "",
+     "1,09,920.91"
+    ]
+   },
+   {
+    "sr": 5,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+    "reference": "142954466589",
+    "debit": 2000,
+    "credit": null,
+    "balance": 107920.91,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+     "2,000.00",
+     "",
+     "1,07,920.91"
+    ]
+   },
+   {
+    "sr": 6,
+    "date": "2026-10-04",
+    "narration": "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+    "reference": "375872224726",
+    "debit": 1027.5,
+    "credit": null,
+    "balance": 106893.41,
+    "txn_type": "pos",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "04/10/2026",
+     "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+     "1,027.50",
+     "",
+     "1,06,893.41"
+    ]
+   },
+   {
+    "sr": 7,
+    "date": "2026-10-05",
+    "narration": "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+    "reference": "435403672877",
+    "debit": 9000,
+    "credit": null,
+    "balance": 97893.41,
+    "txn_type": "imps_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+     "9,000.00",
+     "",
+     "97,893.41"
+    ]
+   },
+   {
+    "sr": 8,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+    "reference": "477194659953",
+    "debit": 2400,
+    "credit": null,
+    "balance": 95493.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+     "2,400.00",
+     "",
+     "95,493.41"
+    ]
+   },
+   {
+    "sr": 9,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+    "reference": "551375484430",
+    "debit": 8420,
+    "credit": null,
+    "balance": 87073.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+     "8,420.00",
+     "",
+     "87,073.41"
+    ]
+   },
+   {
+    "sr": 10,
+    "date": "2026-10-05",
+    "narration": "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+    "reference": "224330538818",
+    "debit": 1000,
+    "credit": null,
+    "balance": 86073.41,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+     "1,000.00",
+     "",
+     "86,073.41"
+    ]
+   },
+   {
+    "sr": 11,
+    "date": "2026-10-06",
+    "narration": "UPI-IRCTC-q3443259319@ybl-591282546291",
+    "reference": "591282546291",
+    "debit": 110.43,
+    "credit": null,
+    "balance": 85962.98,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "UPI-IRCTC-q3443259319@ybl-591282546291",
+     "110.43",
+     "",
+     "85,962.98"
+    ]
+   },
+   {
+    "sr": 12,
+    "date": "2026-10-06",
+    "narration": "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+    "reference": "",
+    "debit": 2000,
+    "credit": null,
+    "balance": 83962.98,
+    "txn_type": "atm_wdl",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+     "2,000.00",
+     "",
+     "83,962.98"
+    ]
+   },
+   {
+    "sr": 13,
+    "date": "2026-10-07",
+    "narration": "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+    "reference": "514479555460",
+    "debit": 458.33,
+    "credit": null,
+    "balance": 83504.65,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "07/10/2026",
+     "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+     "458.33",
+     "",
+     "83,504.65"
+    ]
+   },
+   {
+    "sr": 14,
+    "date": "2026-10-08",
+    "narration": "UPI/DR/922008263422/Shell India/shell6749@apl",
+    "reference": "922008263422",
+    "debit": 320.85,
+    "credit": null,
+    "balance": 83183.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "08/10/2026",
+     "UPI/DR/922008263422/Shell India/shell6749@apl",
+     "320.85",
+     "",
+     "83,183.80"
+    ]
+   },
+   {
+    "sr": 15,
+    "date": "2026-10-09",
+    "narration": "UPI/DR/330105395028/Medplus/medplus19@paytm",
+    "reference": "330105395028",
+    "debit": 626.5,
+    "credit": null,
+    "balance": 82557.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "09/10/2026",
+     "UPI/DR/330105395028/Medplus/medplus19@paytm",
+     "626.50",
+     "",
+     "82,557.30"
+    ]
+   },
+   {
+    "sr": 16,
+    "date": "2026-10-10",
+    "narration": "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+    "reference": "411745249607",
+    "debit": 3554.21,
+    "credit": null,
+    "balance": 79003.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/10/2026",
+     "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+     "3,554.21",
+     "",
+     "79,003.09"
+    ]
+   },
+   {
+    "sr": 17,
+    "date": "2026-10-11",
+    "narration": "UPI-IRCTC-irctc73@apl-398984150498",
+    "reference": "398984150498",
+    "debit": 395.16,
+    "credit": null,
+    "balance": 78607.93,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-IRCTC-irctc73@apl-398984150498",
+     "395.16",
+     "",
+     "78,607.93"
+    ]
+   },
+   {
+    "sr": 18,
+    "date": "2026-10-11",
+    "narration": "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+    "reference": "755916343951",
+    "debit": 345.81,
+    "credit": null,
+    "balance": 78262.12,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+     "345.81",
+     "",
+     "78,262.12"
+    ]
+   },
+   {
+    "sr": 19,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+    "reference": "456316337201",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 76583.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+     "1,678.37",
+     "",
+     "76,583.75"
+    ]
+   },
+   {
+    "sr": 20,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+    "reference": "762770229826",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 74905.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": true,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+     "1,678.37",
+     "",
+     "74,905.38"
+    ]
+   },
+   {
+    "sr": 21,
+    "date": "2026-10-12",
+    "narration": "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+    "reference": "657343314741",
+    "debit": 164.59,
+    "credit": null,
+    "balance": 74740.79,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "12/10/2026",
+     "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+     "164.59",
+     "",
+     "74,740.79"
+    ]
+   },
+   {
+    "sr": 22,
+    "date": "2026-10-14",
+    "narration": "UPI-UBER INDIA-uber5686@axl-390306674565",
+    "reference": "390306674565",
+    "debit": 344.95,
+    "credit": null,
+    "balance": 74395.84,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/10/2026",
+     "UPI-UBER INDIA-uber5686@axl-390306674565",
+     "344.95",
+     "",
+     "74,395.84"
+    ]
+   },
+   {
+    "sr": 23,
+    "date": "2026-10-15",
+    "narration": "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+    "reference": "591165014656",
+    "debit": 2399.01,
+    "credit": null,
+    "balance": 71996.83,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+     "2,399.01",
+     "",
+     "71,996.83"
+    ]
+   },
+   {
+    "sr": 24,
+    "date": "2026-10-15",
+    "narration": "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+    "reference": "490695759246",
+    "debit": 558.33,
+    "credit": null,
+    "balance": 71438.5,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+     "558.33",
+     "",
+     "71,438.50"
+    ]
+   },
+   {
+    "sr": 25,
+    "date": "2026-10-15",
+    "narration": "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+    "reference": "511474167532",
+    "debit": 2167.8,
+    "credit": null,
+    "balance": 69270.7,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+     "2,167.80",
+     "",
+     "69,270.70"
+    ]
+   },
+   {
+    "sr": 26,
+    "date": "2026-10-16",
+    "narration": "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+    "reference": "228757271074",
+    "debit": 3901.11,
+    "credit": null,
+    "balance": 65369.59,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+     "3,901.11",
+     "",
+     "65,369.59"
+    ]
+   },
+   {
+    "sr": 27,
+    "date": "2026-10-16",
+    "narration": "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+    "reference": "797567058470",
+    "debit": 656.68,
+    "credit": null,
+    "balance": 64712.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+     "656.68",
+     "",
+     "64,712.91"
+    ]
+   },
+   {
+    "sr": 28,
+    "date": "2026-10-17",
+    "narration": "UPI-NYKAA-nykaa@icici-925607500371",
+    "reference": "925607500371",
+    "debit": 174.11,
+    "credit": null,
+    "balance": 64538.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "17/10/2026",
+     "UPI-NYKAA-nykaa@icici-925607500371",
+     "174.11",
+     "",
+     "64,538.80"
+    ]
+   },
+   {
+    "sr": 29,
+    "date": "2026-10-18",
+    "narration": "UPI/DR/455517839948/Amma Mess/amma69@icici",
+    "reference": "455517839948",
+    "debit": 2161.71,
+    "credit": null,
+    "balance": 62377.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "18/10/2026",
+     "UPI/DR/455517839948/Amma Mess/amma69@icici",
+     "2,161.71",
+     "",
+     "62,377.09"
+    ]
+   },
+   {
+    "sr": 30,
+    "date": "2026-10-19",
+    "narration": "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+    "reference": "003741451339",
+    "debit": 372.37,
+    "credit": null,
+    "balance": 62004.72,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "19/10/2026",
+     "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+     "372.37",
+     "",
+     "62,004.72"
+    ]
+   },
+   {
+    "sr": 31,
+    "date": "2026-10-20",
+    "narration": "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+    "reference": "998568994378",
+    "debit": 204.92,
+    "credit": null,
+    "balance": 61799.8,
+    "txn_type": "bill_pay",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "20/10/2026",
+     "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+     "204.92",
+     "",
+     "61,799.80"
+    ]
+   },
+   {
+    "sr": 32,
+    "date": "2026-10-21",
+    "narration": "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+    "reference": "436879321846",
+    "debit": 2552.35,
+    "credit": null,
+    "balance": 59247.45,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+     "2,552.35",
+     "",
+     "59,247.45"
+    ]
+   },
+   {
+    "sr": 33,
+    "date": "2026-10-21",
+    "narration": "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+    "reference": "580859987515",
+    "debit": 3722.5,
+    "credit": null,
+    "balance": 55524.95,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+     "3,722.50",
+     "",
+     "55,524.95"
+    ]
+   },
+   {
+    "sr": 34,
+    "date": "2026-10-21",
+    "narration": "UPI-STARBUCKS-q9784544502@icici-035057678051",
+    "reference": "035057678051",
+    "debit": 117.44,
+    "credit": null,
+    "balance": 55407.51,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-STARBUCKS-q9784544502@icici-035057678051",
+     "117.44",
+     "",
+     "55,407.51"
+    ]
+   },
+   {
+    "sr": 35,
+    "date": "2026-10-21",
+    "narration": "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+    "reference": "014390253171",
+    "debit": 3290.13,
+    "credit": null,
+    "balance": 52117.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+     "3,290.13",
+     "",
+     "52,117.38"
+    ]
+   },
+   {
+    "sr": 36,
+    "date": "2026-10-22",
+    "narration": "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+    "reference": "573205523643",
+    "debit": 119.99,
+    "credit": null,
+    "balance": 51997.39,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+     "119.99",
+     "",
+     "51,997.39"
+    ]
+   },
+   {
+    "sr": 37,
+    "date": "2026-10-22",
+    "narration": "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+    "reference": "014243286426",
+    "debit": 381.11,
+    "credit": null,
+    "balance": 51616.28,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+     "381.11",
+     "",
+     "51,616.28"
+    ]
+   },
+   {
+    "sr": 38,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+    "reference": "723506644997",
+    "debit": 340.73,
+    "credit": null,
+    "balance": 51275.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+     "340.73",
+     "",
+     "51,275.55"
+    ]
+   },
+   {
+    "sr": 39,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+    "reference": "905168295516",
+    "debit": 861.87,
+    "credit": null,
+    "balance": 50413.68,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+     "861.87",
+     "",
+     "50,413.68"
+    ]
+   },
+   {
+    "sr": 40,
+    "date": "2026-10-26",
+    "narration": "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+    "reference": "767921078998",
+    "debit": 47.93,
+    "credit": null,
+    "balance": 50365.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "26/10/2026",
+     "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+     "47.93",
+     "",
+     "50,365.75"
+    ]
+   },
+   {
+    "sr": 41,
+    "date": "2026-10-28",
+    "narration": "SMS ALERT CHARGES INCL GST OCT26",
+    "reference": "",
+    "debit": 118.0,
+    "credit": null,
+    "balance": 50247.75,
+    "txn_type": "charge",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "SMS ALERT CHARGES INCL GST OCT26",
+     "118.00",
+     "",
+     "50,247.75"
+    ]
+   },
+   {
+    "sr": 42,
+    "date": "2026-10-28",
+    "narration": "UPI/DR/682648348583/Dmart/dmart@apl",
+    "reference": "682648348583",
+    "debit": 762.38,
+    "credit": null,
+    "balance": 49485.37,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI/DR/682648348583/Dmart/dmart@apl",
+     "762.38",
+     "",
+     "49,485.37"
+    ]
+   },
+   {
+    "sr": 43,
+    "date": "2026-10-28",
+    "narration": "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+    "reference": "639946257975",
+    "debit": 2107.61,
+    "credit": null,
+    "balance": 47377.76,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+     "2,107.61",
+     "",
+     "47,377.76"
+    ]
+   },
+   {
+    "sr": 44,
+    "date": "2026-10-29",
+    "narration": "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+    "reference": "330434070982",
+    "debit": 207.38,
+    "credit": null,
+    "balance": 47170.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "29/10/2026",
+     "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+     "207.38",
+     "",
+     "47,170.38"
+    ]
+   },
+   {
+    "sr": 45,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+    "reference": "413770531702",
+    "debit": 2849.89,
+    "credit": null,
+    "balance": 44320.49,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+     "2,849.89",
+     "",
+     "44,320.49"
+    ]
+   },
+   {
+    "sr": 46,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+    "reference": "495645963243",
+    "debit": 593.19,
+    "credit": null,
+    "balance": 43727.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+     "593.19",
+     "",
+     "43,727.30"
+    ]
+   }
+  ],
+  "damage": {
+   "level": "medium",
+   "seed": 5,
+   "angle": 0.95
+  }
+ },
+ "A_page1_photo_heavy.jpg": {
+  "account": {
+   "bank": "PocketAcc Demo Bank",
+   "bank_code": "DEMO",
+   "holder": "Karan Sharma",
+   "occupation": "Software Engineer",
+   "profile": "salaried",
+   "city": "Guwahati",
+   "account_no": "95908814627165",
+   "account_type": "SAVINGS",
+   "ifsc": "DEMO0391976",
+   "period_from": "2026-10-01",
+   "period_to": "2026-10-31"
+  },
+  "summary": {
+   "opening_balance": 48250.75,
+   "closing_balance": 40815.96,
+   "pages": 2,
+   "transaction_count": 46,
+   "only_page": 1
+  },
+  "transactions": [
+   {
+    "sr": 1,
+    "date": "2026-10-01",
+    "narration": "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+    "reference": "929920414173",
+    "debit": null,
+    "credit": 63943.14,
+    "balance": 112193.89,
+    "txn_type": "salary",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "NEFT CR-UTIB0000688-RELIANCE RETAIL LTD-SALARY",
+     "",
+     "63,943.14",
+     "1,12,193.89"
+    ]
+   },
+   {
+    "sr": 2,
+    "date": "2026-10-01",
+    "narration": "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+    "reference": "574386308027",
+    "debit": 167.63,
+    "credit": null,
+    "balance": 112026.26,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-RAPIDO-rapido.kulkarni@okaxis-574386308027",
+     "167.63",
+     "",
+     "1,12,026.26"
+    ]
+   },
+   {
+    "sr": 3,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+    "reference": "556099273558",
+    "debit": 1162.71,
+    "credit": null,
+    "balance": 110863.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/556099273558/Apollo Pharmacy/apollo.yadav@icici",
+     "1,162.71",
+     "",
+     "1,10,863.55"
+    ]
+   },
+   {
+    "sr": 4,
+    "date": "2026-10-01",
+    "narration": "UPI-NETMEDS-netmeds84@axl-146613520156",
+    "reference": "146613520156",
+    "debit": 942.64,
+    "credit": null,
+    "balance": 109920.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI-NETMEDS-netmeds84@axl-146613520156",
+     "942.64",
+     "",
+     "1,09,920.91"
+    ]
+   },
+   {
+    "sr": 5,
+    "date": "2026-10-01",
+    "narration": "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+    "reference": "142954466589",
+    "debit": 2000,
+    "credit": null,
+    "balance": 107920.91,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/10/2026",
+     "UPI/DR/142954466589/Rohan Mehta/q5750146919@ybl",
+     "2,000.00",
+     "",
+     "1,07,920.91"
+    ]
+   },
+   {
+    "sr": 6,
+    "date": "2026-10-04",
+    "narration": "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+    "reference": "375872224726",
+    "debit": 1027.5,
+    "credit": null,
+    "balance": 106893.41,
+    "txn_type": "pos",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "04/10/2026",
+     "POS 5XXXXXXXX0479 APOLLO PHARMACY",
+     "1,027.50",
+     "",
+     "1,06,893.41"
+    ]
+   },
+   {
+    "sr": 7,
+    "date": "2026-10-05",
+    "narration": "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+    "reference": "435403672877",
+    "debit": 9000,
+    "credit": null,
+    "balance": 97893.41,
+    "txn_type": "imps_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "IMPS/P2A/435403672877/Ritu Khan/Loan Repay",
+     "9,000.00",
+     "",
+     "97,893.41"
+    ]
+   },
+   {
+    "sr": 8,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+    "reference": "477194659953",
+    "debit": 2400,
+    "credit": null,
+    "balance": 95493.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDB FINANCIAL SERVICES-BUSINESS LOAN EMI",
+     "2,400.00",
+     "",
+     "95,493.41"
+    ]
+   },
+   {
+    "sr": 9,
+    "date": "2026-10-05",
+    "narration": "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+    "reference": "551375484430",
+    "debit": 8420,
+    "credit": null,
+    "balance": 87073.41,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "NACH DR-HDFC BANK LTD-HOME LOAN EMI",
+     "8,420.00",
+     "",
+     "87,073.41"
+    ]
+   },
+   {
+    "sr": 10,
+    "date": "2026-10-05",
+    "narration": "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+    "reference": "224330538818",
+    "debit": 1000,
+    "credit": null,
+    "balance": 86073.41,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/10/2026",
+     "UPI/DR/224330538818/Venkat Fernandes/venkat@ptys",
+     "1,000.00",
+     "",
+     "86,073.41"
+    ]
+   },
+   {
+    "sr": 11,
+    "date": "2026-10-06",
+    "narration": "UPI-IRCTC-q3443259319@ybl-591282546291",
+    "reference": "591282546291",
+    "debit": 110.43,
+    "credit": null,
+    "balance": 85962.98,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "UPI-IRCTC-q3443259319@ybl-591282546291",
+     "110.43",
+     "",
+     "85,962.98"
+    ]
+   },
+   {
+    "sr": 12,
+    "date": "2026-10-06",
+    "narration": "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+    "reference": "",
+    "debit": 2000,
+    "credit": null,
+    "balance": 83962.98,
+    "txn_type": "atm_wdl",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/10/2026",
+     "ATM WDL-GUWAHATI-5XXXXXXXX0479",
+     "2,000.00",
+     "",
+     "83,962.98"
+    ]
+   },
+   {
+    "sr": 13,
+    "date": "2026-10-07",
+    "narration": "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+    "reference": "514479555460",
+    "debit": 458.33,
+    "credit": null,
+    "balance": 83504.65,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "07/10/2026",
+     "UPI/DR/514479555460/Amma Mess/amma7958@icici",
+     "458.33",
+     "",
+     "83,504.65"
+    ]
+   },
+   {
+    "sr": 14,
+    "date": "2026-10-08",
+    "narration": "UPI/DR/922008263422/Shell India/shell6749@apl",
+    "reference": "922008263422",
+    "debit": 320.85,
+    "credit": null,
+    "balance": 83183.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "08/10/2026",
+     "UPI/DR/922008263422/Shell India/shell6749@apl",
+     "320.85",
+     "",
+     "83,183.80"
+    ]
+   },
+   {
+    "sr": 15,
+    "date": "2026-10-09",
+    "narration": "UPI/DR/330105395028/Medplus/medplus19@paytm",
+    "reference": "330105395028",
+    "debit": 626.5,
+    "credit": null,
+    "balance": 82557.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "09/10/2026",
+     "UPI/DR/330105395028/Medplus/medplus19@paytm",
+     "626.50",
+     "",
+     "82,557.30"
+    ]
+   },
+   {
+    "sr": 16,
+    "date": "2026-10-10",
+    "narration": "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+    "reference": "411745249607",
+    "debit": 3554.21,
+    "credit": null,
+    "balance": 79003.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/10/2026",
+     "UPI-AIRTEL PREPAID-airtel81@axl-411745249607",
+     "3,554.21",
+     "",
+     "79,003.09"
+    ]
+   },
+   {
+    "sr": 17,
+    "date": "2026-10-11",
+    "narration": "UPI-IRCTC-irctc73@apl-398984150498",
+    "reference": "398984150498",
+    "debit": 395.16,
+    "credit": null,
+    "balance": 78607.93,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-IRCTC-irctc73@apl-398984150498",
+     "395.16",
+     "",
+     "78,607.93"
+    ]
+   },
+   {
+    "sr": 18,
+    "date": "2026-10-11",
+    "narration": "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+    "reference": "755916343951",
+    "debit": 345.81,
+    "credit": null,
+    "balance": 78262.12,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI-AIRTEL PREPAID-airtel94@ibl-755916343951",
+     "345.81",
+     "",
+     "78,262.12"
+    ]
+   },
+   {
+    "sr": 19,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+    "reference": "456316337201",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 76583.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/456316337201/Gupta Fruits/q1458888218@ptys",
+     "1,678.37",
+     "",
+     "76,583.75"
+    ]
+   },
+   {
+    "sr": 20,
+    "date": "2026-10-11",
+    "narration": "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+    "reference": "762770229826",
+    "debit": 1678.37,
+    "credit": null,
+    "balance": 74905.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": true,
+    "printed": [
+     "11/10/2026",
+     "UPI/DR/762770229826/Gupta Fruits/gupta@okaxis",
+     "1,678.37",
+     "",
+     "74,905.38"
+    ]
+   },
+   {
+    "sr": 21,
+    "date": "2026-10-12",
+    "narration": "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+    "reference": "657343314741",
+    "debit": 164.59,
+    "credit": null,
+    "balance": 74740.79,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "12/10/2026",
+     "UPI-ANNAPURNA TIFFIN-q7514720867@hdfcbank-657343314741",
+     "164.59",
+     "",
+     "74,740.79"
+    ]
+   },
+   {
+    "sr": 22,
+    "date": "2026-10-14",
+    "narration": "UPI-UBER INDIA-uber5686@axl-390306674565",
+    "reference": "390306674565",
+    "debit": 344.95,
+    "credit": null,
+    "balance": 74395.84,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/10/2026",
+     "UPI-UBER INDIA-uber5686@axl-390306674565",
+     "344.95",
+     "",
+     "74,395.84"
+    ]
+   },
+   {
+    "sr": 23,
+    "date": "2026-10-15",
+    "narration": "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+    "reference": "591165014656",
+    "debit": 2399.01,
+    "credit": null,
+    "balance": 71996.83,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-RELIANCE FRESH-q2174137569@icici-591165014656",
+     "2,399.01",
+     "",
+     "71,996.83"
+    ]
+   },
+   {
+    "sr": 24,
+    "date": "2026-10-15",
+    "narration": "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+    "reference": "490695759246",
+    "debit": 558.33,
+    "credit": null,
+    "balance": 71438.5,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-BOOKMYSHOW-bookmyshow@paytm-490695759246",
+     "558.33",
+     "",
+     "71,438.50"
+    ]
+   },
+   {
+    "sr": 25,
+    "date": "2026-10-15",
+    "narration": "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+    "reference": "511474167532",
+    "debit": 2167.8,
+    "credit": null,
+    "balance": 69270.7,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "15/10/2026",
+     "UPI-MCDONALDS-mcdonalds9291@hdfcbank-511474167532",
+     "2,167.80",
+     "",
+     "69,270.70"
+    ]
+   },
+   {
+    "sr": 26,
+    "date": "2026-10-16",
+    "narration": "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+    "reference": "228757271074",
+    "debit": 3901.11,
+    "credit": null,
+    "balance": 65369.59,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI/DR/228757271074/Sharma General Store/q6235719730@oksbi",
+     "3,901.11",
+     "",
+     "65,369.59"
+    ]
+   },
+   {
+    "sr": 27,
+    "date": "2026-10-16",
+    "narration": "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+    "reference": "797567058470",
+    "debit": 656.68,
+    "credit": null,
+    "balance": 64712.91,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "16/10/2026",
+     "UPI-PARKING CHARGES-parking.rao@okaxis-797567058470",
+     "656.68",
+     "",
+     "64,712.91"
+    ]
+   },
+   {
+    "sr": 28,
+    "date": "2026-10-17",
+    "narration": "UPI-NYKAA-nykaa@icici-925607500371",
+    "reference": "925607500371",
+    "debit": 174.11,
+    "credit": null,
+    "balance": 64538.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "17/10/2026",
+     "UPI-NYKAA-nykaa@icici-925607500371",
+     "174.11",
+     "",
+     "64,538.80"
+    ]
+   },
+   {
+    "sr": 29,
+    "date": "2026-10-18",
+    "narration": "UPI/DR/455517839948/Amma Mess/amma69@icici",
+    "reference": "455517839948",
+    "debit": 2161.71,
+    "credit": null,
+    "balance": 62377.09,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "18/10/2026",
+     "UPI/DR/455517839948/Amma Mess/amma69@icici",
+     "2,161.71",
+     "",
+     "62,377.09"
+    ]
+   },
+   {
+    "sr": 30,
+    "date": "2026-10-19",
+    "narration": "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+    "reference": "003741451339",
+    "debit": 372.37,
+    "credit": null,
+    "balance": 62004.72,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "19/10/2026",
+     "UPI-METRO CASH CARRY-metro2701@axl-003741451339",
+     "372.37",
+     "",
+     "62,004.72"
+    ]
+   },
+   {
+    "sr": 31,
+    "date": "2026-10-20",
+    "narration": "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+    "reference": "998568994378",
+    "debit": 204.92,
+    "credit": null,
+    "balance": 61799.8,
+    "txn_type": "bill_pay",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "20/10/2026",
+     "BILLPAY-MAHANAGAR GAS LTD-0533403096",
+     "204.92",
+     "",
+     "61,799.80"
+    ]
+   },
+   {
+    "sr": 32,
+    "date": "2026-10-21",
+    "narration": "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+    "reference": "436879321846",
+    "debit": 2552.35,
+    "credit": null,
+    "balance": 59247.45,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI/DR/436879321846/Apollo Pharmacy/apollo.saikia@ybl",
+     "2,552.35",
+     "",
+     "59,247.45"
+    ]
+   },
+   {
+    "sr": 33,
+    "date": "2026-10-21",
+    "narration": "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+    "reference": "580859987515",
+    "debit": 3722.5,
+    "credit": null,
+    "balance": 55524.95,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-RAJU TEA STALL-raju30@paytm-580859987515",
+     "3,722.50",
+     "",
+     "55,524.95"
+    ]
+   },
+   {
+    "sr": 34,
+    "date": "2026-10-21",
+    "narration": "UPI-STARBUCKS-q9784544502@icici-035057678051",
+    "reference": "035057678051",
+    "debit": 117.44,
+    "credit": null,
+    "balance": 55407.51,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-STARBUCKS-q9784544502@icici-035057678051",
+     "117.44",
+     "",
+     "55,407.51"
+    ]
+   },
+   {
+    "sr": 35,
+    "date": "2026-10-21",
+    "narration": "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+    "reference": "014390253171",
+    "debit": 3290.13,
+    "credit": null,
+    "balance": 52117.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "21/10/2026",
+     "UPI-MAA DURGA DAIRY-maa.chauhan@ybl-014390253171",
+     "3,290.13",
+     "",
+     "52,117.38"
+    ]
+   },
+   {
+    "sr": 36,
+    "date": "2026-10-22",
+    "narration": "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+    "reference": "573205523643",
+    "debit": 119.99,
+    "credit": null,
+    "balance": 51997.39,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI-SAI MEDICAL-q7742776754@okicici-573205523643",
+     "119.99",
+     "",
+     "51,997.39"
+    ]
+   },
+   {
+    "sr": 37,
+    "date": "2026-10-22",
+    "narration": "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+    "reference": "014243286426",
+    "debit": 381.11,
+    "credit": null,
+    "balance": 51616.28,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "22/10/2026",
+     "UPI/DR/014243286426/Nykaa/q0611640782@hdfcbank",
+     "381.11",
+     "",
+     "51,616.28"
+    ]
+   },
+   {
+    "sr": 38,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+    "reference": "723506644997",
+    "debit": 340.73,
+    "credit": null,
+    "balance": 51275.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/723506644997/Annapurna Tiffin/annapurna95@axl",
+     "340.73",
+     "",
+     "51,275.55"
+    ]
+   },
+   {
+    "sr": 39,
+    "date": "2026-10-25",
+    "narration": "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+    "reference": "905168295516",
+    "debit": 861.87,
+    "credit": null,
+    "balance": 50413.68,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "25/10/2026",
+     "UPI/DR/905168295516/Gupta Fruits/gupta96@paytm",
+     "861.87",
+     "",
+     "50,413.68"
+    ]
+   },
+   {
+    "sr": 40,
+    "date": "2026-10-26",
+    "narration": "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+    "reference": "767921078998",
+    "debit": 47.93,
+    "credit": null,
+    "balance": 50365.75,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "26/10/2026",
+     "UPI-BALAJI SWEETS-q1830850935@ibl-767921078998",
+     "47.93",
+     "",
+     "50,365.75"
+    ]
+   },
+   {
+    "sr": 41,
+    "date": "2026-10-28",
+    "narration": "SMS ALERT CHARGES INCL GST OCT26",
+    "reference": "",
+    "debit": 118.0,
+    "credit": null,
+    "balance": 50247.75,
+    "txn_type": "charge",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "SMS ALERT CHARGES INCL GST OCT26",
+     "118.00",
+     "",
+     "50,247.75"
+    ]
+   },
+   {
+    "sr": 42,
+    "date": "2026-10-28",
+    "narration": "UPI/DR/682648348583/Dmart/dmart@apl",
+    "reference": "682648348583",
+    "debit": 762.38,
+    "credit": null,
+    "balance": 49485.37,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI/DR/682648348583/Dmart/dmart@apl",
+     "762.38",
+     "",
+     "49,485.37"
+    ]
+   },
+   {
+    "sr": 43,
+    "date": "2026-10-28",
+    "narration": "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+    "reference": "639946257975",
+    "debit": 2107.61,
+    "credit": null,
+    "balance": 47377.76,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "28/10/2026",
+     "UPI-MAA DURGA DAIRY-maa33@okaxis-639946257975",
+     "2,107.61",
+     "",
+     "47,377.76"
+    ]
+   },
+   {
+    "sr": 44,
+    "date": "2026-10-29",
+    "narration": "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+    "reference": "330434070982",
+    "debit": 207.38,
+    "credit": null,
+    "balance": 47170.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "29/10/2026",
+     "UPI/DR/330434070982/Blinkit/blinkit@oksbi",
+     "207.38",
+     "",
+     "47,170.38"
+    ]
+   },
+   {
+    "sr": 45,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+    "reference": "413770531702",
+    "debit": 2849.89,
+    "credit": null,
+    "balance": 44320.49,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/413770531702/Bikanervala/bikanervala3986@icici",
+     "2,849.89",
+     "",
+     "44,320.49"
+    ]
+   },
+   {
+    "sr": 46,
+    "date": "2026-10-30",
+    "narration": "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+    "reference": "495645963243",
+    "debit": 593.19,
+    "credit": null,
+    "balance": 43727.3,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "30/10/2026",
+     "UPI/DR/495645963243/Decathlon/decathlon@hdfcbank",
+     "593.19",
+     "",
+     "43,727.30"
+    ]
+   }
+  ],
+  "damage": {
+   "level": "heavy",
+   "seed": 7,
+   "angle": 0.66
+  }
+ },
+ "B_shop_statement.pdf": {
+  "account": {
+   "bank": "PocketAcc Demo Bank",
+   "bank_code": "DEMO",
+   "holder": "Imran Malhotra",
+   "occupation": "Kirana Store Owner",
+   "profile": "self_employed",
+   "city": "Patna",
+   "account_no": "90262908656199",
+   "account_type": "CURRENT",
+   "ifsc": "DEMO0189710",
+   "period_from": "2026-09-01",
+   "period_to": "2026-09-30"
+  },
+  "summary": {
+   "opening_balance": 186400.0,
+   "closing_balance": 403059.66,
+   "pages": 3,
+   "transaction_count": 102,
+   "only_page": null
+  },
+  "transactions": [
+   {
+    "sr": 1,
+    "date": "2026-09-01",
+    "narration": "UPI/DR/346217654521/Hp Petrol Pump/hp32@ybl",
+    "reference": "346217654521",
+    "debit": 1861.57,
+    "credit": null,
+    "balance": 184538.43,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/09/2026",
+     "UPI/DR/346217654521/Hp Petrol Pump/hp32@ybl",
+     "1,861.57",
+     "",
+     "1,84,538.43"
+    ]
+   },
+   {
+    "sr": 2,
+    "date": "2026-09-01",
+    "narration": "UPI-DMART-q0422314640@ptys-681389502096",
+    "reference": "681389502096",
+    "debit": 877.08,
+    "credit": null,
+    "balance": 183661.35,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/09/2026",
+     "UPI-DMART-q0422314640@ptys-681389502096",
+     "877.08",
+     "",
+     "1,83,661.35"
+    ]
+   },
+   {
+    "sr": 3,
+    "date": "2026-09-01",
+    "narration": "UPI/DR/688035442460/Ola Cabs/ola@okaxis",
+    "reference": "688035442460",
+    "debit": 269.37,
+    "credit": null,
+    "balance": 183391.98,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/09/2026",
+     "UPI/DR/688035442460/Ola Cabs/ola@okaxis",
+     "269.37",
+     "",
+     "1,83,391.98"
+    ]
+   },
+   {
+    "sr": 4,
+    "date": "2026-09-01",
+    "narration": "UPI/DR/225349467546/Uber India/q7084470548@oksbi",
+    "reference": "225349467546",
+    "debit": 3972.44,
+    "credit": null,
+    "balance": 179419.54,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/09/2026",
+     "UPI/DR/225349467546/Uber India/q7084470548@oksbi",
+     "3,972.44",
+     "",
+     "1,79,419.54"
+    ]
+   },
+   {
+    "sr": 5,
+    "date": "2026-09-01",
+    "narration": "NEFT DR-INDB0005219-GST PAYMENT",
+    "reference": "591150177932",
+    "debit": 104794.15,
+    "credit": null,
+    "balance": 74625.39,
+    "txn_type": "neft_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "01/09/2026",
+     "NEFT DR-INDB0005219-GST PAYMENT",
+     "1,04,794.15",
+     "",
+     "74,625.39"
+    ]
+   },
+   {
+    "sr": 6,
+    "date": "2026-09-02",
+    "narration": "UPI/DR/010696377012/Hp Petrol Pump/q2684653106@ibl",
+    "reference": "010696377012",
+    "debit": 3463.52,
+    "credit": null,
+    "balance": 71161.87,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "02/09/2026",
+     "UPI/DR/010696377012/Hp Petrol Pump/q2684653106@ibl",
+     "3,463.52",
+     "",
+     "71,161.87"
+    ]
+   },
+   {
+    "sr": 7,
+    "date": "2026-09-02",
+    "narration": "CHQ DEP-484721-NEW ERA GARMENTS",
+    "reference": "070059965524",
+    "debit": null,
+    "credit": 117386.27,
+    "balance": 188548.14,
+    "txn_type": "cheque_dep",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "02/09/2026",
+     "CHQ DEP-484721-NEW ERA GARMENTS",
+     "",
+     "1,17,386.27",
+     "1,88,548.14"
+    ]
+   },
+   {
+    "sr": 8,
+    "date": "2026-09-02",
+    "narration": "NEFT DR-UTIB0001051-ITC LTD DISTRIBUTOR",
+    "reference": "896682728808",
+    "debit": 31396.95,
+    "credit": null,
+    "balance": 157151.19,
+    "txn_type": "neft_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "02/09/2026",
+     "NEFT DR-UTIB0001051-ITC LTD DISTRIBUTOR",
+     "31,396.95",
+     "",
+     "1,57,151.19"
+    ]
+   },
+   {
+    "sr": 9,
+    "date": "2026-09-02",
+    "narration": "UPI/CR/994752984421/Karan Pillai/karan@okicici",
+    "reference": "994752984421",
+    "debit": null,
+    "credit": 2637.58,
+    "balance": 159788.77,
+    "txn_type": "upi_p2p_in",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "02/09/2026",
+     "UPI/CR/994752984421/Karan Pillai/karan@okicici",
+     "",
+     "2,637.58",
+     "1,59,788.77"
+    ]
+   },
+   {
+    "sr": 10,
+    "date": "2026-09-03",
+    "narration": "UPI-MEDPLUS-medplus66@axl-725265784129",
+    "reference": "725265784129",
+    "debit": 5751.14,
+    "credit": null,
+    "balance": 154037.63,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "03/09/2026",
+     "UPI-MEDPLUS-medplus66@axl-725265784129",
+     "5,751.14",
+     "",
+     "1,54,037.63"
+    ]
+   },
+   {
+    "sr": 11,
+    "date": "2026-09-03",
+    "narration": "UPI/DR/093969480685/Rapido/rapido3016@oksbi",
+    "reference": "093969480685",
+    "debit": 2073.08,
+    "credit": null,
+    "balance": 151964.55,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "03/09/2026",
+     "UPI/DR/093969480685/Rapido/rapido3016@oksbi",
+     "2,073.08",
+     "",
+     "1,51,964.55"
+    ]
+   },
+   {
+    "sr": 12,
+    "date": "2026-09-04",
+    "narration": "UPI/DR/437626119711/Parking Charges/q8550788826@ybl",
+    "reference": "437626119711",
+    "debit": 1427.17,
+    "credit": null,
+    "balance": 150537.38,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "04/09/2026",
+     "UPI/DR/437626119711/Parking Charges/q8550788826@ybl",
+     "1,427.17",
+     "",
+     "1,50,537.38"
+    ]
+   },
+   {
+    "sr": 13,
+    "date": "2026-09-04",
+    "narration": "UPI/DR/465467695627/Amit Yadav/amit.reddy@apl",
+    "reference": "465467695627",
+    "debit": 200,
+    "credit": null,
+    "balance": 150337.38,
+    "txn_type": "upi_p2p_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "04/09/2026",
+     "UPI/DR/465467695627/Amit Yadav/amit.reddy@apl",
+     "200.00",
+     "",
+     "1,50,337.38"
+    ]
+   },
+   {
+    "sr": 14,
+    "date": "2026-09-04",
+    "narration": "NEFT CR-ICIC0005444-MAHAVIR TEXTILES PVT LTD",
+    "reference": "733618980668",
+    "debit": null,
+    "credit": 7837.13,
+    "balance": 158174.51,
+    "txn_type": "neft_in",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "04/09/2026",
+     "NEFT CR-ICIC0005444-MAHAVIR TEXTILES PVT LTD",
+     "",
+     "7,837.13",
+     "1,58,174.51"
+    ]
+   },
+   {
+    "sr": 15,
+    "date": "2026-09-05",
+    "narration": "IMPS/P2A/237381870536/Amit Gupta/Fees",
+    "reference": "237381870536",
+    "debit": 6000,
+    "credit": null,
+    "balance": 152174.51,
+    "txn_type": "imps_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/09/2026",
+     "IMPS/P2A/237381870536/Amit Gupta/Fees",
+     "6,000.00",
+     "",
+     "1,52,174.51"
+    ]
+   },
+   {
+    "sr": 16,
+    "date": "2026-09-05",
+    "narration": "NACH DR-MAHINDRA FINANCE-VEHICLE LOAN EMI",
+    "reference": "711495290434",
+    "debit": 14600,
+    "credit": null,
+    "balance": 137574.51,
+    "txn_type": "nach_emi",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/09/2026",
+     "NACH DR-MAHINDRA FINANCE-VEHICLE LOAN EMI",
+     "14,600.00",
+     "",
+     "1,37,574.51"
+    ]
+   },
+   {
+    "sr": 17,
+    "date": "2026-09-05",
+    "narration": "UPI/DR/501236773893/Maa Durga Dairy/maa8563@apl",
+    "reference": "501236773893",
+    "debit": 456.28,
+    "credit": null,
+    "balance": 137118.23,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/09/2026",
+     "UPI/DR/501236773893/Maa Durga Dairy/maa8563@apl",
+     "456.28",
+     "",
+     "1,37,118.23"
+    ]
+   },
+   {
+    "sr": 18,
+    "date": "2026-09-05",
+    "narration": "UPI/DR/992203436754/Nykaa/nykaa.khan@ybl",
+    "reference": "992203436754",
+    "debit": 2102.9,
+    "credit": null,
+    "balance": 135015.33,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/09/2026",
+     "UPI/DR/992203436754/Nykaa/nykaa.khan@ybl",
+     "2,102.90",
+     "",
+     "1,35,015.33"
+    ]
+   },
+   {
+    "sr": 19,
+    "date": "2026-09-05",
+    "narration": "NEFT CR-YESB0003153-NEW ERA GARMENTS",
+    "reference": "929877185296",
+    "debit": null,
+    "credit": 114176.47,
+    "balance": 249191.8,
+    "txn_type": "neft_in",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/09/2026",
+     "NEFT CR-YESB0003153-NEW ERA GARMENTS",
+     "",
+     "1,14,176.47",
+     "2,49,191.80"
+    ]
+   },
+   {
+    "sr": 20,
+    "date": "2026-09-05",
+    "narration": "NEFT DR-BARB0008451-SURAT POLY PACK",
+    "reference": "767129314230",
+    "debit": 128973.68,
+    "credit": null,
+    "balance": 120218.12,
+    "txn_type": "neft_out",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "05/09/2026",
+     "NEFT DR-BARB0008451-SURAT POLY PACK",
+     "1,28,973.68",
+     "",
+     "1,20,218.12"
+    ]
+   },
+   {
+    "sr": 21,
+    "date": "2026-09-06",
+    "narration": "UPI-KHAN LAUNDRY-khan@paytm-891418422125",
+    "reference": "891418422125",
+    "debit": 1733.9,
+    "credit": null,
+    "balance": 118484.22,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "06/09/2026",
+     "UPI-KHAN LAUNDRY-khan@paytm-891418422125",
+     "1,733.90",
+     "",
+     "1,18,484.22"
+    ]
+   },
+   {
+    "sr": 22,
+    "date": "2026-09-07",
+    "narration": "UPI-FLIPKART-flipkart.singh@okicici-724108189815",
+    "reference": "724108189815",
+    "debit": 1798.86,
+    "credit": null,
+    "balance": 116685.36,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "07/09/2026",
+     "UPI-FLIPKART-flipkart.singh@okicici-724108189815",
+     "1,798.86",
+     "",
+     "1,16,685.36"
+    ]
+   },
+   {
+    "sr": 23,
+    "date": "2026-09-07",
+    "narration": "UPI/CR/429877408927/Amit Yadav/q2868303543@apl",
+    "reference": "429877408927",
+    "debit": null,
+    "credit": 500,
+    "balance": 117185.36,
+    "txn_type": "upi_p2p_in",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "07/09/2026",
+     "UPI/CR/429877408927/Amit Yadav/q2868303543@apl",
+     "",
+     "500.00",
+     "1,17,185.36"
+    ]
+   },
+   {
+    "sr": 24,
+    "date": "2026-09-07",
+    "narration": "CASH DEPOSIT-PATNA BRANCH",
+    "reference": "",
+    "debit": null,
+    "credit": 12000,
+    "balance": 129185.36,
+    "txn_type": "cash_dep",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "07/09/2026",
+     "CASH DEPOSIT-PATNA BRANCH",
+     "",
+     "12,000.00",
+     "1,29,185.36"
+    ]
+   },
+   {
+    "sr": 25,
+    "date": "2026-09-08",
+    "narration": "UPI/DR/428141909255/Cafe Coffee Day/cafe@ibl",
+    "reference": "428141909255",
+    "debit": 1739.24,
+    "credit": null,
+    "balance": 127446.12,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "08/09/2026",
+     "UPI/DR/428141909255/Cafe Coffee Day/cafe@ibl",
+     "1,739.24",
+     "",
+     "1,27,446.12"
+    ]
+   },
+   {
+    "sr": 26,
+    "date": "2026-09-08",
+    "narration": "UPI/DR/519548689171/Starbucks/starbucks1602@okicici",
+    "reference": "519548689171",
+    "debit": 2399.81,
+    "credit": null,
+    "balance": 125046.31,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "08/09/2026",
+     "UPI/DR/519548689171/Starbucks/starbucks1602@okicici",
+     "2,399.81",
+     "",
+     "1,25,046.31"
+    ]
+   },
+   {
+    "sr": 27,
+    "date": "2026-09-09",
+    "narration": "UPI/DR/033713799697/Netmeds/netmeds.verma@ybl",
+    "reference": "033713799697",
+    "debit": 141.89,
+    "credit": null,
+    "balance": 124904.42,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "09/09/2026",
+     "UPI/DR/033713799697/Netmeds/netmeds.verma@ybl",
+     "141.89",
+     "",
+     "1,24,904.42"
+    ]
+   },
+   {
+    "sr": 28,
+    "date": "2026-09-09",
+    "narration": "UPI/CR/205277867446/Rohan Reddy/rohan48@oksbi",
+    "reference": "205277867446",
+    "debit": null,
+    "credit": 176.29,
+    "balance": 125080.71,
+    "txn_type": "upi_p2p_in",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "09/09/2026",
+     "UPI/CR/205277867446/Rohan Reddy/rohan48@oksbi",
+     "",
+     "176.29",
+     "1,25,080.71"
+    ]
+   },
+   {
+    "sr": 29,
+    "date": "2026-09-10",
+    "narration": "NACH DR-SBI BLUECHIP FUND-SIP",
+    "reference": "230341459217",
+    "debit": 500,
+    "credit": null,
+    "balance": 124580.71,
+    "txn_type": "sip",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/09/2026",
+     "NACH DR-SBI BLUECHIP FUND-SIP",
+     "500.00",
+     "",
+     "1,24,580.71"
+    ]
+   },
+   {
+    "sr": 30,
+    "date": "2026-09-10",
+    "narration": "NACH DR-MOTILAL OSWAL MIDCAP-SIP",
+    "reference": "113530382747",
+    "debit": 2000,
+    "credit": null,
+    "balance": 122580.71,
+    "txn_type": "sip",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/09/2026",
+     "NACH DR-MOTILAL OSWAL MIDCAP-SIP",
+     "2,000.00",
+     "",
+     "1,22,580.71"
+    ]
+   },
+   {
+    "sr": 31,
+    "date": "2026-09-10",
+    "narration": "UPI/DR/714538781519/Mcdonalds/mcdonalds.bhatt@ybl",
+    "reference": "714538781519",
+    "debit": 932.29,
+    "credit": null,
+    "balance": 121648.42,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/09/2026",
+     "UPI/DR/714538781519/Mcdonalds/mcdonalds.bhatt@ybl",
+     "932.29",
+     "",
+     "1,21,648.42"
+    ]
+   },
+   {
+    "sr": 32,
+    "date": "2026-09-10",
+    "narration": "CHQ PAID-207779-ITC LTD DISTRIBUTOR",
+    "reference": "066447481392",
+    "debit": 27068.5,
+    "credit": null,
+    "balance": 94579.92,
+    "txn_type": "cheque_paid",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "10/09/2026",
+     "CHQ PAID-207779-ITC LTD DISTRIBUTOR",
+     "27,068.50",
+     "",
+     "94,579.92"
+    ]
+   },
+   {
+    "sr": 33,
+    "date": "2026-09-11",
+    "narration": "UPI/DR/027250626513/Parking Charges/q0500076549@ybl",
+    "reference": "027250626513",
+    "debit": 1081.94,
+    "credit": null,
+    "balance": 93497.98,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/09/2026",
+     "UPI/DR/027250626513/Parking Charges/q0500076549@ybl",
+     "1,081.94",
+     "",
+     "93,497.98"
+    ]
+   },
+   {
+    "sr": 34,
+    "date": "2026-09-11",
+    "narration": "UPI/DR/815423019549/Swiggy/swiggy6174@icici",
+    "reference": "815423019549",
+    "debit": 591.57,
+    "credit": null,
+    "balance": 92906.41,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/09/2026",
+     "UPI/DR/815423019549/Swiggy/swiggy6174@icici",
+     "591.57",
+     "",
+     "92,906.41"
+    ]
+   },
+   {
+    "sr": 35,
+    "date": "2026-09-11",
+    "narration": "UPI/DR/513554066627/Kfc India/q3789114936@ibl",
+    "reference": "513554066627",
+    "debit": 509.09,
+    "credit": null,
+    "balance": 92397.32,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/09/2026",
+     "UPI/DR/513554066627/Kfc India/q3789114936@ibl",
+     "509.09",
+     "",
+     "92,397.32"
+    ]
+   },
+   {
+    "sr": 36,
+    "date": "2026-09-11",
+    "narration": "CHQ DEP-894132-NEW ERA GARMENTS",
+    "reference": "470622844721",
+    "debit": null,
+    "credit": 98127.56,
+    "balance": 190524.88,
+    "txn_type": "cheque_dep",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "11/09/2026",
+     "CHQ DEP-894132-NEW ERA GARMENTS",
+     "",
+     "98,127.56",
+     "1,90,524.88"
+    ]
+   },
+   {
+    "sr": 37,
+    "date": "2026-09-12",
+    "narration": "BILLPAY-MAHANAGAR GAS LTD-0500422367",
+    "reference": "201284820656",
+    "debit": 2157.79,
+    "credit": null,
+    "balance": 188367.09,
+    "txn_type": "bill_pay",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "12/09/2026",
+     "BILLPAY-MAHANAGAR GAS LTD-0500422367",
+     "2,157.79",
+     "",
+     "1,88,367.09"
+    ]
+   },
+   {
+    "sr": 38,
+    "date": "2026-09-13",
+    "narration": "UPI-MEDPLUS-medplus4193@ptys-242027190775",
+    "reference": "242027190775",
+    "debit": 3269.06,
+    "credit": null,
+    "balance": 185098.03,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "13/09/2026",
+     "UPI-MEDPLUS-medplus4193@ptys-242027190775",
+     "3,269.06",
+     "",
+     "1,85,098.03"
+    ]
+   },
+   {
+    "sr": 39,
+    "date": "2026-09-14",
+    "narration": "UPI-SHARMA GENERAL STORE-q1411256827@hdfcbank-712185518163",
+    "reference": "712185518163",
+    "debit": 289.87,
+    "credit": null,
+    "balance": 184808.16,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/09/2026",
+     "UPI-SHARMA GENERAL STORE-q1411256827@hdfcbank-712185518163",
+     "289.87",
+     "",
+     "1,84,808.16"
+    ]
+   },
+   {
+    "sr": 40,
+    "date": "2026-09-14",
+    "narration": "UPI-METRO CASH CARRY-metro.khan@paytm-149834771834",
+    "reference": "149834771834",
+    "debit": 573.37,
+    "credit": null,
+    "balance": 184234.79,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/09/2026",
+     "UPI-METRO CASH CARRY-metro.khan@paytm-149834771834",
+     "573.37",
+     "",
+     "1,84,234.79"
+    ]
+   },
+   {
+    "sr": 41,
+    "date": "2026-09-14",
+    "narration": "UPI-HALDIRAMS-q0415247427@ibl-972997483836",
+    "reference": "972997483836",
+    "debit": 365.99,
+    "credit": null,
+    "balance": 183868.8,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/09/2026",
+     "UPI-HALDIRAMS-q0415247427@ibl-972997483836",
+     "365.99",
+     "",
+     "1,83,868.80"
+    ]
+   },
+   {
+    "sr": 42,
+    "date": "2026-09-14",
+    "narration": "UPI/DR/473557548207/Zepto/q5297709445@hdfcbank",
+    "reference": "473557548207",
+    "debit": 3121.63,
+    "credit": null,
+    "balance": 180747.17,
+    "txn_type": "upi_p2m",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/09/2026",
+     "UPI/DR/473557548207/Zepto/q5297709445@hdfcbank",
+     "3,121.63",
+     "",
+     "1,80,747.17"
+    ]
+   },
+   {
+    "sr": 43,
+    "date": "2026-09-14",
+    "narration": "CHQ PAID-561619-ALOK INDUSTRIES",
+    "reference": "396996104615",
+    "debit": 51860.31,
+    "credit": null,
+    "balance": 128886.86,
+    "txn_type": "cheque_paid",
+    "page": 1,
+    "planted_double_debit": false,
+    "printed": [
+     "14/09/2026",
+     "CHQ PAID-561619-ALOK INDUSTRIES",
+     "51,860.31",
+     "",
+     "1,28,886.86"
+    ]
+   },
+   {
+    "sr": 44,
+    "date": "2026-09-14",
+    "narration": "CASH DEPOSIT-PATNA BRANCH",
+    "reference": "852276156482",
+    "debit": null,
+    "credit": 12000,
+    "balance": 140886.86,
+    "txn_type": "cash_dep",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "14/09/2026",
+     "CASH DEPOSIT-PATNA BRANCH",
+     "",
+     "12,000.00",
+     "1,40,886.86"
+    ]
+   },
+   {
+    "sr": 45,
+    "date": "2026-09-16",
+    "narration": "UPI-DOMINOS PIZZA-dominos.yadav@apl-671123243833",
+    "reference": "671123243833",
+    "debit": 248.6,
+    "credit": null,
+    "balance": 140638.26,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "16/09/2026",
+     "UPI-DOMINOS PIZZA-dominos.yadav@apl-671123243833",
+     "248.60",
+     "",
+     "1,40,638.26"
+    ]
+   },
+   {
+    "sr": 46,
+    "date": "2026-09-16",
+    "narration": "CHQ PAID-903908-SURAT POLY PACK",
+    "reference": "185437596418",
+    "debit": 86535.8,
+    "credit": null,
+    "balance": 54102.46,
+    "txn_type": "cheque_paid",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "16/09/2026",
+     "CHQ PAID-903908-SURAT POLY PACK",
+     "86,535.80",
+     "",
+     "54,102.46"
+    ]
+   },
+   {
+    "sr": 47,
+    "date": "2026-09-16",
+    "narration": "CASH DEPOSIT-PATNA BRANCH",
+    "reference": "",
+    "debit": null,
+    "credit": 40000,
+    "balance": 94102.46,
+    "txn_type": "cash_dep",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "16/09/2026",
+     "CASH DEPOSIT-PATNA BRANCH",
+     "",
+     "40,000.00",
+     "94,102.46"
+    ]
+   },
+   {
+    "sr": 48,
+    "date": "2026-09-17",
+    "narration": "UPI/CR/416070131397/Amit Yadav/amit@ibl",
+    "reference": "416070131397",
+    "debit": null,
+    "credit": 1200,
+    "balance": 95302.46,
+    "txn_type": "upi_p2p_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "17/09/2026",
+     "UPI/CR/416070131397/Amit Yadav/amit@ibl",
+     "",
+     "1,200.00",
+     "95,302.46"
+    ]
+   },
+   {
+    "sr": 49,
+    "date": "2026-09-18",
+    "narration": "UPI-DMART-dmart23@okicici-453519537862",
+    "reference": "453519537862",
+    "debit": 579.19,
+    "credit": null,
+    "balance": 94723.27,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "18/09/2026",
+     "UPI-DMART-dmart23@okicici-453519537862",
+     "579.19",
+     "",
+     "94,723.27"
+    ]
+   },
+   {
+    "sr": 50,
+    "date": "2026-09-19",
+    "narration": "UPI/DR/228921068412/Annapurna Tiffin/q3422577936@okaxis",
+    "reference": "228921068412",
+    "debit": 1477.52,
+    "credit": null,
+    "balance": 93245.75,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "19/09/2026",
+     "UPI/DR/228921068412/Annapurna Tiffin/q3422577936@okaxis",
+     "1,477.52",
+     "",
+     "93,245.75"
+    ]
+   },
+   {
+    "sr": 51,
+    "date": "2026-09-19",
+    "narration": "UPI/DR/642755366625/Rapido/q0102038887@oksbi",
+    "reference": "642755366625",
+    "debit": 5300.37,
+    "credit": null,
+    "balance": 87945.38,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "19/09/2026",
+     "UPI/DR/642755366625/Rapido/q0102038887@oksbi",
+     "5,300.37",
+     "",
+     "87,945.38"
+    ]
+   },
+   {
+    "sr": 52,
+    "date": "2026-09-19",
+    "narration": "UPI/DR/218460741716/Khan Laundry/khan@ibl",
+    "reference": "218460741716",
+    "debit": 482.57,
+    "credit": null,
+    "balance": 87462.81,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "19/09/2026",
+     "UPI/DR/218460741716/Khan Laundry/khan@ibl",
+     "482.57",
+     "",
+     "87,462.81"
+    ]
+   },
+   {
+    "sr": 53,
+    "date": "2026-09-19",
+    "narration": "UPI/DR/200766134127/Myntra/q4802345869@oksbi",
+    "reference": "200766134127",
+    "debit": 814.67,
+    "credit": null,
+    "balance": 86648.14,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "19/09/2026",
+     "UPI/DR/200766134127/Myntra/q4802345869@oksbi",
+     "814.67",
+     "",
+     "86,648.14"
+    ]
+   },
+   {
+    "sr": 54,
+    "date": "2026-09-19",
+    "narration": "CHQ DEP-205007-GOKUL FASHION HOUSE",
+    "reference": "923234380252",
+    "debit": null,
+    "credit": 21568.55,
+    "balance": 108216.69,
+    "txn_type": "cheque_dep",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "19/09/2026",
+     "CHQ DEP-205007-GOKUL FASHION HOUSE",
+     "",
+     "21,568.55",
+     "1,08,216.69"
+    ]
+   },
+   {
+    "sr": 55,
+    "date": "2026-09-20",
+    "narration": "BILLPAY-DELHI JAL BOARD-6236297491",
+    "reference": "113266726112",
+    "debit": 348.46,
+    "credit": null,
+    "balance": 107868.23,
+    "txn_type": "bill_pay",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "20/09/2026",
+     "BILLPAY-DELHI JAL BOARD-6236297491",
+     "348.46",
+     "",
+     "1,07,868.23"
+    ]
+   },
+   {
+    "sr": 56,
+    "date": "2026-09-20",
+    "narration": "UPI-JIO RECHARGE-q6628334258@apl-000744986591",
+    "reference": "000744986591",
+    "debit": 629.22,
+    "credit": null,
+    "balance": 107239.01,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "20/09/2026",
+     "UPI-JIO RECHARGE-q6628334258@apl-000744986591",
+     "629.22",
+     "",
+     "1,07,239.01"
+    ]
+   },
+   {
+    "sr": 57,
+    "date": "2026-09-20",
+    "narration": "UPI/DR/310904538920/Dominos Pizza/q5051870472@ybl",
+    "reference": "310904538920",
+    "debit": 346.1,
+    "credit": null,
+    "balance": 106892.91,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "20/09/2026",
+     "UPI/DR/310904538920/Dominos Pizza/q5051870472@ybl",
+     "346.10",
+     "",
+     "1,06,892.91"
+    ]
+   },
+   {
+    "sr": 58,
+    "date": "2026-09-20",
+    "narration": "UPI/DR/401447842313/Chaayos/q4149640941@okicici",
+    "reference": "401447842313",
+    "debit": 192.97,
+    "credit": null,
+    "balance": 106699.94,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "20/09/2026",
+     "UPI/DR/401447842313/Chaayos/q4149640941@okicici",
+     "192.97",
+     "",
+     "1,06,699.94"
+    ]
+   },
+   {
+    "sr": 59,
+    "date": "2026-09-20",
+    "narration": "UPI-IRCTC-irctc57@axl-256075263168",
+    "reference": "256075263168",
+    "debit": 3018.11,
+    "credit": null,
+    "balance": 103681.83,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "20/09/2026",
+     "UPI-IRCTC-irctc57@axl-256075263168",
+     "3,018.11",
+     "",
+     "1,03,681.83"
+    ]
+   },
+   {
+    "sr": 60,
+    "date": "2026-09-21",
+    "narration": "UPI-CAFE COFFEE DAY-cafe.bhatt@icici-715629426413",
+    "reference": "715629426413",
+    "debit": 6179.56,
+    "credit": null,
+    "balance": 97502.27,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "21/09/2026",
+     "UPI-CAFE COFFEE DAY-cafe.bhatt@icici-715629426413",
+     "6,179.56",
+     "",
+     "97,502.27"
+    ]
+   },
+   {
+    "sr": 61,
+    "date": "2026-09-21",
+    "narration": "UPI-ZOMATO-zomato7166@okicici-429197578361",
+    "reference": "429197578361",
+    "debit": 181.98,
+    "credit": null,
+    "balance": 97320.29,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "21/09/2026",
+     "UPI-ZOMATO-zomato7166@okicici-429197578361",
+     "181.98",
+     "",
+     "97,320.29"
+    ]
+   },
+   {
+    "sr": 62,
+    "date": "2026-09-21",
+    "narration": "NEFT CR-ICIC0006938-GOKUL FASHION HOUSE",
+    "reference": "074503451353",
+    "debit": null,
+    "credit": 92338.46,
+    "balance": 189658.75,
+    "txn_type": "neft_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "21/09/2026",
+     "NEFT CR-ICIC0006938-GOKUL FASHION HOUSE",
+     "",
+     "92,338.46",
+     "1,89,658.75"
+    ]
+   },
+   {
+    "sr": 63,
+    "date": "2026-09-21",
+    "narration": "NEFT DR-BARB0000685-ALOK INDUSTRIES",
+    "reference": "398437328457",
+    "debit": 106132.56,
+    "credit": null,
+    "balance": 83526.19,
+    "txn_type": "neft_out",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "21/09/2026",
+     "NEFT DR-BARB0000685-ALOK INDUSTRIES",
+     "1,06,132.56",
+     "",
+     "83,526.19"
+    ]
+   },
+   {
+    "sr": 64,
+    "date": "2026-09-21",
+    "narration": "CASH DEPOSIT-PATNA BRANCH",
+    "reference": "",
+    "debit": null,
+    "credit": 12000,
+    "balance": 95526.19,
+    "txn_type": "cash_dep",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "21/09/2026",
+     "CASH DEPOSIT-PATNA BRANCH",
+     "",
+     "12,000.00",
+     "95,526.19"
+    ]
+   },
+   {
+    "sr": 65,
+    "date": "2026-09-21",
+    "narration": "UPI/CR/631532407294/Ajay Chauhan/ajay.singh@okaxis",
+    "reference": "631532407294",
+    "debit": null,
+    "credit": 1329.03,
+    "balance": 96855.22,
+    "txn_type": "upi_p2p_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "21/09/2026",
+     "UPI/CR/631532407294/Ajay Chauhan/ajay.singh@okaxis",
+     "",
+     "1,329.03",
+     "96,855.22"
+    ]
+   },
+   {
+    "sr": 66,
+    "date": "2026-09-22",
+    "narration": "UPI-RAJU TEA STALL-raju@axl-150730740401",
+    "reference": "150730740401",
+    "debit": 600.13,
+    "credit": null,
+    "balance": 96255.09,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "22/09/2026",
+     "UPI-RAJU TEA STALL-raju@axl-150730740401",
+     "600.13",
+     "",
+     "96,255.09"
+    ]
+   },
+   {
+    "sr": 67,
+    "date": "2026-09-22",
+    "narration": "UPI-PARKING CHARGES-parking@apl-786259494109",
+    "reference": "786259494109",
+    "debit": 316.88,
+    "credit": null,
+    "balance": 95938.21,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "22/09/2026",
+     "UPI-PARKING CHARGES-parking@apl-786259494109",
+     "316.88",
+     "",
+     "95,938.21"
+    ]
+   },
+   {
+    "sr": 68,
+    "date": "2026-09-22",
+    "narration": "UPI/DR/089055890126/Metro Cash Carry/q4899312554@paytm",
+    "reference": "089055890126",
+    "debit": 292.27,
+    "credit": null,
+    "balance": 95645.94,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "22/09/2026",
+     "UPI/DR/089055890126/Metro Cash Carry/q4899312554@paytm",
+     "292.27",
+     "",
+     "95,645.94"
+    ]
+   },
+   {
+    "sr": 69,
+    "date": "2026-09-22",
+    "narration": "ATM WDL-PATNA-5XXXXXXXX9752",
+    "reference": "",
+    "debit": 2000,
+    "credit": null,
+    "balance": 93645.94,
+    "txn_type": "atm_wdl",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "22/09/2026",
+     "ATM WDL-PATNA-5XXXXXXXX9752",
+     "2,000.00",
+     "",
+     "93,645.94"
+    ]
+   },
+   {
+    "sr": 70,
+    "date": "2026-09-22",
+    "narration": "NEFT CR-KKBK0000081-PATEL BROTHERS",
+    "reference": "197932962657",
+    "debit": null,
+    "credit": 62137.36,
+    "balance": 155783.3,
+    "txn_type": "neft_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "22/09/2026",
+     "NEFT CR-KKBK0000081-PATEL BROTHERS",
+     "",
+     "62,137.36",
+     "1,55,783.30"
+    ]
+   },
+   {
+    "sr": 71,
+    "date": "2026-09-23",
+    "narration": "UPI/DR/055898101275/Bookmyshow/bookmyshow@ybl",
+    "reference": "055898101275",
+    "debit": 2045.4,
+    "credit": null,
+    "balance": 153737.9,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "23/09/2026",
+     "UPI/DR/055898101275/Bookmyshow/bookmyshow@ybl",
+     "2,045.40",
+     "",
+     "1,53,737.90"
+    ]
+   },
+   {
+    "sr": 72,
+    "date": "2026-09-23",
+    "narration": "UPI/DR/487266366763/Starbucks/q0134951584@okicici",
+    "reference": "487266366763",
+    "debit": 238.12,
+    "credit": null,
+    "balance": 153499.78,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "23/09/2026",
+     "UPI/DR/487266366763/Starbucks/q0134951584@okicici",
+     "238.12",
+     "",
+     "1,53,499.78"
+    ]
+   },
+   {
+    "sr": 73,
+    "date": "2026-09-23",
+    "narration": "POS 5XXXXXXXX9752 MAKEMYTRIP",
+    "reference": "526340241768",
+    "debit": 3876.52,
+    "credit": null,
+    "balance": 149623.26,
+    "txn_type": "pos",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "23/09/2026",
+     "POS 5XXXXXXXX9752 MAKEMYTRIP",
+     "3,876.52",
+     "",
+     "1,49,623.26"
+    ]
+   },
+   {
+    "sr": 74,
+    "date": "2026-09-23",
+    "narration": "NEFT CR-FDRL0002301-MAHAVIR TEXTILES PVT LTD",
+    "reference": "354002392089",
+    "debit": null,
+    "credit": 139893.21,
+    "balance": 289516.47,
+    "txn_type": "neft_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "23/09/2026",
+     "NEFT CR-FDRL0002301-MAHAVIR TEXTILES PVT LTD",
+     "",
+     "1,39,893.21",
+     "2,89,516.47"
+    ]
+   },
+   {
+    "sr": 75,
+    "date": "2026-09-24",
+    "narration": "UPI/CR/254296936558/Imran Shah/imran.patel@paytm",
+    "reference": "254296936558",
+    "debit": null,
+    "credit": 1182.36,
+    "balance": 290698.83,
+    "txn_type": "upi_p2p_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "24/09/2026",
+     "UPI/CR/254296936558/Imran Shah/imran.patel@paytm",
+     "",
+     "1,182.36",
+     "2,90,698.83"
+    ]
+   },
+   {
+    "sr": 76,
+    "date": "2026-09-25",
+    "narration": "UPI/DR/865244864069/Shell India/q0935104053@ibl",
+    "reference": "865244864069",
+    "debit": 6215.48,
+    "credit": null,
+    "balance": 284483.35,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "25/09/2026",
+     "UPI/DR/865244864069/Shell India/q0935104053@ibl",
+     "6,215.48",
+     "",
+     "2,84,483.35"
+    ]
+   },
+   {
+    "sr": 77,
+    "date": "2026-09-25",
+    "narration": "UPI/DR/670422883546/Dominos Pizza/dominos@hdfcbank",
+    "reference": "670422883546",
+    "debit": 1348.92,
+    "credit": null,
+    "balance": 283134.43,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "25/09/2026",
+     "UPI/DR/670422883546/Dominos Pizza/dominos@hdfcbank",
+     "1,348.92",
+     "",
+     "2,83,134.43"
+    ]
+   },
+   {
+    "sr": 78,
+    "date": "2026-09-25",
+    "narration": "UPI-KHAN LAUNDRY-khan.naidu@ibl-040003005491",
+    "reference": "040003005491",
+    "debit": 1280.05,
+    "credit": null,
+    "balance": 281854.38,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "25/09/2026",
+     "UPI-KHAN LAUNDRY-khan.naidu@ibl-040003005491",
+     "1,280.05",
+     "",
+     "2,81,854.38"
+    ]
+   },
+   {
+    "sr": 79,
+    "date": "2026-09-26",
+    "narration": "UPI-ANNAPURNA TIFFIN-annapurna50@ptys-844108838597",
+    "reference": "844108838597",
+    "debit": 368.69,
+    "credit": null,
+    "balance": 281485.69,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "26/09/2026",
+     "UPI-ANNAPURNA TIFFIN-annapurna50@ptys-844108838597",
+     "368.69",
+     "",
+     "2,81,485.69"
+    ]
+   },
+   {
+    "sr": 80,
+    "date": "2026-09-26",
+    "narration": "ATM WDL-PATNA-5XXXXXXXX9752",
+    "reference": "",
+    "debit": 5000,
+    "credit": null,
+    "balance": 276485.69,
+    "txn_type": "atm_wdl",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "26/09/2026",
+     "ATM WDL-PATNA-5XXXXXXXX9752",
+     "5,000.00",
+     "",
+     "2,76,485.69"
+    ]
+   },
+   {
+    "sr": 81,
+    "date": "2026-09-26",
+    "narration": "RTGS CR-NEW ERA GARMENTS-551079571",
+    "reference": "433560260053",
+    "debit": null,
+    "credit": 159561.85,
+    "balance": 436047.54,
+    "txn_type": "rtgs_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "26/09/2026",
+     "RTGS CR-NEW ERA GARMENTS-551079571",
+     "",
+     "1,59,561.85",
+     "4,36,047.54"
+    ]
+   },
+   {
+    "sr": 82,
+    "date": "2026-09-27",
+    "narration": "UPI/DR/699328126971/Uber India/uber@hdfcbank",
+    "reference": "699328126971",
+    "debit": 1387.79,
+    "credit": null,
+    "balance": 434659.75,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "27/09/2026",
+     "UPI/DR/699328126971/Uber India/uber@hdfcbank",
+     "1,387.79",
+     "",
+     "4,34,659.75"
+    ]
+   },
+   {
+    "sr": 83,
+    "date": "2026-09-27",
+    "narration": "UPI/DR/581344764602/Nykaa/q1050224696@icici",
+    "reference": "581344764602",
+    "debit": 4119.6,
+    "credit": null,
+    "balance": 430540.15,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "27/09/2026",
+     "UPI/DR/581344764602/Nykaa/q1050224696@icici",
+     "4,119.60",
+     "",
+     "4,30,540.15"
+    ]
+   },
+   {
+    "sr": 84,
+    "date": "2026-09-27",
+    "narration": "UPI/DR/981824776998/Reliance Fresh/reliance3356@apl",
+    "reference": "981824776998",
+    "debit": 630.23,
+    "credit": null,
+    "balance": 429909.92,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "27/09/2026",
+     "UPI/DR/981824776998/Reliance Fresh/reliance3356@apl",
+     "630.23",
+     "",
+     "4,29,909.92"
+    ]
+   },
+   {
+    "sr": 85,
+    "date": "2026-09-27",
+    "narration": "NEFT CR-ICIC0006109-MAHAVIR TEXTILES PVT LTD",
+    "reference": "930118165714",
+    "debit": null,
+    "credit": 132382.4,
+    "balance": 562292.32,
+    "txn_type": "neft_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "27/09/2026",
+     "NEFT CR-ICIC0006109-MAHAVIR TEXTILES PVT LTD",
+     "",
+     "1,32,382.40",
+     "5,62,292.32"
+    ]
+   },
+   {
+    "sr": 86,
+    "date": "2026-09-27",
+    "narration": "CHQ PAID-976069-SURAT POLY PACK",
+    "reference": "114734526397",
+    "debit": 97618.52,
+    "credit": null,
+    "balance": 464673.8,
+    "txn_type": "cheque_paid",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "27/09/2026",
+     "CHQ PAID-976069-SURAT POLY PACK",
+     "97,618.52",
+     "",
+     "4,64,673.80"
+    ]
+   },
+   {
+    "sr": 87,
+    "date": "2026-09-27",
+    "narration": "UPI/CR/287170636832/Anjali Nair/anjali.mehta@ybl",
+    "reference": "287170636832",
+    "debit": null,
+    "credit": 811.38,
+    "balance": 465485.18,
+    "txn_type": "upi_p2p_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "27/09/2026",
+     "UPI/CR/287170636832/Anjali Nair/anjali.mehta@ybl",
+     "",
+     "811.38",
+     "4,65,485.18"
+    ]
+   },
+   {
+    "sr": 88,
+    "date": "2026-09-28",
+    "narration": "SMS ALERT CHARGES INCL GST SEP26",
+    "reference": "",
+    "debit": 23.6,
+    "credit": null,
+    "balance": 465461.58,
+    "txn_type": "charge",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "28/09/2026",
+     "SMS ALERT CHARGES INCL GST SEP26",
+     "23.60",
+     "",
+     "4,65,461.58"
+    ]
+   },
+   {
+    "sr": 89,
+    "date": "2026-09-28",
+    "narration": "UPI/DR/889991871983/Uber India/q4045944538@okaxis",
+    "reference": "889991871983",
+    "debit": 2525.07,
+    "credit": null,
+    "balance": 462936.51,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "28/09/2026",
+     "UPI/DR/889991871983/Uber India/q4045944538@okaxis",
+     "2,525.07",
+     "",
+     "4,62,936.51"
+    ]
+   },
+   {
+    "sr": 90,
+    "date": "2026-09-29",
+    "narration": "UPI-BARBEQUE NATION-barbeque21@hdfcbank-837305052174",
+    "reference": "837305052174",
+    "debit": 4131.05,
+    "credit": null,
+    "balance": 458805.46,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "29/09/2026",
+     "UPI-BARBEQUE NATION-barbeque21@hdfcbank-837305052174",
+     "4,131.05",
+     "",
+     "4,58,805.46"
+    ]
+   },
+   {
+    "sr": 91,
+    "date": "2026-09-29",
+    "narration": "UPI/DR/949539031974/Apollo Pharmacy/apollo1777@okicici",
+    "reference": "949539031974",
+    "debit": 230.87,
+    "credit": null,
+    "balance": 458574.59,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "29/09/2026",
+     "UPI/DR/949539031974/Apollo Pharmacy/apollo1777@okicici",
+     "230.87",
+     "",
+     "4,58,574.59"
+    ]
+   },
+   {
+    "sr": 92,
+    "date": "2026-09-29",
+    "narration": "UPI/DR/241569691048/Shell India/q1534219526@ibl",
+    "reference": "241569691048",
+    "debit": 3781.01,
+    "credit": null,
+    "balance": 454793.58,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "29/09/2026",
+     "UPI/DR/241569691048/Shell India/q1534219526@ibl",
+     "3,781.01",
+     "",
+     "4,54,793.58"
+    ]
+   },
+   {
+    "sr": 93,
+    "date": "2026-09-29",
+    "narration": "UPI/CR/927419118024/Amit Yadav/amit@hdfcbank",
+    "reference": "927419118024",
+    "debit": null,
+    "credit": 2500,
+    "balance": 457293.58,
+    "txn_type": "upi_p2p_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "29/09/2026",
+     "UPI/CR/927419118024/Amit Yadav/amit@hdfcbank",
+     "",
+     "2,500.00",
+     "4,57,293.58"
+    ]
+   },
+   {
+    "sr": 94,
+    "date": "2026-09-29",
+    "narration": "NEFT DR-KKBK0007215-SURAT POLY PACK",
+    "reference": "432602428314",
+    "debit": 48496.66,
+    "credit": null,
+    "balance": 408796.92,
+    "txn_type": "neft_out",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "29/09/2026",
+     "NEFT DR-KKBK0007215-SURAT POLY PACK",
+     "48,496.66",
+     "",
+     "4,08,796.92"
+    ]
+   },
+   {
+    "sr": 95,
+    "date": "2026-09-29",
+    "narration": "UPI/CR/422308512153/Rohan Reddy/rohan.chauhan@ybl",
+    "reference": "422308512153",
+    "debit": null,
+    "credit": 2227.52,
+    "balance": 411024.44,
+    "txn_type": "upi_p2p_in",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "29/09/2026",
+     "UPI/CR/422308512153/Rohan Reddy/rohan.chauhan@ybl",
+     "",
+     "2,227.52",
+     "4,11,024.44"
+    ]
+   },
+   {
+    "sr": 96,
+    "date": "2026-09-30",
+    "narration": "SB INTEREST CREDIT",
+    "reference": "",
+    "debit": null,
+    "credit": 918.02,
+    "balance": 411942.46,
+    "txn_type": "interest",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/09/2026",
+     "SB INTEREST CREDIT",
+     "",
+     "918.02",
+     "4,11,942.46"
+    ]
+   },
+   {
+    "sr": 97,
+    "date": "2026-09-30",
+    "narration": "UPI/DR/609755929185/Flipkart/flipkart4651@icici",
+    "reference": "609755929185",
+    "debit": 576.24,
+    "credit": null,
+    "balance": 411366.22,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/09/2026",
+     "UPI/DR/609755929185/Flipkart/flipkart4651@icici",
+     "576.24",
+     "",
+     "4,11,366.22"
+    ]
+   },
+   {
+    "sr": 98,
+    "date": "2026-09-30",
+    "narration": "UPI-BIGBASKET-bigbasket1142@icici-565467397732",
+    "reference": "565467397732",
+    "debit": 1910.62,
+    "credit": null,
+    "balance": 409455.6,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/09/2026",
+     "UPI-BIGBASKET-bigbasket1142@icici-565467397732",
+     "1,910.62",
+     "",
+     "4,09,455.60"
+    ]
+   },
+   {
+    "sr": 99,
+    "date": "2026-09-30",
+    "narration": "UPI/DR/447204663481/Annapurna Tiffin/annapurna.malhotra@ibl",
+    "reference": "447204663481",
+    "debit": 4959.02,
+    "credit": null,
+    "balance": 404496.58,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/09/2026",
+     "UPI/DR/447204663481/Annapurna Tiffin/annapurna.malhotra@ibl",
+     "4,959.02",
+     "",
+     "4,04,496.58"
+    ]
+   },
+   {
+    "sr": 100,
+    "date": "2026-09-30",
+    "narration": "UPI-SWIGGY-q6438599013@oksbi-329514877920",
+    "reference": "329514877920",
+    "debit": 1436.92,
+    "credit": null,
+    "balance": 403059.66,
+    "txn_type": "upi_p2m",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/09/2026",
+     "UPI-SWIGGY-q6438599013@oksbi-329514877920",
+     "1,436.92",
+     "",
+     "4,03,059.66"
+    ]
+   },
+   {
+    "sr": 101,
+    "date": "2026-09-30",
+    "narration": "UPI/DR/171387841626/Amit Yadav/amit.kulkarni@ptys",
+    "reference": "171387841626",
+    "debit": 500,
+    "credit": null,
+    "balance": 402559.66,
+    "txn_type": "upi_p2p_out",
+    "page": 2,
+    "planted_double_debit": false,
+    "printed": [
+     "30/09/2026",
+     "UPI/DR/171387841626/Amit Yadav/amit.kulkarni@ptys",
+     "500.00",
+     "",
+     "4,02,559.66"
+    ]
+   },
+   {
+    "sr": 102,
+    "date": "2026-09-30",
+    "narration": "UPI/CR/864165320492/Amit Yadav/amit.reddy@icici",
+    "reference": "864165320492",
+    "debit": null,
+    "credit": 500,
+    "balance": 403059.66,
+    "txn_type": "upi_p2p_in",
+    "page": 3,
+    "planted_double_debit": false,
+    "printed": [
+     "30/09/2026",
+     "UPI/CR/864165320492/Amit Yadav/amit.reddy@icici",
+     "",
+     "500.00",
+     "4,03,059.66"
+    ]
+   }
+  ]
+ }
+}
