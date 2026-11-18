@@ -8,6 +8,7 @@ with no Python, no server and no internet - nothing can fail during the presenta
 
     python scripts/build_demo_viewer.py                      # -> demo/pocketacc_results.html
     python scripts/build_demo_viewer.py --out my_page.html
+    python scripts/build_demo_viewer.py --split demo/site      # index.html + data.json + images (for hosting)
 """
 import argparse
 import base64
@@ -33,7 +34,11 @@ def main():
     ap.add_argument("--saved", default=str(ROOT / "demo/results"))
     ap.add_argument("--out", default=str(ROOT / "demo/pocketacc_results.html"))
     ap.add_argument("--title", default="Fine-tuned Qwen2-VL-2B vs Tesseract OCR on the demo statements.")
+    ap.add_argument("--split", default=None, help="write a folder (index.html, data.json, images) instead of one file")
     a = ap.parse_args()
+    split = Path(a.split) if a.split else None
+    if split:
+        (split / "pages").mkdir(parents=True, exist_ok=True)
 
     files = []
     for f in Path(a.saved).glob("*.json"):
@@ -55,17 +60,31 @@ def main():
         src = s.get("source")
         if src and src not in pages and (ROOT / src).is_file():
             img = pipeline.page_preview(ROOT / src, height=1600, quality=80)
-            if img:
+            if img and split:
+                rel = f"pages/{Path(src).stem}.jpg"
+                (split / rel).write_bytes(img)
+                pages[src] = rel
+            elif img:
                 pages[src] = data_uri(img, "image/jpeg")
     loss = ROOT / "results/finetune/loss_curve.png"
+    if split and loss.exists():
+        (split / "loss_curve.png").write_bytes(loss.read_bytes())
     payload = {"title": a.title, "index": index, "results": results, "pages": pages,
                "evaluation": pipeline.evaluation_summary(),
-               "loss_curve": data_uri(loss.read_bytes(), "image/png") if loss.exists() else None}
+               "loss_curve": ("loss_curve.png" if split else data_uri(loss.read_bytes(), "image/png"))
+               if loss.exists() else None}
     html = (ROOT / "src/static/index.html").read_text()
-    blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
-    html = html.replace("<script>", f"<script>window.POCKETACC_OFFLINE = {blob};</script>\n<script>", 1)
     html = html.replace("<title>PocketAcc – bank statement to verified data</title>",
                         "<title>PocketAcc – saved results</title>")
+    if split:
+        json.dump(payload, open(split / "data.json", "w"), ensure_ascii=False)
+        html = html.replace("<script>", '<script>window.POCKETACC_OFFLINE_URL = "data.json";</script>\n<script>', 1)
+        (split / "index.html").write_text(html)
+        print(f"saved {split}/: index.html, data.json ({(split / 'data.json').stat().st_size / 1e6:.1f} MB), "
+              f"{len(pages)} page images - {len(index)} results")
+        return
+    blob = json.dumps(payload, ensure_ascii=False).replace("</", "<\\/")
+    html = html.replace("<script>", f"<script>window.POCKETACC_OFFLINE = {blob};</script>\n<script>", 1)
     out = Path(a.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)

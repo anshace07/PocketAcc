@@ -277,7 +277,8 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const mmss = (s) => s < 60 ? `${Math.round(s)} s` : `${Math.floor(s / 60)} min ${String(Math.round(s % 60)).padStart(2, "0")} s`;
 // OFFLINE: scripts/build_demo_viewer.py embeds saved results so this page works as a single file, no server
-const OFF = window.POCKETACC_OFFLINE || null;
+let OFF = window.POCKETACC_OFFLINE || null;
+const FRAMED = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
 let current = null, filter = "all", busy = false, vlmOK = false;
 
 async function getJSON(url, opts) {
@@ -288,6 +289,10 @@ async function getJSON(url, opts) {
 }
 
 async function init() {
+  if (!OFF && window.POCKETACC_OFFLINE_URL) {
+    try { OFF = await getJSON(window.POCKETACC_OFFLINE_URL); }
+    catch (e) { return setStatus(`Could not load the saved results: ${e.message}`, false, true); }
+  }
   if (OFF) return initOffline();
   try {
     const h = await getJSON("/api/health");
@@ -312,6 +317,7 @@ async function init() {
 
 function initOffline() {
   $("uploadcard").style.display = "none";
+  if (FRAMED) { $("x-csv").textContent = "Copy CSV"; $("x-json").textContent = "Copy JSON"; }
   $("offline").style.display = "block";
   $("offline").innerHTML = `<b>PocketAcc – saved results.</b> <span class="muted">${esc(OFF.title || "")} Everything below was produced by the real pipeline; this page only displays it (no server needed). Pick a statement and a reader.</span>`;
   drawSaved(OFF.index);
@@ -518,8 +524,13 @@ function exportAs(fmt) {
   if (!current) return;
   const stem = current.file.replace(/\.[^.]+$/, "") + "_pocketacc";
   if (!OFF && current.id) { location.href = `/api/results/${current.id}.${fmt}`; return; }
-  if (fmt === "csv") download(stem + ".csv", csvOf(current), "text/csv");
-  if (fmt === "json") download(stem + ".json", JSON.stringify(current, null, 1), "application/json");
+  const text = fmt === "csv" ? csvOf(current) : JSON.stringify(current, null, 1);
+  if (FRAMED) {          // a page inside a viewer frame may not start downloads: copy instead
+    navigator.clipboard.writeText(text).then(() => setStatus(`Copied ${fmt.toUpperCase()} of ${current.file} to the clipboard.`),
+                                             () => setStatus("This viewer blocks copying – open the page on its own.", false, true));
+    return;
+  }
+  download(stem + "." + fmt, text, fmt === "csv" ? "text/csv" : "application/json");
 }
 
 document.querySelectorAll(".chip").forEach((c) => c.onclick = () => {
