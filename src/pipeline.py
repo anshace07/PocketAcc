@@ -70,11 +70,19 @@ def train_models(out=MODELS):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     gt = [ROOT / "data/original/ground_truth.json", ROOT / "data/generated/ground_truth.json"]
-    TxnClassifier().fit(all_transactions(*gt)).save(out / "classifier.joblib")
+    _save_atomic(TxnClassifier().fit(all_transactions(*gt)), out / "classifier.joblib")
     orig = json.load(open(gt[0])).values()
-    AnomalyDetector().fit([(st["transactions"], [t["txn_type"] for t in st["transactions"]]) for st in orig]) \
-        .save(out / "anomaly.joblib")
+    _save_atomic(AnomalyDetector().fit([(st["transactions"], [t["txn_type"] for t in st["transactions"]])
+                                        for st in orig]), out / "anomaly.joblib")
     return out
+
+
+def _save_atomic(model, path):
+    """Write to a temporary file, then rename: two processes training at the same time (the two GPU jobs
+    of the demo notebook) never read a half-written file."""
+    tmp = path.with_name(f"{path.name}.{os.getpid()}.tmp")
+    model.save(tmp)
+    os.replace(tmp, path)
 
 
 def load_models():
