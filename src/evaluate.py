@@ -128,9 +128,12 @@ def summarise(counts):
     }
 
 
-def score(pred_file, data_dir, split):
+def score(pred_file, data_dir, split, limit=0):
+    """limit: score only the first N pages of the split, so every system is compared on the same pages."""
     recs = {json.loads(l)["id"]: json.loads(l) for l in open(Path(data_dir) / f"{split}.jsonl")}
-    preds = [json.loads(l) for l in open(pred_file)]
+    if limit:
+        recs = dict(list(recs.items())[:limit])
+    preds = [p for p in (json.loads(l) for l in open(pred_file)) if p["id"] in recs]
     groups = defaultdict(lambda: defaultdict(float))
     for pr in preds:
         r = recs[pr["id"]]
@@ -178,15 +181,18 @@ def predict(args):
                 continue
             img = Image.open(data / r["image"]).convert("RGB")
             if args.system == "vlm":
-                raw, _, secs = ex.read_image(img)
+                raw, parsed, secs = ex.read_image(img)
                 row = {"id": r["id"], "raw": raw, "seconds": round(secs, 1)}
+                # show the first outputs: garbage (empty, "!!!!", no JSON) is visible in minutes, not hours
+                note = f"  rows={len(parsed.get('rows', []))}" + (f"  raw: {raw[:150]!r}" if k <= 2 else "")
             else:
                 from ocr_baseline import ocr_page
                 rows, secs = ocr_page(img, r["bank"])
                 row = {"id": r["id"], "rows": rows, "seconds": round(secs, 1)}
+                note = f"  rows={len(rows)}"
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
             f.flush()
-            print(f"[{k}/{len(recs)}] {r['id']}  {row['seconds']}s", flush=True)
+            print(f"[{k}/{len(recs)}] {r['id']}  {row['seconds']}s{note}", flush=True)
 
 
 def main():
@@ -208,11 +214,12 @@ def main():
     s.add_argument("--data", default="data/vlm")
     s.add_argument("--split", default="test_unseen")
     s.add_argument("--json-out", default=None)
+    s.add_argument("--limit", type=int, default=0, help="score only the first N pages of the split")
     a = ap.parse_args()
     if a.cmd == "predict":
         predict(a)
     else:
-        res = score(a.pred_file, a.data, a.split)
+        res = score(a.pred_file, a.data, a.split, a.limit)
         print_table(res)
         if a.json_out:
             json.dump(res, open(a.json_out, "w"), indent=1)

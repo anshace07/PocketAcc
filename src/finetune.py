@@ -45,8 +45,12 @@ class PageDataset(torch.utils.data.Dataset):
 
 def add_lora(model, rank, alpha=None, dropout=0.05, mlp=False, four_bit=True):
     from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-    if four_bit and torch.cuda.is_available():
+    if four_bit and getattr(model, "is_loaded_in_4bit", False):
         model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+        # that call upcasts every non-4-bit weight to fp32; the frozen vision encoder does not need
+        # it (fp32 = 2.7 GB vs 1.35 GB), and inference runs it in fp16/bf16 anyway
+        if getattr(model, "visual", None) is not None:
+            model.visual.to(compute_dtype())
     else:
         model.gradient_checkpointing_enable()
         model.enable_input_require_grads()

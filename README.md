@@ -69,6 +69,7 @@ pip install -r requirements-gpu.txt
 python src/generate.py --n 140 --out data/generated --seed 7      # step 1 (already done, PDFs in repo)
 python src/build_dataset.py --out data/vlm                         # steps 2-4a: page images + JSON targets (~20 min)
 python scripts/smoke_test.py data/vlm                              # CPU test of the training code
+python scripts/check_4bit_vision.py                               # CPU test: in 4-bit the vision encoder still sees the real image
 python scripts/vram_test.py --data data/vlm                        # GPU: will it fit?
 python src/finetune.py --data data/vlm --out runs/lora_r8 --rank 8 --epochs 1
 python src/evaluate.py predict --system vlm --adapter runs/lora_r8/best_adapter --split test_unseen --limit 24 --out results/ft_unseen.jsonl
