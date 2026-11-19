@@ -49,9 +49,10 @@ All statements are synthetic — no real customer data. Every balance chain in b
 | Deskew (heavy damage) | mean tilt 1.53° → 0.57° |
 | Tesseract OCR baseline (unseen banks) | amounts 89.8% on clean pages (**98.0%** with corrector), 3.2% on heavy damage |
 | Whole app on a real 9-page PDF (PNB, 592 rows, Tesseract) | 98.1% of rows verified, closing balance matches, 574/592 rows exactly right, categories 592/592 |
-| Qwen2-VL-2B fine-tuning | **in progress** — needs a GPU, see below |
+| Qwen2-VL-2B fine-tuning (Kaggle T4, 300 pages) | unseen banks, numeric accuracy after correction: zero-shot 14.9% → fine-tuned **61.8%** (88.5% with the tolerant parser); heavy-damage photos 60.0% / 95.6% vs Tesseract 5.1% |
+| **Both readers (the app)** | keep, per page, the reading whose balance chain verifies: **93.8%** unseen banks (clean 100, medium 85.9, heavy 95.6) |
 
-All numbers: `docs/milestone2.md`.
+All numbers: `docs/milestone2.md`, step 9: `docs/milestone3.md`.
 
 ## Setup
 
@@ -95,6 +96,14 @@ python scripts/corrector_sim.py data/original/ground_truth.json results/correcto
 
 ## Web app (step 10)
 
+**On a Windows laptop (no GPU needed):**
+1. Install Tesseract once: `winget install UB-Mannheim.TesseractOCR` (PDFs are rendered with PyMuPDF, no Poppler needed)
+2. `pip install -r requirements.txt -r requirements-app.txt`
+3. `python -m uvicorn app:app --app-dir src --port 8000` and open http://localhost:8000
+4. Click the **Bank of Baroda** samples: Tesseract runs live, and the fine-tuned model's reading recorded on a Kaggle T4
+   is used for the "both readers" choice. Try the heavy-damage sample with *Tesseract OCR only*, then with *Automatic*.
+
+
 ```bash
 pip install -r requirements.txt -r requirements-app.txt
 uvicorn app:app --app-dir src --port 8000          # open http://localhost:8000
@@ -108,7 +117,7 @@ docker run -p 8000:8000 pocketacc
 ```
 Upload a PDF or phone photo (or click a sample). The table marks rows **corrected** (green), **needs review** (red) and
 **unusual** (amber), with the reason; export CSV, Excel or JSON. On a GPU machine with the trained adapter in
-`runs/lora_r8/best_adapter`, the reader switches to the fine-tuned vision model automatically.
+`adapter/lora_r8` (in the repo), Automatic reads every page with both readers and keeps the one that verifies.
 
 ![dashboard](docs/proof/5_app_dashboard.png)
 

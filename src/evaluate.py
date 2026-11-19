@@ -128,7 +128,7 @@ def summarise(counts):
     }
 
 
-def score(pred_file, data_dir, split, limit=0):
+def score(pred_file, data_dir, split, limit=0, strict_parse=False):
     """limit: score only the first N pages of the split, so every system is compared on the same pages."""
     recs = {json.loads(l)["id"]: json.loads(l) for l in open(Path(data_dir) / f"{split}.jsonl")}
     if limit:
@@ -137,7 +137,7 @@ def score(pred_file, data_dir, split, limit=0):
     groups = defaultdict(lambda: defaultdict(float))
     for pr in preds:
         r = recs[pr["id"]]
-        parsed = parse_model_output(pr["raw"]) if "raw" in pr else {"rows": pr["rows"]}
+        parsed = parse_model_output(pr["raw"], strict=strict_parse) if "raw" in pr else {"rows": pr["rows"]}
         txns = rows_to_transactions(parsed.get("rows", []))
         gt = r["gt"]
         for stage, t in (("before", txns), ("after", apply_corrector(r["prev_balance"], txns))):
@@ -206,7 +206,7 @@ def main():
     p.add_argument("--adapter", default=None)
     p.add_argument("--model", default="Qwen/Qwen2-VL-2B-Instruct")
     p.add_argument("--no-4bit", action="store_true")
-    p.add_argument("--max-pixels", type=int, default=1_400_000)
+    p.add_argument("--max-pixels", type=int, default=900_000)
     p.add_argument("--max-new-tokens", type=int, default=4096)
     p.add_argument("--limit", type=int, default=0)
     s = sub.add_parser("score")
@@ -215,11 +215,12 @@ def main():
     s.add_argument("--split", default="test_unseen")
     s.add_argument("--json-out", default=None)
     s.add_argument("--limit", type=int, default=0, help="score only the first N pages of the split")
+    s.add_argument("--strict-parse", action="store_true", help="original parser: exact JSON, 5-field rows only")
     a = ap.parse_args()
     if a.cmd == "predict":
         predict(a)
     else:
-        res = score(a.pred_file, a.data, a.split, a.limit)
+        res = score(a.pred_file, a.data, a.split, a.limit, a.strict_parse)
         print_table(res)
         if a.json_out:
             json.dump(res, open(a.json_out, "w"), indent=1)

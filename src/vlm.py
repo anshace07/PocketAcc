@@ -15,7 +15,7 @@ def compute_dtype():
     return torch.float32
 
 
-def load_processor(model_id=DEFAULT_MODEL, max_pixels=1_400_000):
+def load_processor(model_id=DEFAULT_MODEL, max_pixels=900_000):
     from transformers import AutoProcessor
     return AutoProcessor.from_pretrained(model_id, min_pixels=64 * 28 * 28, max_pixels=max_pixels)
 

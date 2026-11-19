@@ -1,0 +1,21 @@
+{
+ "data": "data/vlm",
+ "out": "runs/lora_r8",
+ "model": "Qwen/Qwen2-VL-2B-Instruct",
+ "rank": 8,
+ "mlp": false,
+ "lr": 0.0002,
+ "epochs": 1.0,
+ "max_steps": 0,
+ "grad_accum": 8,
+ "max_len": 6144,
+ "max_pixels": 900000,
+ "no_4bit": false,
+ "log_every": 5,
+ "eval_every": 25,
+ "val_samples": 20,
+ "limit": 300,
+ "seed": 0,
+ "best_val_loss": 0.05997274055844173,
+ "steps": 37
+}

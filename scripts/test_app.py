@@ -53,7 +53,14 @@ vlm = c.post("/api/extract", files={"file": (pdf.name, pdf.read_bytes())}, data=
 assert vlm.status_code == (200 if h["readers"]["vlm"] else 400)
 print("[5] OK errors: wrong file type 415, unreadable image 422, expired result 404, VLM without GPU 400")
 
-p = c.post("/api/samples/icici_photo_light", data={"reader": "tesseract"}).json()
-print(f"[6] OK phone-photo sample (light damage): {p['bank_label']}, {p['summary']['transactions']} rows, "
-      f"trust {p['summary']['trust_score']}%, notes: {len(p['notes'])}")
+h_both = c.post("/api/samples/bob_page1_heavy", data={"reader": "auto"}).json()
+h_ocr = c.post("/api/samples/bob_page1_heavy", data={"reader": "tesseract"}).json()
+assert h_both["backend"] == "both" and h_both["pages"][0]["reader"] == "vlm", h_both["pages"]
+assert h_both["summary"]["trust_score"] >= 90 and h_both["summary"]["transactions"] >= 30, h_both["summary"]
+print(f"[6] OK heavy-damage photo: Tesseract only -> {h_ocr['summary']['transactions']} rows, trust "
+      f"{h_ocr['summary']['trust_score']}; both readers -> {h_both['summary']['transactions']} rows, trust "
+      f"{h_both['summary']['trust_score']}% (kept the model's reading: {h_both['pages'][0]['verified']})")
+cl = c.post("/api/samples/bob_page1_clean", data={"reader": "auto"}).json()
+assert cl["pages"][0]["reader"] == "tesseract" and cl["summary"]["trust_score"] == 100.0, cl["pages"]
+print(f"[7] OK clean scan: both readers kept Tesseract ({cl['pages'][0]['verified']}), trust 100%")
 print("\nALL APP TESTS PASSED")

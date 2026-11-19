@@ -18,8 +18,23 @@ import numpy as np
 
 
 def render_pages(pdf_path: str, dpi: int = 150) -> list[np.ndarray]:
-    from pdf2image import convert_from_path
-    return [cv2.cvtColor(np.array(p), cv2.COLOR_RGB2BGR) for p in convert_from_path(pdf_path, dpi=dpi)]
+    """PDF -> BGR page images. Uses Poppler (pdf2image); if Poppler is not installed (common on
+    Windows) it falls back to PyMuPDF, which needs no system install."""
+    try:
+        from pdf2image import convert_from_path
+        return [cv2.cvtColor(np.array(p), cv2.COLOR_RGB2BGR) for p in convert_from_path(pdf_path, dpi=dpi)]
+    except Exception as poppler_error:
+        try:
+            import pymupdf as fitz  # PyMuPDF (needs no system install)
+        except ImportError:
+            raise poppler_error
+        pages = []
+        with fitz.open(pdf_path) as doc:
+            for page in doc:
+                pix = page.get_pixmap(dpi=dpi)
+                arr = np.frombuffer(pix.samples, np.uint8).reshape(pix.height, pix.width, pix.n)
+                pages.append(cv2.cvtColor(arr, cv2.COLOR_RGBA2BGR if pix.n == 4 else cv2.COLOR_RGB2BGR))
+        return pages
 
 
 def crop_paper(img: np.ndarray, min_area: float = 0.35) -> np.ndarray:

@@ -25,7 +25,7 @@ from vlm import DEFAULT_MODEL, build_inputs, load_model, load_processor
 
 
 class Extractor:
-    def __init__(self, model_id=DEFAULT_MODEL, adapter=None, four_bit=True, max_pixels=1_400_000,
+    def __init__(self, model_id=DEFAULT_MODEL, adapter=None, four_bit=True, max_pixels=900_000,
                  max_new_tokens=4096, model=None, processor=None):
         self.processor = processor or load_processor(model_id, max_pixels)
         self.model = model or load_model(model_id, four_bit=four_bit, adapter=adapter)
@@ -63,7 +63,7 @@ def main():
     ap.add_argument("--adapter", default=None)
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--no-4bit", action="store_true")
-    ap.add_argument("--max-pixels", type=int, default=1_400_000)
+    ap.add_argument("--max-pixels", type=int, default=900_000)
     ap.add_argument("--out", default=None)
     a = ap.parse_args()
     ex = Extractor(a.model, a.adapter, not a.no_4bit, a.max_pixels)

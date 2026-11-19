@@ -131,9 +131,10 @@
       <div class="controls">
         <label class="field">Reader
           <select id="reader">
-            <option value="auto">Automatic</option>
-            <option value="tesseract">Tesseract OCR (CPU)</option>
-            <option value="vlm">Fine-tuned vision model (GPU)</option>
+            <option value="auto">Automatic (best available)</option>
+            <option value="both">Both readers, keep the one that verifies</option>
+            <option value="tesseract">Tesseract OCR only (CPU)</option>
+            <option value="vlm">Fine-tuned vision model only</option>
           </select>
         </label>
         <label class="field">Bank
@@ -158,6 +159,7 @@
         <button id="x-csv">CSV</button><button id="x-xlsx">Excel</button><button id="x-json">JSON</button>
       </span>
     </div>
+    <div class="notes" id="readers"></div>
     <div class="notes" id="notes"></div>
 
     <div class="kpis">
@@ -217,14 +219,13 @@ async function init() {
     const h = await (await fetch("/api/health")).json();
     vlmOK = h.readers.vlm;
     for (const [code, name] of Object.entries(h.banks)) $("bank").insertAdjacentHTML("beforeend", `<option value="${code}">${esc(name)}</option>`);
-    $("reader").querySelector('option[value="vlm"]').disabled = !vlmOK;
     $("readerinfo").textContent = vlmOK
-      ? "Automatic uses the fine-tuned vision model (GPU found)."
-      : "Automatic uses Tesseract OCR: no GPU or trained adapter on this server. Tesseract is reliable on PDFs and clean scans, weak on damaged photos.";
+      ? "GPU found: Automatic reads every page with both Tesseract and the fine-tuned model and keeps the reading whose balance chain verifies."
+      : "No GPU here: your uploads are read with Tesseract OCR. The Bank of Baroda samples include the fine-tuned model's reading recorded on a Kaggle GPU, so Automatic uses both readers for them. Try the heavy-damage sample with 'Tesseract OCR only', then with 'Automatic'.";
     const samples = await (await fetch("/api/samples")).json();
     for (const s of samples) {
       const b = document.createElement("button");
-      b.className = "sample"; b.innerHTML = `<b>${esc(s.label)}</b><span>${esc(s.detail)}</span>`;
+      b.className = "sample"; b.innerHTML = `<b>${esc(s.label)}</b><span>${esc(s.detail)}${s.recorded_model ? " · model output recorded on a Kaggle T4" : ""}</span>`;
       b.onclick = () => go(() => { const f = new FormData(); f.append("reader", $("reader").value); return fetch(`/api/samples/${s.name}`, { method: "POST", body: f }); }, s.label);
       $("samples").appendChild(b);
     }
@@ -253,7 +254,6 @@ async function go(request, label) {
   } finally {
     busy = false;
     document.querySelectorAll("button, select").forEach((el) => el.disabled = false);
-    $("reader").querySelector('option[value="vlm"]').disabled = !vlmOK;
   }
 }
 
@@ -278,7 +278,13 @@ function render(r) {
   $("results").style.display = "block";
   $("m-bank").textContent = r.bank_label;
   $("m-file").textContent = `${r.file} · ${r.pages.length} page${r.pages.length > 1 ? "s" : ""} · ${r.seconds} s`;
-  $("f-reader").textContent = r.backend === "vlm" ? "fine-tuned Qwen2-VL-2B (QLoRA)" : "Tesseract OCR + rule-based column parser";
+  $("f-reader").textContent = { vlm: "fine-tuned Qwen2-VL-2B (QLoRA)", tesseract: "Tesseract OCR + rule-based column parser",
+    both: "both Tesseract OCR and the fine-tuned Qwen2-VL-2B; each page keeps the reading whose balance chain verifies best" }[r.backend] || r.backend;
+  const name = { vlm: "fine-tuned model", tesseract: "Tesseract OCR" };
+  $("readers").innerHTML = r.backend !== "both" ? "" : r.pages.map((p) =>
+    `<div class="note"><span aria-hidden="true">${p.reader === "vlm" ? "◎" : "▤"}</span><span><b>Page ${p.page}: kept the ${name[p.reader]}'s reading.</b>
+     Rows that verify after correction: fine-tuned model ${p.verified.vlm}% · Tesseract ${p.verified.tesseract}%.
+     Time: Tesseract ${p.ocr_seconds} s, model ${p.model_seconds} s${p.model_recorded ? " (recorded on a Kaggle T4)" : ""}.</span></div>`).join("");
   $("notes").innerHTML = r.notes.map((n) => `<div class="note ${n.startsWith("LOW TRUST") ? "low" : ""}"><span aria-hidden="true">${n.startsWith("LOW TRUST") ? "!" : "i"}</span><span>${esc(n)}</span></div>`).join("");
 
   $("k-trust").textContent = s.trust_score === null ? "–" : `${s.trust_score}%`;

@@ -94,8 +94,71 @@ def target_json(header: dict | None, rows: list[list[str]]) -> str:
     return json.dumps({"header": header, "rows": rows}, ensure_ascii=False, separators=(",", ":"))
 
 
-def parse_model_output(text: str) -> dict:
-    """Robustly pull the JSON object out of a model response."""
+ROW_DATE = re.compile(r"^\s*\d{1,2}[-/. ](?:\d{1,2}|[A-Za-z]{3})[-/. ]\d{2,4}\s*$")
+ROW_AMOUNT = re.compile(r"^\s*-?[\d,]*\d\.\d{2}\s*(?:Cr|Dr|CR|DR)?\s*$")
+
+
+def _flat_to_rows(items):
+    """The model sometimes drops the row brackets: [[...], "date", "narr", ...]. Re-split at dates."""
+    rows, cur = [], None
+    for x in items:
+        if isinstance(x, list):
+            if cur:
+                rows.append(cur)
+                cur = None
+            rows.append(x)
+        elif ROW_DATE.match(str(x)):
+            if cur:
+                rows.append(cur)
+            cur = [str(x)]
+        elif cur is not None:
+            cur.append(str(x))
+    if cur:
+        rows.append(cur)
+    return rows
+
+
+def normalise_row(r):
+    """Rows should be [date, narration, debit, credit, balance]. A model sometimes emits another
+    shape (a bank's extra columns, a dropped empty cell, amount+balance with no direction). Keep the
+    date, the narration and the amounts in order; when the debit/credit column is unclear the amount
+    goes in debit and the balance chain decides (the corrector's column-swap rule). 5-field rows
+    that make sense are returned unchanged."""
+    r = ["" if v is None else str(v) for v in r]
+    if len(r) == 5 and not (r[2].strip() and r[3].strip() and not r[4].strip()):
+        return r
+    di = next((i for i, v in enumerate(r) if ROW_DATE.match(v)), None)
+    if di is None:
+        return r if len(r) >= 5 else None
+    rest = r[di + 1:]
+    first_amt = next((i for i, v in enumerate(rest) if ROW_AMOUNT.match(v)), len(rest))
+    nar = " ".join(v.strip() for v in rest[:first_amt] if v.strip())
+    amts = [v for v in rest[first_amt:] if ROW_AMOUNT.match(v)]
+    if not amts:
+        return None
+    if len(amts) == 1:
+        return [r[di], nar, "", "", amts[0]]
+    return [r[di], nar, amts[0], "", amts[-1]]
+
+
+def _split_multi(row):
+    """One list holding several rows (["d1", ..., "d2", ...]) -> one list per date."""
+    cut = [i for i, v in enumerate(row) if i > 0 and ROW_DATE.match(str(v))]
+    if not cut:
+        return [row]
+    bounds = [0] + cut + [len(row)]
+    return [row[a:b] for a, b in zip(bounds, bounds[1:])]
+
+
+def _clean_rows(rows):
+    rows = _flat_to_rows(rows) if any(not isinstance(x, list) for x in rows) else rows
+    rows = [part for x in rows if isinstance(x, list) for part in _split_multi(x)]
+    return [n for n in (normalise_row(x) for x in rows if isinstance(x, list)) if n is not None]
+
+
+def parse_model_output(text: str, strict: bool = False) -> dict:
+    """Robustly pull the JSON object out of a model response.
+    strict=True is the original parser (exact JSON, 5-field rows only) - kept to report both."""
     text = text.strip()
     if text.startswith("```"):
         text = re.sub(r"^```(json)?", "", text).rstrip("`").strip()
@@ -110,12 +173,19 @@ def parse_model_output(text: str) -> dict:
             depth -= 1
             if depth == 0:
                 try:
-                    return json.loads(text[start:i + 1])
+                    out = json.loads(text[start:i + 1])
+                    if not strict and isinstance(out, dict) and isinstance(out.get("rows"), list):
+                        out["rows"] = _clean_rows(out["rows"])
+                    return out
                 except json.JSONDecodeError:
                     break
-    # truncated output: keep every complete row we can recover
-    rows = re.findall(r'\[\s*"([^"]*)"\s*,\s*"((?:[^"\\]|\\.)*)"\s*,\s*"([^"]*)"\s*,\s*"([^"]*)"\s*,\s*"([^"]*)"\s*\]', text)
-    return {"header": None, "rows": [list(r) for r in rows]}
+    # broken or truncated output: keep every complete row we can recover
+    if strict:
+        rows = re.findall(r'\[\s*"([^"]*)"\s*,\s*"((?:[^"\\]|\\.)*)"\s*,\s*"([^"]*)"\s*,\s*"([^"]*)"\s*,\s*"([^"]*)"\s*\]', text)
+        return {"header": None, "rows": [list(r) for r in rows]}
+    groups = re.findall(r'\[\s*("(?:[^"\\]|\\.)*"(?:\s*,\s*"(?:[^"\\]|\\.)*")+)\s*\]', text)
+    rows = [re.findall(r'"((?:[^"\\]|\\.)*)"', g) for g in groups]
+    return {"header": None, "rows": _clean_rows(rows)}
 
 
 def rows_to_transactions(rows: list) -> list[dict]:

@@ -153,7 +153,7 @@ def main():
     ap.add_argument("--max-steps", type=int, default=0)
     ap.add_argument("--grad-accum", type=int, default=8)
     ap.add_argument("--max-len", type=int, default=6144, help="skip examples longer than this many tokens")
-    ap.add_argument("--max-pixels", type=int, default=1_400_000)
+    ap.add_argument("--max-pixels", type=int, default=900_000)
     ap.add_argument("--no-4bit", action="store_true")
     ap.add_argument("--log-every", type=int, default=5)
     ap.add_argument("--eval-every", type=int, default=25)

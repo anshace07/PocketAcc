@@ -31,7 +31,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="data/vlm")
     ap.add_argument("--model", default=DEFAULT_MODEL)
-    ap.add_argument("--max-pixels", type=int, default=1_400_000)
+    ap.add_argument("--max-pixels", type=int, default=900_000)
     ap.add_argument("--rank", type=int, default=8)
     a = ap.parse_args()
 

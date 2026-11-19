@@ -12,22 +12,20 @@ Run:
 API:
     GET  /api/health                     readers available
     GET  /api/samples                    demo statements
-    POST /api/extract   (file, reader, bank)
+    POST /api/extract   (file, reader = auto | both | tesseract | vlm, bank)
     POST /api/samples/{name}             run a demo statement
     GET  /api/results/{id}.csv|.xlsx|.json
 """
+import json
 import tempfile
 import uuid
 from collections import OrderedDict
 from pathlib import Path
 
-import cv2
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, Response
 
 import pipeline
-from degrade import degrade
-from preprocess import render_pages
 
 ROOT = pipeline.ROOT
 STATIC = Path(__file__).resolve().parent / "static"
@@ -39,29 +37,25 @@ app = FastAPI(title="PocketAcc", version="1.0",
               description="Bank statement photo/PDF -> verified, categorised transactions")
 MODELS = pipeline.load_models()
 RESULTS: "OrderedDict[str, dict]" = OrderedDict()
-SAMPLE_DIR = Path(tempfile.mkdtemp(prefix="pocketacc_samples_"))
+DEMO = ROOT / "demo"
+GPU_OUTPUTS = json.loads((DEMO / "gpu_outputs.json").read_text()) if (DEMO / "gpu_outputs.json").exists() else {}
 SAMPLES = {
-    "axis_pdf": dict(label="Digital PDF", detail="Axis Bank · 2 pages · a bank the model never trained on",
+    "bob_page1_clean": dict(label="Clean scan", detail="Bank of Baroda · page 1 · never used in training · both readers"),
+    "bob_page1_medium": dict(label="Phone photo, medium damage", detail="Same page · tilt, blur, stamp, shadow · both readers"),
+    "bob_page1_heavy": dict(label="Phone photo, heavy damage", detail="Same page · strong tilt, blur, noise · both readers"),
+    "axis_pdf": dict(label="Digital PDF", detail="Axis Bank · 2 pages · Tesseract only (no GPU here)",
                      path=ROOT / "data/generated/pdf/G007_AXIS_Suresh-Ansari.pdf"),
-    "pnb_pdf": dict(label="Digital PDF", detail="Punjab National Bank · kirana shop · 9 pages (~40 s)",
+    "pnb_pdf": dict(label="Digital PDF, 9 pages", detail="Punjab National Bank · kirana shop · 592 rows (~40 s)",
                     path=ROOT / "data/original/pdf/03_PNB_Rakesh-Agarwal_Indore.pdf"),
-    "icici_photo_light": dict(label="Phone photo, light damage", detail="ICICI Bank · 1 page",
-                              page=(ROOT / "data/generated/pdf/G005_ICICI_Rahul-Bhatt.pdf", "light")),
-    "icici_photo_medium": dict(label="Phone photo, medium damage", detail="ICICI Bank · 1 page · shows the low-trust warning",
-                               page=(ROOT / "data/generated/pdf/G005_ICICI_Rahul-Bhatt.pdf", "medium")),
 }
+for name in SAMPLES:
+    if "path" not in SAMPLES[name]:
+        SAMPLES[name]["path"] = DEMO / f"{name}.jpg"
+SAMPLES = {k: v for k, v in SAMPLES.items() if Path(v["path"]).exists()}
 
 
 def sample_path(name):
-    s = SAMPLES[name]
-    if "path" in s:
-        return s["path"]
-    out = SAMPLE_DIR / f"{name}.jpg"
-    if not out.exists():                    # photo samples are made on demand with our own damage generator
-        pdf, level = s["page"]
-        img, _ = degrade(render_pages(str(pdf), 150)[0], level, seed=3)
-        cv2.imwrite(str(out), img, [cv2.IMWRITE_JPEG_QUALITY, 90])
-    return out
+    return SAMPLES[name]["path"]
 
 
 def keep(result):
@@ -73,16 +67,17 @@ def keep(result):
     return result
 
 
-def run(path, reader, bank):
-    if reader not in ("auto", "tesseract", "vlm"):
-        raise HTTPException(400, "reader must be auto, tesseract or vlm")
-    if reader == "vlm" and not pipeline.vlm_available():
-        raise HTTPException(400, "The vision model needs a GPU and a trained adapter (runs/lora_r8/best_adapter).")
+def run(path, reader, bank, cache=None):
+    if reader not in ("auto", "both", "tesseract", "vlm"):
+        raise HTTPException(400, "reader must be auto, both, tesseract or vlm")
+    if reader in ("vlm", "both") and cache is None and not pipeline.vlm_available():
+        raise HTTPException(400, "The vision model needs a GPU and the trained adapter (adapter/lora_r8). "
+                                 "Try a Bank of Baroda sample: their model readings were recorded on a GPU.")
     bank = None if bank in (None, "", "auto") else bank
     if bank is not None and bank not in pipeline.BANK_LABEL:
         raise HTTPException(400, f"unknown bank {bank}")
     try:
-        return keep(pipeline.analyse(path, reader, bank, MODELS))
+        return keep(pipeline.analyse(path, reader, bank, MODELS, cache))
     except ValueError as e:
         raise HTTPException(422, str(e))
 
@@ -100,14 +95,15 @@ def health():
 
 @app.get("/api/samples")
 def samples():
-    return [{"name": k, "label": v["label"], "detail": v["detail"]} for k, v in SAMPLES.items()]
+    return [{"name": k, "label": v["label"], "detail": v["detail"], "recorded_model": k in GPU_OUTPUTS}
+            for k, v in SAMPLES.items()]
 
 
 @app.post("/api/samples/{name}")
 def run_sample(name: str, reader: str = Form("auto")):
     if name not in SAMPLES:
         raise HTTPException(404, "no such sample")
-    return run(sample_path(name), reader, None)
+    return run(sample_path(name), reader, None, GPU_OUTPUTS.get(name))
 
 
 @app.post("/api/extract")

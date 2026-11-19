@@ -33,7 +33,7 @@ from preprocess import prepare, render_pages
 
 ROOT = Path(__file__).resolve().parents[1]
 MODELS = Path(os.environ.get("POCKETACC_MODELS", ROOT / "models"))
-ADAPTER = os.environ.get("POCKETACC_ADAPTER", str(ROOT / "runs/lora_r8/best_adapter"))
+ADAPTER = os.environ.get("POCKETACC_ADAPTER", str(ROOT / "adapter/lora_r8"))
 
 IFSC_PREFIX = {"HDFC": "HDFC", "SBIN": "SBI", "PUNB": "PNB", "KKBK": "KOTAK", "ICIC": "ICICI", "BARB": "BOB", "UTIB": "AXIS"}
 BANK_NAMES = {"HDFC BANK": "HDFC", "STATE BANK OF INDIA": "SBI", "PUNJAB NATIONAL": "PNB", "KOTAK": "KOTAK",
@@ -125,9 +125,10 @@ def header_from_lines(lines):
     return {"opening_balance": opening, "closing_balance": closing}
 
 
-def read_tesseract(pages, bank=None):
+def tesseract_pages(pages, bank=None):
+    """Tesseract + rule parser, page by page -> header, bank, [{"rows", "seconds"}]."""
     from ocr_baseline import lines_of, ocr_page, words
-    header, rows, info = {}, [], []
+    header, out = {}, []
     for i, page in enumerate(pages):
         t0 = time.time()
         img = Image.fromarray(cv2.cvtColor(prepare(page), cv2.COLOR_BGR2RGB))
@@ -136,27 +137,113 @@ def read_tesseract(pages, bank=None):
             bank = bank or detect_bank([" ".join(w["text"] for w in ln) for ln in lines])
             header = header_from_lines(lines)
         page_rows, _ = ocr_page(img, bank or "HDFC", lines=lines, max_gap=1.8)
-        rows += page_rows
-        info.append({"page": i + 1, "rows": len(page_rows), "seconds": round(time.time() - t0, 1)})
-    return header, rows, bank, info
+        out.append({"rows": page_rows, "seconds": round(time.time() - t0, 1)})
+    return header, bank, out
 
 
 _EXTRACTOR = None
 
 
-def read_vlm(pages):
+def split_opening_row(rows):
+    """The model often writes the 'OPENING BALANCE B/F' line as a row. It is not a transaction: take its
+    amount as the opening balance and drop it."""
+    keep, opening = [], None
+    for r in rows:
+        nar = str(r[1]).upper() if len(r) > 1 else ""
+        if "OPENING BALANCE" in nar or "B/F" in nar or "BROUGHT FORWARD" in nar:
+            amounts = [a for a in (parse_amount(x) for x in r[2:]) if a is not None]
+            if amounts and opening is None:
+                opening = amounts[-1]
+            continue
+        keep.append(r)
+    return keep, opening
+
+
+def vlm_pages(pages, cache=None):
+    """Fine-tuned Qwen2-VL, page by page -> header, bank, [{"rows", "seconds"}].
+    cache: outputs recorded earlier on a GPU ({"raw": [...], "seconds": [...]}, one per page), so the
+    model's real readings can be shown on a laptop without a GPU."""
     global _EXTRACTOR
-    if _EXTRACTOR is None:
-        from extract import Extractor
-        _EXTRACTOR = Extractor(adapter=ADAPTER)
-    header, rows, info = None, [], []
+    from common import parse_model_output
+    header, out = None, []
     for i, page in enumerate(pages):
-        _, parsed, secs = _EXTRACTOR.read_image(page)
+        if cache is not None:
+            parsed, secs = parse_model_output(cache["raw"][i]), cache["seconds"][i]
+        else:
+            if _EXTRACTOR is None:
+                from extract import Extractor
+                _EXTRACTOR = Extractor(adapter=ADAPTER)
+            _, parsed, secs = _EXTRACTOR.read_image(page)
         header = header or parsed.get("header")
-        rows += parsed.get("rows", [])
-        info.append({"page": i + 1, "rows": len(parsed.get("rows", [])), "seconds": round(secs, 1)})
-    header = header or {}
-    return header, rows, detect_bank(["IFSC " + str(header.get("ifsc", "")), str(header.get("bank", ""))]), info
+        page_rows, page_opening = split_opening_row(parsed.get("rows", []))
+        out.append({"rows": page_rows, "opening": page_opening, "seconds": round(secs, 1)})
+    header = dict(header) if isinstance(header, dict) else {}
+    if parse_amount(header.get("opening_balance")) is None and out and out[0]["opening"] is not None:
+        header["opening_balance"] = f"{out[0]['opening']:.2f}"
+    return header, detect_bank(["IFSC " + str(header.get("ifsc", "")), str(header.get("bank", ""))]), out
+
+
+def _first_row_opening(rows):
+    if not rows:
+        return None
+    _, _, dr, cr, bal = (list(rows[0]) + [""] * 5)[:5]
+    b = parse_amount(bal)
+    return None if b is None else round(b + (parse_amount(dr) or 0.0) - (parse_amount(cr) or 0.0), 2)
+
+
+def chain_check(rows, opening):
+    """Share of rows whose balance chain verifies AFTER the corrector has run (what the user gets),
+    and the last balance."""
+    import copy
+    from common import rows_to_transactions
+    from corrector import Txn, correct, verify
+    t = rows_to_transactions(copy.deepcopy(rows))
+    if not t or opening is None:
+        return 0.0, None
+    chain = [Txn(x["debit"], x["credit"], x["balance"] if x["balance"] is not None else float("nan")) for x in t]
+    correct(opening, chain)
+    ok = verify(opening, chain)
+    last = next((c.balance for c in reversed(chain) if c.balance == c.balance), None)
+    return sum(ok) / len(ok), last
+
+
+def read_both(pages, bank=None, cache=None):
+    """Read every page with BOTH readers and keep, per page, the reading whose balance chain verifies
+    on more rows after correction (ties -> Tesseract). The choice uses only the statement's own arithmetic."""
+    th, tbank, tp = tesseract_pages(pages, bank)
+    vh, vbank, vp = vlm_pages(pages, cache)
+    printed = [o for o in (parse_amount(th.get("opening_balance")), parse_amount(vh.get("opening_balance"))) if o is not None]
+    rows, info, prev, opening = [], [], None, None
+    for i, (t, v) in enumerate(zip(tp, vp)):
+        best = {}
+        for name, r in (("tesseract", t["rows"]), ("vlm", v["rows"])):
+            starts = [prev] if prev is not None else (printed or [_first_row_opening(r)])
+            best[name] = max(((chain_check(r, o), o) for o in starts), key=lambda x: x[0][0])
+        pick = "vlm" if best["vlm"][0][0] > best["tesseract"][0][0] else "tesseract"
+        (frac, last), used = best[pick]
+        if i == 0:
+            opening = used
+        chosen = v["rows"] if pick == "vlm" else t["rows"]
+        rows += chosen
+        prev = last if last is not None else prev
+        info.append({"page": i + 1, "rows": len(chosen), "seconds": round(t["seconds"] + v["seconds"], 1), "reader": pick,
+                     "ocr_seconds": t["seconds"], "model_seconds": v["seconds"], "model_recorded": cache is not None,
+                     "verified": {"tesseract": round(100 * best["tesseract"][0][0], 1), "vlm": round(100 * best["vlm"][0][0], 1)}})
+    header = {"opening_balance": None if opening is None else f"{opening:.2f}",
+              "closing_balance": th.get("closing_balance") or vh.get("closing_balance")}
+    return header, rows, bank or tbank or vbank, info
+
+
+def read_tesseract(pages, bank=None):
+    header, bank, out = tesseract_pages(pages, bank)
+    return header, [r for p in out for r in p["rows"]], bank, \
+        [{"page": i + 1, "rows": len(p["rows"]), "seconds": p["seconds"], "reader": "tesseract"} for i, p in enumerate(out)]
+
+
+def read_vlm(pages, cache=None):
+    header, bank, out = vlm_pages(pages, cache)
+    return header, [r for p in out for r in p["rows"]], bank, \
+        [{"page": i + 1, "rows": len(p["rows"]), "seconds": p["seconds"], "reader": "vlm"} for i, p in enumerate(out)]
 
 
 # ------------------------------------------------------------------------------- analysis
@@ -169,14 +256,18 @@ def status_of(flags):
     return "ok"
 
 
-def analyse(path, backend="auto", bank=None, models=None):
+def analyse(path, backend="auto", bank=None, models=None, vlm_cache=None):
+    """backend: auto | both | vlm | tesseract. auto = both readers when the model is available (GPU, or
+    outputs recorded on a GPU in vlm_cache), else Tesseract."""
     t0 = time.time()
     clf, det = models or load_models()
     if backend == "auto":
-        backend = "vlm" if vlm_available() else "tesseract"
+        backend = "both" if (vlm_cache is not None or vlm_available()) else "tesseract"
     pages = load_pages(path)
-    if backend == "vlm":
-        header, rows, bank_found, info = read_vlm(pages)
+    if backend == "both":
+        header, rows, bank_found, info = read_both(pages, bank, vlm_cache)
+    elif backend == "vlm":
+        header, rows, bank_found, info = read_vlm(pages, vlm_cache)
     else:
         header, rows, bank_found, info = read_tesseract(pages, bank)
     header = dict(header or {})
@@ -215,6 +306,9 @@ def analyse(path, backend="auto", bank=None, models=None):
     elif backend == "tesseract":
         notes.append("Read with Tesseract OCR (CPU). It is reliable on clean PDFs and scans, weak on damaged photos; "
                      "the fine-tuned vision model is used automatically when a GPU and adapter are available.")
+    elif backend == "both" and vlm_cache is not None:
+        notes.append("Tesseract ran live on this computer; the fine-tuned model's reading was recorded on a Kaggle "
+                     "Tesla T4 GPU for this sample. Each page keeps the reading whose balance chain verifies best.")
     return {
         "file": Path(path).name, "backend": backend, "bank": bank_found, "bank_label": BANK_LABEL.get(bank_found, "Unknown bank"),
         "pages": info, "seconds": round(time.time() - t0, 1), "notes": notes,
@@ -301,7 +395,7 @@ def to_xlsx(result):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("path", nargs="?")
-    ap.add_argument("--backend", default="auto", choices=["auto", "tesseract", "vlm"])
+    ap.add_argument("--backend", default="auto", choices=["auto", "both", "tesseract", "vlm"])
     ap.add_argument("--bank", default=None, choices=sorted(BANK_LABEL))
     ap.add_argument("--out")
     ap.add_argument("--csv")

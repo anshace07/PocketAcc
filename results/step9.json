@@ -1,0 +1,280 @@
+{
+ "pages_per_split": 24,
+ "metric": "numeric field accuracy (%) after balance correction",
+ "splits": {
+  "unseen": {
+   "systems": {
+    "Tesseract OCR": {
+     "clean": {
+      "before": 91.42,
+      "after": 100.0,
+      "rows_found": 100.0
+     },
+     "medium": {
+      "before": 70.95,
+      "after": 72.61,
+      "rows_found": 82.99
+     },
+     "heavy": {
+      "before": 5.12,
+      "after": 5.12,
+      "rows_found": 9.13
+     },
+     "all": {
+      "before": 55.83,
+      "after": 59.24,
+      "rows_found": 64.04
+     }
+    },
+    "Zero-shot Qwen2-VL (strict)": {
+     "clean": {
+      "before": 21.99,
+      "after": 21.99,
+      "rows_found": 57.68
+     },
+     "medium": {
+      "before": 5.67,
+      "after": 5.67,
+      "rows_found": 35.68
+     },
+     "heavy": {
+      "before": 8.71,
+      "after": 17.01,
+      "rows_found": 24.07
+     },
+     "all": {
+      "before": 12.13,
+      "after": 14.89,
+      "rows_found": 39.14
+     }
+    },
+    "Zero-shot Qwen2-VL (tolerant)": {
+     "clean": {
+      "before": 36.1,
+      "after": 37.48,
+      "rows_found": 58.92
+     },
+     "medium": {
+      "before": 24.34,
+      "after": 25.31,
+      "rows_found": 43.57
+     },
+     "heavy": {
+      "before": 16.32,
+      "after": 16.32,
+      "rows_found": 37.76
+     },
+     "all": {
+      "before": 25.59,
+      "after": 26.37,
+      "rows_found": 46.75
+     }
+    },
+    "Fine-tuned (strict)": {
+     "clean": {
+      "before": 71.78,
+      "after": 78.01,
+      "rows_found": 90.87
+     },
+     "medium": {
+      "before": 40.66,
+      "after": 47.3,
+      "rows_found": 63.07
+     },
+     "heavy": {
+      "before": 52.56,
+      "after": 60.03,
+      "rows_found": 61.83
+     },
+     "all": {
+      "before": 55.0,
+      "after": 61.78,
+      "rows_found": 71.92
+     }
+    },
+    "Fine-tuned (tolerant)": {
+     "clean": {
+      "before": 77.18,
+      "after": 84.23,
+      "rows_found": 90.87
+     },
+     "medium": {
+      "before": 74.83,
+      "after": 85.62,
+      "rows_found": 85.89
+     },
+     "heavy": {
+      "before": 84.23,
+      "after": 95.57,
+      "rows_found": 97.93
+     },
+     "all": {
+      "before": 78.75,
+      "after": 88.47,
+      "rows_found": 91.56
+     }
+    },
+    "Both readers (app)": {
+     "clean": {
+      "before": 91.42,
+      "after": 100.0,
+      "rows_found": 100.0
+     },
+     "medium": {
+      "before": 74.83,
+      "after": 85.89,
+      "rows_found": 85.89
+     },
+     "heavy": {
+      "before": 83.96,
+      "after": 95.57,
+      "rows_found": 97.51
+     },
+     "all": {
+      "before": 83.4,
+      "after": 93.82,
+      "rows_found": 94.47
+     }
+    }
+   },
+   "both_picked_model_on": 16
+  },
+  "seen": {
+   "systems": {
+    "Tesseract OCR": {
+     "clean": {
+      "before": 99.58,
+      "after": 100.0,
+      "rows_found": 100.0
+     },
+     "medium": {
+      "before": 27.07,
+      "after": 27.07,
+      "rows_found": 36.31
+     },
+     "heavy": {
+      "before": 1.06,
+      "after": 1.06,
+      "rows_found": 2.23
+     },
+     "all": {
+      "before": 42.57,
+      "after": 42.71,
+      "rows_found": 46.18
+     }
+    },
+    "Zero-shot Qwen2-VL (strict)": {
+     "clean": {
+      "before": 1.8,
+      "after": 5.2,
+      "rows_found": 6.69
+     },
+     "medium": {
+      "before": 0.0,
+      "after": 0.0,
+      "rows_found": 0.0
+     },
+     "heavy": {
+      "before": 0.96,
+      "after": 1.27,
+      "rows_found": 1.59
+     },
+     "all": {
+      "before": 0.92,
+      "after": 2.16,
+      "rows_found": 2.76
+     }
+    },
+    "Zero-shot Qwen2-VL (tolerant)": {
+     "clean": {
+      "before": 9.55,
+      "after": 17.62,
+      "rows_found": 32.48
+     },
+     "medium": {
+      "before": 5.84,
+      "after": 10.3,
+      "rows_found": 13.38
+     },
+     "heavy": {
+      "before": 17.09,
+      "after": 17.73,
+      "rows_found": 28.98
+     },
+     "all": {
+      "before": 10.83,
+      "after": 15.22,
+      "rows_found": 24.95
+     }
+    },
+    "Fine-tuned (strict)": {
+     "clean": {
+      "before": 39.38,
+      "after": 44.59,
+      "rows_found": 62.74
+     },
+     "medium": {
+      "before": 42.78,
+      "after": 54.78,
+      "rows_found": 81.53
+     },
+     "heavy": {
+      "before": 36.41,
+      "after": 44.59,
+      "rows_found": 95.22
+     },
+     "all": {
+      "before": 39.53,
+      "after": 47.98,
+      "rows_found": 79.83
+     }
+    },
+    "Fine-tuned (tolerant)": {
+     "clean": {
+      "before": 56.9,
+      "after": 67.73,
+      "rows_found": 96.82
+     },
+     "medium": {
+      "before": 44.9,
+      "after": 61.46,
+      "rows_found": 82.17
+     },
+     "heavy": {
+      "before": 46.39,
+      "after": 58.49,
+      "rows_found": 95.86
+     },
+     "all": {
+      "before": 49.4,
+      "after": 62.56,
+      "rows_found": 91.61
+     }
+    },
+    "Both readers (app)": {
+     "clean": {
+      "before": 99.58,
+      "after": 100.0,
+      "rows_found": 100.0
+     },
+     "medium": {
+      "before": 51.8,
+      "after": 68.37,
+      "rows_found": 94.59
+     },
+     "heavy": {
+      "before": 46.5,
+      "after": 58.6,
+      "rows_found": 95.86
+     },
+     "all": {
+      "before": 65.96,
+      "after": 75.65,
+      "rows_found": 96.82
+     }
+    }
+   },
+   "both_picked_model_on": 16
+  }
+ }
+}

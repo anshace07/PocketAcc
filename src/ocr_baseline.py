@@ -15,7 +15,17 @@ import time
 
 import cv2
 import numpy as np
+import os
+import shutil
+
 import pytesseract
+
+if os.name == "nt" and shutil.which("tesseract") is None:      # Windows installer does not add it to PATH
+    for _exe in (r"C:\Program Files\Tesseract-OCR\tesseract.exe", r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
+                 os.path.expandvars(r"%LOCALAPPDATA%\Programs\Tesseract-OCR\tesseract.exe")):
+        if os.path.exists(_exe):
+            pytesseract.pytesseract.tesseract_cmd = _exe
+            break
 from PIL import Image
 
 from common import parse_date
